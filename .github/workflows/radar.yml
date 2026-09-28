@@ -1,0 +1,52 @@
+name: radar
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # every 10 min; GitHub may delay runs by a few minutes
+  workflow_dispatch:          # "Run workflow" button for manual tests
+
+permissions:
+  contents: read
+  actions: write   # keepalive step below
+
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      # bring back what the last run saw (seen trades, last prices)
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            radar_state.json
+            alerts.csv
+          key: radar-state-${{ github.run_id }}
+          restore-keys: radar-state-
+
+      - name: Scan
+        run: python3 radar.py --hours 2
+        env:
+          RADAR_NTFY: ${{ secrets.RADAR_NTFY }}
+
+      # GitHub pauses cron workflows in public repos after 60 days without
+      # commits; re-enabling resets that clock.
+      - name: Keepalive
+        if: github.event_name == 'schedule'
+        continue-on-error: true
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/radar.yml/enable"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: |
+            radar_state.json
+            alerts.csv
+          key: radar-state-${{ github.run_id }}

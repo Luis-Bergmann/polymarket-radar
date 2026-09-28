@@ -55,6 +55,7 @@
     border: 0; border-radius: 7px; padding: 6px 12px; cursor: pointer; }
   .seg button[aria-pressed="true"] { background: var(--sheet); color: var(--ink);
     box-shadow: 0 1px 2px rgba(19, 32, 47, .12); }
+  .seg[hidden] { display: none; }
   .seg.small button { font-size: 13px; padding: 4px 10px; }
 
   main { max-width: 720px; margin: 0 auto; padding: 4px 16px 48px; }
@@ -369,7 +370,7 @@ function evidence(ev) {
 function render() {
   document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.tab === tab));
   document.querySelectorAll("#sort button").forEach(b => b.setAttribute("aria-pressed", b.dataset.sort === sort));
-  document.getElementById("sort").style.visibility = tab === "log" || tab === "evidence" ? "hidden" : "visible";
+  document.getElementById("sort").hidden = tab === "log" || tab === "evidence";
   if (!data) return;
   document.getElementById("meta").innerHTML =
     `Scanned ${ago(data.updated)}<br>${data.markets.toLocaleString("en-US")} markets`;

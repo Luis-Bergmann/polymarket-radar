@@ -44,8 +44,8 @@ sys.modules.setdefault("radar", sys.modules[__name__])
 
 # ---------------------------------------------------------------- HTTP
 
-def get(base, path, params=None, tries=4):
-    """GET JSON with polite retries on 429/503."""
+def get(base, path, params=None, tries=6):
+    """GET JSON with polite retries on 429/5xx (waits 2, 4, 8, 16, 32s, or what the server asks)."""
     url = base + path
     if params:
         url += "?" + urllib.parse.urlencode({k: v for k, v in params.items() if v is not None})
@@ -55,7 +55,7 @@ def get(base, path, params=None, tries=4):
             with urllib.request.urlopen(req, timeout=30) as r:
                 return json.loads(r.read().decode("utf-8"))
         except urllib.error.HTTPError as e:
-            if e.code in (429, 503) and attempt < tries - 1:
+            if e.code in (429, 500, 502, 503, 504) and attempt < tries - 1:
                 wait = int(e.headers.get("Retry-After") or 2 ** (attempt + 1))
                 time.sleep(min(wait, 60))
                 continue
@@ -286,12 +286,24 @@ def wallet_profile(addr):
     return prof
 
 
-def prefetch_wallets(addrs):
-    """Look up many uncached wallets in parallel."""
+def prefetch_wallets(addrs, workers=8):
+    """Look up many uncached wallets in parallel. A lookup that keeps failing is skipped
+    (and retried on demand later) rather than aborting the scan."""
     todo = [a for a in set(addrs) if a and a not in _wallet_cache]
+
+    def one(addr):
+        try:
+            wallet_profile(addr)
+        except (urllib.error.URLError, ValueError) as e:
+            return e
+        return None
+
+    failed = 0
     if todo:
-        with ThreadPoolExecutor(8) as pool:
-            list(pool.map(wallet_profile, todo))
+        with ThreadPoolExecutor(workers) as pool:
+            failed = sum(1 for r in pool.map(one, todo) if r)
+    if failed:
+        print(f"  ({failed} wallet lookups failed, skipped)")
     return len(todo)
 
 

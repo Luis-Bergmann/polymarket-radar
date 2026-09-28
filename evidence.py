@@ -251,15 +251,20 @@ def backtest(args):
     cids = sorted(markets, key=lambda c: -markets[c]["volume"])[:args.max_markets]
     print(f"  {len(cids)} markets to replay", flush=True)
 
-    trades, truncated = {}, 0
+    trades, failed = {}, []
 
     def fetch(cid):
-        trades[cid] = market_trades(cid, args.max_pages)
+        try:
+            trades[cid] = market_trades(cid, args.max_pages)
+        except (R.urllib.error.URLError, ValueError) as e:
+            failed.append(cid)
+            print(f"  skipped a market, trades would not load: {e}", flush=True)
 
-    with ThreadPoolExecutor(6) as pool:
+    with ThreadPoolExecutor(4) as pool:
         for i, _ in enumerate(pool.map(fetch, cids), 1):
             if i % 200 == 0:
                 print(f"  trades fetched for {i}/{len(cids)} markets", flush=True)
+    cids = [c for c in cids if c in trades]
     truncated = sum(1 for _, cut in trades.values() if cut)
     print(f"  {sum(len(t) for t, _ in trades.values()):,} trades >= ${TRADE_MIN} "
           f"({truncated} markets capped at {args.max_pages} pages)", flush=True)
@@ -268,14 +273,21 @@ def backtest(args):
     wallets = sorted({t[5] for rows, _ in trades.values() for t in rows if t[5]} - set(R._wallet_cache))
     print(f"  {len(wallets):,} wallets to look up ({len(R._wallet_cache):,} cached)", flush=True)
     for i in range(0, len(wallets), 5000):
-        R.prefetch_wallets(wallets[i:i + 5000])
+        R.prefetch_wallets(wallets[i:i + 5000], workers=6)
         save_wallet_file(args.wallets)
         print(f"  wallets {min(i + 5000, len(wallets)):,}/{len(wallets):,}", flush=True)
+
+    def profile(addr):
+        """Cached profile; a wallet whose lookup failed twice counts as unknown, not fresh."""
+        try:
+            return R.wallet_profile(addr)
+        except (R.urllib.error.URLError, ValueError):
+            return {"markets": 999, "join": None, "fetched": 0}
 
     signals = []
     for cid in cids:
         m = markets[cid]
-        for s in detect(trades[cid][0], R.wallet_profile):
+        for s in detect(trades[cid][0], profile):
             signals.append(dict(s, cid=cid, question=m["question"], link=m["link"],
                                 won=s["side"] == m["winner"]))
     result = {
@@ -284,6 +296,7 @@ def backtest(args):
         "min_volume": args.min_volume,
         "markets": len(cids),
         "truncated": truncated,
+        "skipped": len(failed),
         "hypotheses": score_all(signals),
         "signals": signals,
     }

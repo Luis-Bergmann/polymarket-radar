@@ -130,6 +130,7 @@
   .test td, .test th { padding: 2px 10px 2px 0; text-align: left; font-weight: 400; }
   .test th { color: var(--soft); }
   h2.sec { font-size: 16px; font-weight: 800; margin: 28px 0 0; }
+  .skew { color: var(--fresh); font-size: 14px; max-width: 62ch; margin: 10px 0 0; }
   .status-won { color: var(--yes); } .status-lost { color: var(--no); } .status-open { color: var(--soft); }
   .logrow { display: block; padding: 14px 0 12px; text-decoration: none; }
   .empty { color: var(--soft); padding: 48px 0; max-width: 40ch; }
@@ -318,24 +319,49 @@ const VERDICT = {
   untested: ["Nothing resolved yet", "wait"],
 };
 const pct = x => Math.round(x * 100) + "%";
+const fmtP = p => p < 0.001 ? "under 0.1%" : p < 0.1 ? (p * 100).toFixed(1) + "%" : pct(p);
+const dayz = d => { const n = Math.round(d); return `${n} day${n === 1 ? "" : "s"}`; };
+const bets = n => `${n} independent bet${n === 1 ? "" : "s"}`;
 const signed = v => (v >= 0 ? "+" : "−") + money(Math.abs(v));
 
 function testBlock(title, r, rules, emptyText) {
   if (!r) return `<div class="test"><h3>${title}</h3><p>${emptyText}</p></div>`;
   const [label, cls] = VERDICT[r.verdict] || VERDICT.untested;
   if (!r.n) return `<div class="test"><h3>${title}</h3><div class="verdict ${cls}">${label}</div>
-    <p>${r.open ? `${r.open} signal${r.open > 1 ? "s" : ""} waiting for their markets to resolve.` : "No signals yet."}</p></div>`;
-  const luck = r.p < 0.001 ? "under 0.1%" : r.p < 0.01 ? (r.p * 100).toFixed(1) + "%" : pct(r.p);
+    <p>${r.open ? `${bets(r.open)} waiting for their markets to resolve.` : "No signals yet."}</p></div>`;
+  const luck = fmtP(r.p);
   const buckets = (r.buckets || []).map(b =>
     `<tr><td>${Math.round(b.lo * 100)}–${Math.round(b.hi * 100)}¢</td><td>${b.n}</td><td>${b.won}</td><td>${Math.round(b.expected)}</td></tr>`).join("");
   return `<div class="test"><h3>${title}</h3>
     <div class="verdict ${cls}">${label}${r.verdict === "too_few" ? ` <span style="font-weight:400;font-size:14px">(${r.n} of ${rules.min_n})</span>` : ""}</div>
     ${track(r.implied, r.win_rate, "%")}
-    <p>Won <b>${r.won} of ${r.n}</b> (${pct(r.win_rate)}). The prices said ${pct(r.implied)}.</p>
+    <p>Won <b>${r.won} of ${bets(r.n)}</b> (${pct(r.win_rate)}). The prices said ${pct(r.implied)}.</p>
+    <p>From ${r.raw_resolved} raw signals, keeping the strongest per event per day.${r.days_resolved != null ? ` Median ${dayz(r.days_resolved)} from signal to resolution.` : ""}</p>
     <p>$100 on each: <b class="${r.profit_100 >= 0 ? "up" : "down"}">${signed(r.profit_100)}</b> total, ${signed(r.per_bet)} a bet.</p>
     <p>Chance a result this good is luck: <b>${luck}</b>${r.open ? `. ${r.open} more still open` : ""}.</p>
     ${buckets ? `<details><summary>By entry price</summary><table>
       <tr><th>Price</th><th>Signals</th><th>Won</th><th>Price said</th></tr>${buckets}</table></details>` : ""}
+  </div>`;
+}
+
+function skewNote(d) {
+  if (!d || !d.resolved_n || d.resolved == null || d.all == null) return "";
+  return `<p class="skew">Early live results are skewed toward short-dated markets: the ${d.resolved_n} live signals resolved
+    so far were a median ${dayz(d.resolved)} from resolution when flagged, against ${dayz(d.all)} for
+    all ${d.n} logged. Markets that settle quickly are not a fair sample of the rest.</p>`;
+}
+
+function compareBlock(title, c, rules) {
+  if (!c) return `<div class="test"><h3>${title}</h3><p>Hasn't run yet. It runs every Monday.</p></div>`;
+  const [label, cls] = VERDICT[c.verdict] || VERDICT.untested;
+  const edge = x => (x >= 0 ? "+" : "−") + Math.abs(x * 100).toFixed(1) + " pts";
+  if (!c.n_fresh || !c.n_plain) return `<div class="test"><h3>${title}</h3><div class="verdict ${cls}">${label}</div>
+    <p>Needs resolved bets on both sides: ${c.n_fresh} fresh-money, ${c.n_plain} plain.</p></div>`;
+  return `<div class="test"><h3>${title}</h3>
+    <div class="verdict ${cls}">${label}${c.verdict === "too_few" ? ` <span style="font-weight:400;font-size:14px">(${Math.min(c.n_fresh, c.n_plain)} of ${rules.min_n})</span>` : ""}</div>
+    <p>Fresh-money pushes against their entry prices: <b class="${c.edge_fresh >= 0 ? "up" : "down"}">${edge(c.edge_fresh)}</b> (${bets(c.n_fresh)}).</p>
+    <p>Other pushes against theirs: <b class="${c.edge_plain >= 0 ? "up" : "down"}">${edge(c.edge_plain)}</b> (${bets(c.n_plain)}).</p>
+    ${c.p != null ? `<p>Chance the gap is luck: <b>${fmtP(c.p)}</b>.</p>` : ""}
   </div>`;
 }
 
@@ -344,10 +370,13 @@ function evidence(ev) {
   const since = new Date(ev.since * 1000).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
   const bt = ev.backtest;
   const btTitle = bt ? `Backtest: ${bt.markets.toLocaleString("en-US")} markets resolved in the last ${bt.days} days` : "Backtest";
+  const alpha = (ev.rules.alpha * 100).toFixed(2).replace(/0$/, "") + "%";
   const intro = `<p class="intro">Each claim is tested two ways: replayed on markets that already resolved, and on every
     signal the radar has raised since ${since}. The faint mark is how often the entry prices said the signal should win,
-    the dot is how often it did. A claim counts as supported only with at least ${ev.rules.min_n} resolved signals and
-    under a ${Math.round(ev.rules.alpha * 100)}% chance that the result is luck.</p>`;
+    the dot is how often it did.</p>
+    <p class="intro">Signals in the same event are one bet (Andersson No and Kristersson Yes are the same call), so only the
+    strongest per event per day counts. A claim counts as supported with at least ${ev.rules.min_n} such independent bets
+    and under a ${alpha} chance that the result is luck: 5% split across the four claims.</p>${skewNote(ev.live_days)}`;
   const hyps = ev.hypotheses.map(h => `<section class="hyp">
       <h2><span class="id">${h.id}</span>${esc(h.title)}</h2>
       <p class="claim">${esc(h.claim)}${h.note ? " " + esc(h.note) : ""}</p>
@@ -356,15 +385,29 @@ function evidence(ev) {
         ${testBlock(`Live since ${since}`, h.live, ev.rules)}
       </div>
     </section>`).join("");
+  const cmp = ev.compare ? `<section class="hyp">
+      <h2><span class="id">H1 vs H2</span>Does fresh money beat plain momentum?</h2>
+      <p class="claim">Fresh-money pushes (H1) against pushes that were never flagged as fresh money, on how far each
+        beat the price it was bought at. If H1 only wins because big pushes win, this says no.</p>
+      <div class="tests">
+        ${compareBlock(btTitle, ev.compare.backtest, ev.rules)}
+        ${compareBlock(`Live since ${since}`, ev.compare.live, ev.rules)}
+      </div>
+    </section>` : "";
+  const horizon = s => {
+    const d = s.days == null ? null : Math.round(s.days);
+    if (d == null) return "";
+    return s.won === null ? `, resolves ${dayz(d)} after the signal` : `, resolved ${dayz(d)} after the signal`;
+  };
   const recent = ev.recent.length ? ev.recent.map(s => {
     const st = s.won === null ? ["Open", "open"] : s.won ? ["Won", "won"] : ["Lost", "lost"];
     return `<div class="row"><a class="logrow" href="${esc(s.link)}" target="_blank" rel="noopener">
       <div class="head">
-        <div class="q">${esc(s.question)}<span class="ev">${s.h}: bought ${esc(s.side_name)} at ${cents(s.entry)}, ${ago(s.at)}</span></div>
+        <div class="q">${esc(s.question)}<span class="ev">${s.h}: bought ${esc(s.side_name)} at ${cents(s.entry)}, ${ago(s.at)}${horizon(s)}</span></div>
         <div class="delta status-${st[1]}" style="font-size:16px">${st[0]}</div>
       </div></a></div>`;
   }).join("") : '<div class="empty">No live signals yet. They are logged here the moment a scan raises one.</div>';
-  return intro + hyps + `<h2 class="sec">Latest live signals</h2>` + recent;
+  return intro + hyps + cmp + `<h2 class="sec">Latest live signals</h2>` + recent;
 }
 
 function render() {

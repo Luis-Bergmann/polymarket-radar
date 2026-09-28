@@ -33,9 +33,9 @@ jobs:
       # wallet lookups are the slow part; keep them between weekly runs
       - uses: actions/cache/restore@v4
         with:
-          path: backtest_wallets.json
-          key: backtest-wallets-${{ github.run_id }}
-          restore-keys: backtest-wallets-
+          path: backtest_wallets_v2.json
+          key: backtest-wallets-v2-${{ github.run_id }}
+          restore-keys: backtest-wallets-v2-
 
       - name: Replay resolved markets
         run: >
@@ -43,13 +43,13 @@ jobs:
           --days ${{ inputs.days || '180' }}
           --min-volume ${{ inputs.min_volume || '50000' }}
           --out track/backtest.json
-          --wallets backtest_wallets.json
+          --wallets backtest_wallets_v2.json
 
       - uses: actions/cache/save@v4
         if: always()
         with:
-          path: backtest_wallets.json
-          key: backtest-wallets-${{ github.run_id }}
+          path: backtest_wallets_v2.json
+          key: backtest-wallets-v2-${{ github.run_id }}
 
       - name: Save backtest
         run: .github/push-track.sh "Backtest $(date -u +%Y-%m-%d)"

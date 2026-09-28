@@ -8,18 +8,26 @@ Does the radar work? Written-down hypotheses, tested two ways.
   live      radar.py --track DIR logs every signal it raises from now on with
             its price at that moment, and scores it when the market resolves
 
-A hypothesis counts as supported only if its side won clearly more often than
-the entry prices implied: one-sided test, p < 0.05, at least 30 resolved signals.
-Each market side counts once per hypothesis, at the first moment it qualified.
+Scoring rules:
+  - A signal wins if the side it points to wins. The test asks whether signals won
+    more often than their entry prices implied (one-sided).
+  - Independence: signals within one event are one bet (Andersson No and
+    Kristersson Yes are the same call). Only the strongest signal per event per
+    UTC day counts, and n is the number of those independent bets.
+  - Multiple testing: four hypotheses, so each needs p < 0.05 / 4 = 0.0125, and at
+    least 30 independent resolved bets.
+  - H1 vs H2: fresh-money pushes are also tested directly against pushes that were
+    never flagged as fresh money, on how far each beat its entry prices.
+
+"Fresh" is judged at the moment of each trade from the wallet's own trade history
+before that moment: first trade under 14 days earlier, or at most 3 markets traded
+before it. Nothing from after the trade is used.
 
 Known biases, stated up front:
-  - "Fresh" uses each wallet's join date (known at the time) or its current
-    market count <= 3. The count only grows, so a wallet that is under the
-    limit today was under it then; older wallets are never wrongly flagged.
   - The backtest enters at the trade price that triggered the signal and ignores
     fees and slippage. Live signals enter at the order-book midpoint.
-  - Markets inside one event (say, every candidate for one office) are correlated,
-    so the p-values are a bit optimistic.
+  - Only markets that resolved are replayed, and the live record fills up with
+    short-dated markets first; both are reported next to the results.
 """
 
 import argparse
@@ -49,7 +57,7 @@ FRESH_MARKETS = 3    # fresh wallet: traded <= this many markets...
 FRESH_DAYS = 14      # ...or account younger than this
 ENTRY_RANGE = (0.03, 0.97)   # near-certain prices carry no information
 MIN_N = 30
-ALPHA = 0.05
+ALPHA = 0.05 / 4     # Bonferroni over H1-H4; the H1-vs-H2 comparison uses the same bar
 
 HYPOTHESES = [
     {"id": "H1", "title": "Fresh money pushing a price knows the outcome",
@@ -70,9 +78,8 @@ HYPOTHESES = [
 
 
 def is_fresh(prof, at):
-    if prof["markets"] <= FRESH_MARKETS:
-        return True
-    return bool(prof["join"]) and 0 <= (at - prof["join"]) / 86400 <= FRESH_DAYS
+    """Fresh at time `at`, judged only from the wallet's history before it."""
+    return R.fresh_at(prof, at, FRESH_MARKETS, FRESH_DAYS)
 
 
 # ---------------------------------------------------------------- Signal detection
@@ -82,15 +89,16 @@ def detect(trades, profile):
     trades: (ts, is_buy, outcome_index, price, usd, wallet) tuples, all >= TRADE_MIN."""
     out, fired = [], set()
 
-    def fire(h, side, entry, at):
+    def fire(h, side, entry, at, strength):
         if (h, side) in fired or not ENTRY_RANGE[0] <= entry <= ENTRY_RANGE[1]:
             return
         fired.add((h, side))
-        out.append({"h": h, "side": side, "entry": round(entry, 4), "at": at})
+        out.append({"h": h, "side": side, "entry": round(entry, 4), "at": at,
+                    "strength": round(strength, 4)})
 
     window, ref = deque(), None
     sums = {1: [0.0, 0.0], -1: [0.0, 0.0]}   # direction -> [usd, fresh usd]
-    buyers = {0: deque(), 1: deque()}        # side -> recent (ts, wallet) big fresh buys
+    buyers = {0: deque(), 1: deque()}        # side -> recent (ts, wallet, usd) big fresh buys
     for at, buy, idx, price, usd, wallet in trades:
         yes = price if idx == 0 else 1 - price
         push = 1 if buy == (idx == 0) else -1   # buying Yes or selling No pushes Yes up
@@ -109,37 +117,74 @@ def detect(trades, profile):
             d = 1 if move > 0 else -1
             side = 0 if d > 0 else 1
             entry = yes if side == 0 else 1 - yes
-            fire("H2", side, entry, at)
+            fire("H2", side, entry, at, abs(move))
             usd_d, fresh_d = sums[d]
             if fresh_d >= FRESH_USD and fresh_d >= FRESH_SHARE * usd_d:
-                fire("H1", side, entry, at)
+                fire("H1", side, entry, at, fresh_d)
 
         if buy and fresh and usd >= BIG:
             if price <= LONGSHOT:
-                fire("H3", idx, price, at)
+                fire("H3", idx, price, at, usd)
             q = buyers[idx]
-            q.append((at, wallet))
+            q.append((at, wallet, usd))
             while q[0][0] < at - WINDOW:
                 q.popleft()
-            if len({w for _, w in q}) >= CLUSTER:
-                fire("H4", idx, price, at)
+            if len({w for _, w, _ in q}) >= CLUSTER:
+                fire("H4", idx, price, at, sum(u for _, _, u in q))
     return out
 
 
 # ---------------------------------------------------------------- Scoring
 
+def event_of(sig):
+    """Event a signal belongs to: the event slug in its Polymarket link."""
+    return sig.get("event") or (sig.get("link") or "").rstrip("/").rsplit("/", 1)[-1] or sig["cid"]
+
+
+def independent(signals):
+    """One bet per event per UTC day: keep the strongest signal."""
+    best = {}
+    for sig in signals:
+        key = (event_of(sig), int(sig["at"]) // 86400)
+        if key not in best or sig.get("strength", 0) > best[key].get("strength", 0):
+            best[key] = sig
+    return list(best.values())
+
+
+def days_to_resolution(sig):
+    end = sig.get("closed") or sig.get("end")
+    return (end - sig["at"]) / 86400 if end else None
+
+
+def median(xs):
+    xs = sorted(x for x in xs if x is not None)
+    if not xs:
+        return None
+    mid = len(xs) // 2
+    return round(xs[mid] if len(xs) % 2 else (xs[mid - 1] + xs[mid]) / 2, 1)
+
+
+def one_sided_p(z):
+    return 0.5 * math.erfc(z / math.sqrt(2))
+
+
 def score(signals):
-    """Did the signalled side win more often than its entry price implied?"""
-    done = [s for s in signals if s.get("won") is not None]
+    """Did the signalled side win more often than its entry price implied?
+    Counts independent bets only (strongest signal per event per day)."""
+    bets = independent(signals)
+    done = [s for s in bets if s.get("won") is not None]
     n = len(done)
-    res = {"n": n, "open": len(signals) - n}
+    res = {"n": n, "open": len(bets) - n, "raw": len(signals),
+           "raw_resolved": sum(1 for s in signals if s.get("won") is not None),
+           "days_resolved": median(days_to_resolution(s) for s in done),
+           "days_all": median(days_to_resolution(s) for s in bets)}
     if not n:
         return dict(res, verdict="untested")
     wins = sum(1 for s in done if s["won"])
     expected = sum(s["entry"] for s in done)
     var = sum(s["entry"] * (1 - s["entry"]) for s in done)
     z = (wins - expected) / math.sqrt(var) if var else 0.0
-    p = 0.5 * math.erfc(z / math.sqrt(2))   # one-sided: more wins than priced in
+    p = one_sided_p(z)
     profit = sum((100 / s["entry"] if s["won"] else 0) - 100 for s in done)
     verdict = "too_few" if n < MIN_N else "supported" if p < ALPHA and wins > expected else "not_supported"
     buckets = []
@@ -150,12 +195,39 @@ def score(signals):
                             "won": sum(1 for s in b if s["won"]),
                             "expected": round(sum(s["entry"] for s in b), 2)})
     return dict(res, won=wins, expected=round(expected, 2), win_rate=round(wins / n, 4),
-                implied=round(expected / n, 4), p=round(p, 4), profit_100=round(profit),
+                implied=round(expected / n, 4), p=round(p, 5), profit_100=round(profit),
                 per_bet=round(profit / n, 2), verdict=verdict, buckets=buckets)
 
 
+def compare(fresh_pushes, all_pushes):
+    """H1 vs H2: do fresh-money pushes beat their prices by more than pushes that were
+    never flagged as fresh money? One-sided Welch test on (won - entry) per bet."""
+    flagged = {(s["cid"], s["side"]) for s in fresh_pushes}
+    plain = [s for s in all_pushes if (s["cid"], s["side"]) not in flagged]
+    groups = []
+    for sigs in (fresh_pushes, plain):
+        done = [s for s in independent(sigs) if s.get("won") is not None]
+        edge = [(1.0 if s["won"] else 0.0) - s["entry"] for s in done]
+        n = len(edge)
+        mean = sum(edge) / n if n else 0.0
+        var = sum((e - mean) ** 2 for e in edge) / (n - 1) if n > 1 else 0.0
+        groups.append((n, mean, var))
+    (n1, m1, v1), (n2, m2, v2) = groups
+    res = {"n_fresh": n1, "n_plain": n2, "edge_fresh": round(m1, 4), "edge_plain": round(m2, 4)}
+    if n1 < 2 or n2 < 2:
+        return dict(res, verdict="untested" if not n1 or not n2 else "too_few")
+    se = math.sqrt(v1 / n1 + v2 / n2)
+    p = one_sided_p((m1 - m2) / se) if se else 0.5
+    verdict = ("too_few" if min(n1, n2) < MIN_N
+               else "supported" if p < ALPHA and m1 > m2 else "not_supported")
+    return dict(res, diff=round(m1 - m2, 4), p=round(p, 5), verdict=verdict)
+
+
 def score_all(signals):
-    return {h["id"]: score([s for s in signals if s["h"] == h["id"]]) for h in HYPOTHESES}
+    by_h = {h["id"]: [s for s in signals if s["h"] == h["id"]] for h in HYPOTHESES}
+    out = {h: score(sigs) for h, sigs in by_h.items()}
+    out["H1_vs_H2"] = compare(by_h["H1"], by_h["H2"])
+    return out
 
 
 # ---------------------------------------------------------------- Backtest
@@ -204,6 +276,7 @@ def resolved_markets(tags, days, min_volume):
                     if w is None:
                         continue
                     out[cid] = {"question": m.get("question") or e.get("title") or "?",
+                                "event": str(e.get("slug") or e.get("id") or cid),
                                 "link": "https://polymarket.com/event/" + str(e.get("slug") or ""),
                                 "closed": closed, "winner": w, "volume": round(R.num(m.get("volumeNum")) or 0)}
             cursor = resp.get("next_cursor")
@@ -231,17 +304,20 @@ def market_trades(cid, max_pages):
 
 
 def load_wallet_file(path):
+    """Wallet histories from earlier backtests. First entries never change, so no expiry,
+    except for wallets that had few markets at lookup time and may have entered more since."""
     try:
         with open(path) as f:
-            for addr, (markets, join, fetched) in json.load(f).items():
-                R._wallet_cache[addr] = {"markets": markets, "join": join, "fetched": fetched}
+            for addr, prof in json.load(f).items():
+                if isinstance(prof, dict) and "entries" in prof:
+                    R._wallet_cache[addr] = prof
     except (OSError, ValueError):
         pass
 
 
 def save_wallet_file(path):
     with open(path, "w") as f:
-        json.dump({a: [p["markets"], p["join"], p["fetched"]] for a, p in R._wallet_cache.items()}, f)
+        json.dump(R._wallet_cache, f, separators=(",", ":"))
 
 
 def backtest(args):
@@ -273,7 +349,7 @@ def backtest(args):
     wallets = sorted({t[5] for rows, _ in trades.values() for t in rows if t[5]} - set(R._wallet_cache))
     print(f"  {len(wallets):,} wallets to look up ({len(R._wallet_cache):,} cached)", flush=True)
     for i in range(0, len(wallets), 5000):
-        R.prefetch_wallets(wallets[i:i + 5000], workers=6)
+        R.prefetch_wallets(wallets[i:i + 5000], workers=8)
         save_wallet_file(args.wallets)
         print(f"  wallets {min(i + 5000, len(wallets)):,}/{len(wallets):,}", flush=True)
 
@@ -282,14 +358,14 @@ def backtest(args):
         try:
             return R.wallet_profile(addr)
         except (R.urllib.error.URLError, ValueError):
-            return {"markets": 999, "join": None, "fetched": 0}
+            return R.UNKNOWN
 
     signals = []
     for cid in cids:
         m = markets[cid]
         for s in detect(trades[cid][0], profile):
-            signals.append(dict(s, cid=cid, question=m["question"], link=m["link"],
-                                won=s["side"] == m["winner"]))
+            signals.append(dict(s, cid=cid, question=m["question"], link=m["link"], event=m["event"],
+                                closed=m["closed"], won=s["side"] == m["winner"]))
     result = {
         "generated": int(time.time()),
         "days": args.days,
@@ -303,13 +379,25 @@ def backtest(args):
     with open(args.out, "w") as f:
         json.dump(result, f, separators=(",", ":"))
     print(f"  {len(signals)} signals, written to {args.out} in {(time.time() - t0) / 60:.0f} min", flush=True)
+    print_results(result["hypotheses"])
+
+
+def print_results(res):
     for h in HYPOTHESES:
-        r = result["hypotheses"][h["id"]]
+        r = res[h["id"]]
         if r["n"]:
-            print(f"  {h['id']}: won {r['won']}/{r['n']} ({r['win_rate']:.0%}) vs {r['implied']:.0%} priced in, "
-                  f"p={r['p']:.3f}, $100 each: {r['profit_100']:+,} -> {r['verdict']}")
+            print(f"  {h['id']}: {r['n']} independent bets ({r['raw']} raw signals): won {r['won']} "
+                  f"({r['win_rate']:.1%}) vs {r['implied']:.1%} priced in, p={r['p']:.4f}, "
+                  f"$100 each: {r['profit_100']:+,} ({r['per_bet']:+.2f}/bet), "
+                  f"median {r['days_resolved']}d to resolution -> {r['verdict']}")
         else:
-            print(f"  {h['id']}: no signals")
+            print(f"  {h['id']}: no resolved signals ({r['raw']} raw)")
+    c = res["H1_vs_H2"]
+    if "p" in c:
+        print(f"  H1 vs H2: fresh edge {c['edge_fresh']:+.3f} (n={c['n_fresh']}) vs plain {c['edge_plain']:+.3f} "
+              f"(n={c['n_plain']}), p={c['p']:.4f} -> {c['verdict']}")
+    else:
+        print(f"  H1 vs H2: {c['verdict']} (n={c['n_fresh']} vs {c['n_plain']})")
 
 
 # ---------------------------------------------------------------- Live track record
@@ -333,24 +421,27 @@ def log_live(track, state, markets, movers_24h, trades, now):
     have = {(s["h"], s["cid"], s["side"]) for s in track["signals"]}
     new = []
 
-    def add(h, cid, side, entry):
+    def add(h, cid, side, entry, strength):
         if (h, cid, side) in have or entry is None or not ENTRY_RANGE[0] <= entry <= ENTRY_RANGE[1]:
             return
         m = markets.get(cid, {})
         have.add((h, cid, side))
-        new.append({"h": h, "cid": cid, "side": side, "side_name": (m.get("outcomes") or ["Yes", "No"])[side],
-                    "entry": round(entry, 4), "at": now, "question": m.get("question", "?"),
-                    "link": m.get("link", ""), "won": None})
+        sig = {"h": h, "cid": cid, "side": side, "side_name": (m.get("outcomes") or ["Yes", "No"])[side],
+               "entry": round(entry, 4), "at": now, "strength": round(strength, 4),
+               "question": m.get("question", "?"), "link": m.get("link", ""),
+               "end": m.get("end"), "won": None}
+        sig["event"] = event_of(sig)
+        new.append(sig)
 
     for r in movers_24h:
         if abs(r["change"]) < MOVE or r["price"] is None:
             continue
         side = 0 if r["change"] > 0 else 1
         entry = r["price"] if side == 0 else 1 - r["price"]
-        add("H2", r["cid"], side, entry)
+        add("H2", r["cid"], side, entry, abs(r["change"]))
         f = r.get("flow") or {}
         if f.get("fresh_usd", 0) >= FRESH_USD and f.get("fresh_pct", 0) >= FRESH_SHARE:
-            add("H1", r["cid"], side, entry)
+            add("H1", r["cid"], side, entry, f["fresh_usd"])
 
     recent = [b for b in state.get("fresh_buys", []) if b[0] >= now - WINDOW]
     for t in trades:
@@ -362,10 +453,11 @@ def log_live(track, state, markets, movers_24h, trades, now):
         cid = R.pick(t, "condition_id", "conditionId")
         idx = int(R.pick(t, "outcome_index", "outcomeIndex", default=0))
         if price <= LONGSHOT:
-            add("H3", cid, idx, price)
-        recent.append([at, cid, idx, wallet])
-        if len({b[3] for b in recent if b[1] == cid and b[2] == idx}) >= CLUSTER:
-            add("H4", cid, idx, price)
+            add("H3", cid, idx, price, usd)
+        recent.append([at, cid, idx, wallet, usd])
+        cluster = [b for b in recent if b[1] == cid and b[2] == idx]
+        if len({b[3] for b in cluster}) >= CLUSTER:
+            add("H4", cid, idx, price, sum(b[4] for b in cluster if len(b) > 4))
     state["fresh_buys"] = recent[-2000:]
     track["signals"].extend(new)
     return new
@@ -383,16 +475,16 @@ def resolve_live(track):
             with R.urllib.request.urlopen(req, timeout=30) as resp:
                 for m in json.loads(resp.read().decode("utf-8")) or []:
                     if m.get("closed") and m.get("umaResolutionStatus") == "resolved":
-                        results[m.get("conditionId")] = winner(m)
+                        results[m.get("conditionId")] = (winner(m), parse_time(m.get("closedTime")))
         except (R.urllib.error.URLError, ValueError) as e:
             print(f"  (could not check resolutions: {e})")
     changed = 0
     for s in track["signals"]:
         if s["won"] is None and s["cid"] in results:
-            w = results[s["cid"]]
+            w, closed = results[s["cid"]]
             s["won"] = None if w is None else s["side"] == w
             s["void"] = w is None
-            s["resolved"] = int(time.time())
+            s["closed"] = closed or int(time.time())
             changed += 1
     track["signals"] = [s for s in track["signals"] if not s.get("void")]
     return changed
@@ -401,6 +493,10 @@ def resolve_live(track):
 def update_live(folder, state, markets, movers_24h, trades, now):
     """One scan's worth of evidence work. Returns the block for data.json."""
     track = load_track(folder)
+    for sig in track["signals"]:   # signals logged before event/end/strength existed
+        sig.setdefault("event", event_of(sig))
+        if sig.get("end") is None and sig["cid"] in markets:
+            sig["end"] = markets[sig["cid"]]["end"]
     new = log_live(track, state, markets, movers_24h, trades, now)
     resolved = resolve_live(track)
     save_track(folder, track)
@@ -410,11 +506,19 @@ def update_live(folder, state, markets, movers_24h, trades, now):
             bt = json.load(f)
     except (OSError, ValueError):
         bt = None
+    live = score_all(track["signals"])
+    for sig in track["signals"]:
+        sig["days"] = None if days_to_resolution(sig) is None else round(days_to_resolution(sig), 1)
     return {
         "since": track["since"],
-        "hypotheses": [dict(h, live=score([s for s in track["signals"] if s["h"] == h["id"]]),
-                            backtest=bt["hypotheses"].get(h["id"]) if bt else None) for h in HYPOTHESES],
-        "backtest": {k: bt[k] for k in ("generated", "days", "markets", "min_volume")} if bt else None,
+        "hypotheses": [dict(h, live=live[h["id"]], backtest=bt["hypotheses"].get(h["id"]) if bt else None)
+                       for h in HYPOTHESES],
+        "compare": {"live": live["H1_vs_H2"], "backtest": bt["hypotheses"].get("H1_vs_H2") if bt else None},
+        "live_days": {"resolved": median(s["days"] for s in track["signals"] if s["won"] is not None),
+                      "all": median(s["days"] for s in track["signals"]),
+                      "resolved_n": sum(1 for s in track["signals"] if s["won"] is not None),
+                      "n": len(track["signals"])},
+        "backtest": {k: bt.get(k) for k in ("generated", "days", "markets", "min_volume", "skipped")} if bt else None,
         "recent": sorted(track["signals"], key=lambda s: -s["at"])[:60],
         "rules": {"min_n": MIN_N, "alpha": ALPHA},
     }

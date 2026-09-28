@@ -256,32 +256,43 @@ def recent_trades(event_ids, since_ts, min_usd):
 
 _wallet_cache = {}
 WALLET_TTL = 2 * 86400  # re-check a wallet's history after this long
+ENTRIES_KEPT = 6        # first-entry times of this many markets per wallet is plenty
+UNKNOWN = {"entries": [], "done": True, "until": 0, "fetched": 0}
 
 
 def load_wallets(state, now):
-    """Seed the wallet cache from the previous runs, dropping stale entries."""
-    for addr, (markets, join, fetched) in state.get("wallets", {}).items():
-        if now - fetched < WALLET_TTL:
-            _wallet_cache[addr] = {"markets": markets, "join": join, "fetched": fetched}
+    """Seed the wallet cache from the previous runs, dropping stale or old-format entries."""
+    for addr, prof in state.get("wallets", {}).items():
+        if isinstance(prof, dict) and now - prof.get("fetched", 0) < WALLET_TTL:
+            _wallet_cache[addr] = prof
 
 
 def dump_wallets(state):
-    state["wallets"] = {a: [p["markets"], p["join"], p["fetched"]] for a, p in _wallet_cache.items()}
+    state["wallets"] = _wallet_cache
 
 
 def wallet_profile(addr):
-    """Distinct markets traded and join date, cached across runs via the state file."""
+    """A wallet's own trade history, oldest first: when it first entered each of its first
+    few markets. Enough to tell whether it was fresh at any moment, without looking ahead."""
     if addr in _wallet_cache:
         return _wallet_cache[addr]
-    resp = get(DATA, "/v2/user-stats", {"user": addr})
-    d = (resp or {}).get("data") if isinstance(resp, dict) else None
-    join = pick(d or {}, "join_date", "joinDate")
-    prof = {
-        # no stats = unknown wallet; don't let a failed lookup count as fresh
-        "markets": int(pick(d, "trades", default=0) or 0) if d else 999,
-        "join": int(join) if join else None,
-        "fetched": int(time.time()),
-    }
+    entries, seen, cursor, until, pages = [], set(), None, 0, 0
+    while len(entries) < ENTRIES_KEPT and pages < 20:
+        rows, cursor = data_rows(get(DATA, "/v2/activity", {
+            "user": addr, "type": "TRADE", "sort_direction": "asc", "limit": 100, "cursor": cursor}))
+        pages += 1
+        for r in rows:
+            ts = int(pick(r, "timestamp", default=0))
+            until = max(until, ts)
+            cid = pick(r, "condition_id", "conditionId")
+            if cid and cid not in seen:
+                seen.add(cid)
+                entries.append(ts)
+                if len(entries) >= ENTRIES_KEPT:
+                    break
+        if not cursor:
+            break
+    prof = {"entries": entries, "done": not cursor, "until": until, "fetched": int(time.time())}
     _wallet_cache[addr] = prof
     return prof
 
@@ -307,13 +318,33 @@ def prefetch_wallets(addrs, workers=8):
     return len(todo)
 
 
-def wallet_age_days(prof, now):
-    return (now - prof["join"]) / 86400 if prof["join"] else None
+def markets_before(prof, at):
+    """Distinct markets the wallet had traded before `at` (capped at ENTRIES_KEPT)."""
+    return sum(1 for e in prof["entries"] if e < at)
 
 
-def is_fresh(prof, args, now):
-    age = wallet_age_days(prof, now)
-    return prof["markets"] <= args.fresh_markets or (age is not None and age <= args.fresh_days)
+def fresh_at(prof, at, max_markets=3, max_days=14):
+    """Was this wallet fresh at time `at`? Under max_days since its first trade, or at most
+    max_markets markets traded before `at`. Judged from its history up to `at` only."""
+    e = prof["entries"]
+    if not e:
+        return False   # no history found: unknown, not fresh
+    if 0 <= at - e[0] <= max_days * 86400:
+        return True
+    if markets_before(prof, at) > max_markets:
+        return False
+    # few markets before `at`, as far as we looked; sure only if we looked past `at`
+    return len(e) > max_markets or prof["done"] or at <= prof["until"]
+
+
+def is_fresh(prof, args, at):
+    return fresh_at(prof, at, args.fresh_markets, args.fresh_days)
+
+
+def describe_wallet(prof, at):
+    n = markets_before(prof, at)
+    age = (at - prof["entries"][0]) / 86400 if prof["entries"] else None
+    return f"{n} mkts before" + (f", first trade {age:.0f}d earlier" if age is not None else "")
 
 
 # ---------------------------------------------------------------- Scoring
@@ -335,9 +366,9 @@ def score_trades(trades, args, now, markets=None):
         wallet = pick(t, "proxy_wallet", "proxyWallet", default="")
         price = float(pick(t, "price", default=0))
         usd = usd_of(t)
-        prof = wallet_profile(wallet) if wallet else {"markets": 999, "join": None}
-        age_days = wallet_age_days(prof, now)
-        fresh = is_fresh(prof, args, now)
+        at = int(pick(t, "timestamp", default=now))
+        prof = wallet_profile(wallet) if wallet else UNKNOWN
+        fresh = is_fresh(prof, args, at)
 
         score, why = 0, []
         if price <= args.longshot:
@@ -350,8 +381,7 @@ def score_trades(trades, args, now, markets=None):
             score += 1
         if fresh:
             score += 2
-            why.append(f"fresh wallet ({prof['markets']} mkts" +
-                       (f", {age_days:.0f}d old)" if age_days is not None else ")"))
+            why.append(f"fresh wallet ({describe_wallet(prof, at)})")
         # payoff multiple: what this wins if right
         if price > 0:
             payoff = usd / price
@@ -507,7 +537,8 @@ def add_flow(rows, window, min_usd, args, now):
             usd = usd_of(t)
             total += usd
             wallet = pick(t, "proxy_wallet", "proxyWallet", default="")
-            if wallet and is_fresh(wallet_profile(wallet), args, now):
+            at = int(pick(t, "timestamp", default=now))
+            if wallet and is_fresh(wallet_profile(wallet), args, at):
                 fresh_usd += usd
                 fresh_wallets[wallet] += usd
         r["flow"] = {
@@ -685,8 +716,9 @@ def main():
     p.add_argument("--min-usd", type=float, default=1000, help="ignore buys smaller than this")
     p.add_argument("--big-usd", type=float, default=10000, help="size that counts as big")
     p.add_argument("--longshot", type=float, default=0.15, help="price at or below = long shot")
-    p.add_argument("--fresh-markets", type=int, default=3, help="wallet with <= N markets = fresh")
-    p.add_argument("--fresh-days", type=float, default=14, help="wallet younger than N days = fresh")
+    p.add_argument("--fresh-markets", type=int, default=3,
+                   help="fresh = traded <= N markets before the trade...")
+    p.add_argument("--fresh-days", type=float, default=14, help="...or first traded <= N days before it")
     p.add_argument("--cluster", type=int, default=3, help="fresh wallets on one side = cluster")
     p.add_argument("--threshold", type=int, default=6, help="minimum score to alert")
     p.add_argument("--max-price", type=float, default=0.35,

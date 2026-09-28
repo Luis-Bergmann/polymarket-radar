@@ -13,6 +13,7 @@ Python 3.9+, standard library only.
   python3 radar.py --watch 10      # rescan every 10 minutes
   python3 radar.py --hours 72 --min-usd 2000
   python3 radar.py --watch 5 --ntfy my-secret-topic   # push alerts to your phone
+  python3 radar.py --site _site    # also write _site/data.json for the dashboard
 """
 
 import argparse
@@ -142,8 +143,16 @@ def yes_price(m):
     return None
 
 
+def num(v):
+    """Float from a Gamma field that may be missing or a string."""
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return None
+
+
 def market_index(events):
-    """condition_id -> {question, end, price, link} from the events' markets."""
+    """condition_id -> {question, end, price, link, changes, volume} from the events' markets."""
     idx = {}
     for e in events.values():
         e_end = parse_ts(e.get("endDate"))
@@ -156,6 +165,13 @@ def market_index(events):
                 "end": parse_ts(m.get("endDate")) or e_end,
                 "price": yes_price(m),
                 "link": "https://polymarket.com/event/" + str(e.get("slug") or ""),
+                "event": e.get("title") or "",
+                "ch_1h": num(m.get("oneHourPriceChange")),
+                "ch_1d": num(m.get("oneDayPriceChange")),
+                "ch_1w": num(m.get("oneWeekPriceChange")),
+                "vol_1d": num(m.get("volume24hr")) or 0,
+                "vol_1w": num(m.get("volume1wk")) or 0,
+                "live": m.get("acceptingOrders") is not False,
             }
     return idx
 
@@ -339,6 +355,49 @@ def append_csv(alerts):
         w.writerows(alerts)
 
 
+# ---------------------------------------------------------------- Dashboard
+
+def log_events(state, kind, items):
+    """Keep a rolling log of moves and alerts for the dashboard."""
+    now = int(time.time())
+    log = state.setdefault("log", [])
+    log.extend(dict(item, kind=kind, at=now) for item in items)
+    state["log"] = log[-300:]
+
+
+def top_movers(markets, key, vol_key, min_vol, now, n=40):
+    rows = []
+    for m in markets.values():
+        ch = m[key]
+        if ch is None or not m["live"] or m[vol_key] < min_vol:
+            continue
+        if m["end"] and m["end"] < now:
+            continue
+        rows.append({"question": m["question"], "event": m["event"], "price": m["price"],
+                     "change": round(ch, 4), "volume": round(m[vol_key]), "link": m["link"]})
+    rows.sort(key=lambda r: -abs(r["change"]))
+    return rows[:n]
+
+
+def write_site(site_dir, markets, state, min_vol):
+    """Write data.json for the static dashboard in site/index.html."""
+    now = int(time.time())
+    data = {
+        "updated": now,
+        "markets": len(markets),
+        "movers": {
+            "1h": top_movers(markets, "ch_1h", "vol_1d", min_vol, now),
+            "24h": top_movers(markets, "ch_1d", "vol_1d", min_vol, now),
+            "7d": top_movers(markets, "ch_1w", "vol_1w", min_vol * 5, now),
+        },
+        "log": list(reversed(state.get("log", []))),
+    }
+    os.makedirs(site_dir, exist_ok=True)
+    with open(os.path.join(site_dir, "data.json"), "w") as f:
+        json.dump(data, f, separators=(",", ":"))
+    print(f"  dashboard data written to {site_dir}/data.json")
+
+
 # ---------------------------------------------------------------- Main
 
 def price_moves(markets, state, min_move):
@@ -380,6 +439,7 @@ def scan(args, state):
         for mv in moves:
             print(f"    {mv['old']:.2f} -> {mv['new']:.2f}  {mv['question']}")
             notify(args.ntfy, f"Move {mv['old']:.2f} -> {mv['new']:.2f}", mv["question"], mv["link"])
+        log_events(state, "move", moves)
 
     trades = recent_trades(list(events), since, args.min_usd)
     seen = set(state["seen"])
@@ -394,8 +454,11 @@ def scan(args, state):
         for a in alerts:
             notify(args.ntfy, f"[{a['score']}] {a['outcome']} @ {a['price']} ${a['usd']:,}",
                    f"{a['market']}\n{a['why']}", a["link"])
+        log_events(state, "alert", alerts)
     state["seen"].extend(pick(t, "transaction_hash", "transactionHash", default="") for t in trades)
     save_state(state)
+    if args.site:
+        write_site(args.site, markets, state, args.site_min_vol)
 
 
 def main():
@@ -416,6 +479,9 @@ def main():
                    help="alert when a price moves this much between scans (0.10 = 10 pts, 0 = off)")
     p.add_argument("--ntfy", default=os.environ.get("RADAR_NTFY"),
                    help="ntfy.sh topic for phone pushes (or set RADAR_NTFY)")
+    p.add_argument("--site", help="write dashboard data.json into this folder")
+    p.add_argument("--site-min-vol", type=float, default=5000,
+                   help="dashboard movers: min 24h volume in USD (7d list uses 5x)")
     args = p.parse_args()
 
     state = load_state()

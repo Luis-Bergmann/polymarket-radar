@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polymarket Radar</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --text: #16181d; --muted: #6b7280; --line: #e5e7eb;
+    --up: #0f8a4a; --down: #c62828; --accent: #2554d8; --alert: #b45309; --alert-bg: #fff4e5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115; --card: #171a21; --text: #e8eaee; --muted: #8b93a1; --line: #262b35;
+      --up: #3ccf7f; --down: #ff6b6b; --accent: #7aa2ff; --alert: #f5a524; --alert-bg: #2a2013;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  header { position: sticky; top: 0; background: var(--bg); padding: 14px 16px 0; z-index: 1;
+    border-bottom: 1px solid var(--line); }
+  h1 { font-size: 18px; margin: 0; }
+  #meta { color: var(--muted); font-size: 13px; margin: 2px 0 10px; }
+  nav { display: flex; gap: 4px; overflow-x: auto; }
+  nav button { background: none; border: 0; color: var(--muted); font: inherit; font-weight: 600;
+    padding: 8px 12px; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; }
+  nav button.on { color: var(--accent); border-color: var(--accent); }
+  main { max-width: 760px; margin: 0 auto; padding: 12px 16px 40px; }
+  .row { display: flex; gap: 12px; align-items: center; background: var(--card);
+    border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px;
+    color: inherit; text-decoration: none; }
+  .row:hover { border-color: var(--accent); }
+  .body { flex: 1; min-width: 0; }
+  .q { font-weight: 600; }
+  .sub { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .num { text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+  .ch { font-weight: 700; font-size: 17px; }
+  .up { color: var(--up); } .down { color: var(--down); }
+  .price { color: var(--muted); font-size: 13px; }
+  .alert { background: var(--alert-bg); }
+  .tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .04em; padding: 1px 6px; border-radius: 4px; margin-right: 6px; }
+  .tag.alert { color: var(--alert); border: 1px solid var(--alert); }
+  .tag.move { color: var(--accent); border: 1px solid var(--accent); }
+  .empty { color: var(--muted); text-align: center; padding: 40px 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📡 Polymarket Radar</h1>
+  <div id="meta">loading…</div>
+  <nav>
+    <button data-tab="1h">1h movers</button>
+    <button data-tab="24h">24h movers</button>
+    <button data-tab="7d">7d movers</button>
+    <button data-tab="log">Radar log</button>
+  </nav>
+</header>
+<main id="list"></main>
+
+<script>
+let data = null;
+let tab = "24h";
+try { tab = localStorage.getItem("tab") || tab; } catch (e) {}
+
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pts = x => (x > 0 ? "+" : "") + (x * 100).toFixed(1);
+const cents = p => p == null ? "–" : Math.round(p * 100) + "¢";
+const usd = v => "$" + (v >= 1e6 ? (v / 1e6).toFixed(1) + "M" : v >= 1e3 ? Math.round(v / 1e3) + "k" : Math.round(v));
+function ago(ts) {
+  const m = Math.round((Date.now() / 1000 - ts) / 60);
+  if (m < 1) return "just now";
+  if (m < 60) return m + " min ago";
+  if (m < 1440) return Math.round(m / 60) + " h ago";
+  return Math.round(m / 1440) + " d ago";
+}
+
+function movers(rows) {
+  if (!rows.length) return '<div class="empty">No movers above the volume filter.</div>';
+  return rows.map(r => `
+    <a class="row" href="${esc(r.link)}" target="_blank" rel="noopener">
+      <div class="body">
+        <div class="q">${esc(r.question)}</div>
+        <div class="sub">${r.event && r.event !== r.question ? esc(r.event) + " · " : ""}vol ${usd(r.volume)}</div>
+      </div>
+      <div class="num">
+        <div class="ch ${r.change >= 0 ? "up" : "down"}">${pts(r.change)}</div>
+        <div class="price">now ${cents(r.price)}</div>
+      </div>
+    </a>`).join("");
+}
+
+function log(rows) {
+  if (!rows.length) return '<div class="empty">No radar alerts or big moves yet. They show up here as the scans find them.</div>';
+  return rows.map(r => r.kind === "alert" ? `
+    <a class="row alert" href="${esc(r.link)}" target="_blank" rel="noopener">
+      <div class="body">
+        <div class="q"><span class="tag alert">alert ${r.score}</span>${esc(r.market)}</div>
+        <div class="sub">BUY ${esc(r.outcome)} @ ${cents(r.price)} · ${esc(r.why)}</div>
+        <div class="sub">${esc(r.time)}${r.trader ? " · " + esc(r.trader) : ""}</div>
+      </div>
+      <div class="num"><div class="ch">${usd(r.usd)}</div></div>
+    </a>` : `
+    <a class="row" href="${esc(r.link)}" target="_blank" rel="noopener">
+      <div class="body">
+        <div class="q"><span class="tag move">move</span>${esc(r.question)}</div>
+        <div class="sub">${cents(r.old)} → ${cents(r.new)} · ${ago(r.at)}</div>
+      </div>
+      <div class="num"><div class="ch ${r.new >= r.old ? "up" : "down"}">${pts(r.new - r.old)}</div></div>
+    </a>`).join("");
+}
+
+function render() {
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab));
+  if (!data) return;
+  document.getElementById("meta").textContent =
+    `Updated ${ago(data.updated)} · ${data.markets.toLocaleString()} markets · change in points (¢)`;
+  document.getElementById("list").innerHTML = tab === "log" ? log(data.log) : movers(data.movers[tab] || []);
+}
+
+async function load() {
+  try {
+    const r = await fetch("data.json?t=" + Date.now(), { cache: "no-store" });
+    data = await r.json();
+  } catch (e) {
+    document.getElementById("meta").textContent = "Could not load data.json";
+  }
+  render();
+}
+
+document.querySelectorAll("nav button").forEach(b => b.onclick = () => {
+  tab = b.dataset.tab;
+  try { localStorage.setItem("tab", tab); } catch (e) {}
+  render();
+  window.scrollTo(0, 0);
+});
+load();
+setInterval(load, 120000);
+</script>
+</body>
+</html>

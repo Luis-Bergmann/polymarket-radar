@@ -8,6 +8,8 @@ on:
 permissions:
   contents: read
   actions: write   # keepalive step below
+  pages: write     # publish the dashboard
+  id-token: write
 
 concurrency:
   group: radar
@@ -17,6 +19,9 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -30,7 +35,7 @@ jobs:
           restore-keys: radar-state-
 
       - name: Scan
-        run: python3 radar.py --hours 2
+        run: python3 radar.py --hours 2 --site _site
         env:
           RADAR_NTFY: ${{ secrets.RADAR_NTFY }}
 
@@ -50,3 +55,12 @@ jobs:
             radar_state.json
             alerts.csv
           key: radar-state-${{ github.run_id }}
+
+      # dashboard: site/index.html + the data.json the scan just wrote
+      - name: Build dashboard
+        run: cp site/index.html _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4

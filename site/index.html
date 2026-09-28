@@ -4,101 +4,154 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Polymarket Radar</title>
+<meta name="theme-color" content="#eef1f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101c2c" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #f6f7f9; --card: #fff; --text: #16181d; --muted: #6b7280; --line: #e5e7eb;
-    --up: #0f8a4a; --down: #c62828; --accent: #2554d8; --alert: #b45309; --alert-bg: #fff4e5;
+    --paper: #eef1f0;      /* ledger grey-green */
+    --sheet: #f8faf9;
+    --ink: #13202f;        /* navy ink */
+    --soft: #5d6b78;
+    --rule: #d5dcdb;
+    --track: #d9e0df;
+    --yes: #16845a;
+    --no: #c23b2a;
+    --fresh: #b87700;      /* amber: only ever means fresh money */
+    --fresh-wash: #fbf1dc;
+    --focus: #2b5fd9;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0f1115; --card: #171a21; --text: #e8eaee; --muted: #8b93a1; --line: #262b35;
-      --up: #3ccf7f; --down: #ff6b6b; --accent: #7aa2ff; --alert: #f5a524; --alert-bg: #2a2013;
+      --paper: #101c2c; --sheet: #16243a; --ink: #e6ecf2; --soft: #8fa0b3; --rule: #22334b;
+      --track: #26384f; --yes: #3fcf8e; --no: #ff7461; --fresh: #f2b33d; --fresh-wash: #2a2a24;
+      --focus: #8fb1ff;
     }
   }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text);
-    font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-  header { position: sticky; top: 0; background: var(--bg); padding: 14px 16px 0; z-index: 1;
-    border-bottom: 1px solid var(--line); }
-  h1 { font-size: 18px; margin: 0; }
-  #meta { color: var(--muted); font-size: 13px; margin: 2px 0 10px; }
-  nav { display: flex; gap: 4px; overflow-x: auto; }
-  nav button { background: none; border: 0; color: var(--muted); font: inherit; font-weight: 600;
-    padding: 8px 12px; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; }
-  nav button.on { color: var(--accent); border-color: var(--accent); }
-  main { max-width: 760px; margin: 0 auto; padding: 12px 16px 40px; }
-  .row { display: flex; gap: 12px; align-items: center; background: var(--card);
-    border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px;
-    color: inherit; text-decoration: none; }
-  .row:hover { border-color: var(--accent); }
-  .body { flex: 1; min-width: 0; }
-  .q { font-weight: 600; }
-  .sub { color: var(--muted); font-size: 13px; margin-top: 2px; }
-  .num { text-align: right; flex-shrink: 0; font-variant-numeric: tabular-nums; }
-  .ch { font-weight: 700; font-size: 17px; }
-  .up { color: var(--up); } .down { color: var(--down); }
-  .price { color: var(--muted); font-size: 13px; }
-  .alert { background: var(--alert-bg); }
-  .tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase;
-    letter-spacing: .04em; padding: 1px 6px; border-radius: 4px; margin-right: 6px; }
-  .tag.alert { color: var(--alert); border: 1px solid var(--alert); }
-  .tag.move { color: var(--accent); border: 1px solid var(--accent); }
-  .empty { color: var(--muted); text-align: center; padding: 40px 0; }
-  .flow { font-size: 13px; margin-top: 4px; color: var(--muted); }
-  .flow b { color: var(--text); }
-  .row.hot { border-color: var(--alert); box-shadow: inset 3px 0 0 var(--alert); }
-  .row.hot .flow b { color: var(--alert); }
-  .tag.hot { color: var(--alert); border: 1px solid var(--alert); }
-  .bar { height: 4px; border-radius: 2px; background: var(--line); margin-top: 5px; overflow: hidden; }
-  .bar i { display: block; height: 100%; background: var(--alert); }
-  #sort { display: flex; gap: 6px; margin-bottom: 10px; font-size: 13px; color: var(--muted); align-items: center; }
-  #sort button { font: inherit; border: 1px solid var(--line); background: var(--card); color: var(--text);
-    border-radius: 999px; padding: 4px 10px; cursor: pointer; }
-  #sort button.on { border-color: var(--accent); color: var(--accent); font-weight: 600; }
-  .hint { color: var(--muted); font-size: 12px; margin: 0 0 12px; }
-  .pay { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line); font-size: 13px; }
-  .pay .lbl { color: var(--muted); }
-  .pay .side { font-weight: 700; }
-  .stakes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
-  .stake { background: var(--bg); border-radius: 6px; padding: 3px 8px; font-variant-numeric: tabular-nums; }
-  .stake b { color: var(--up); }
-  .stake .thin { color: var(--muted); }
-  details.help { background: var(--card); border: 1px solid var(--line); border-radius: 10px;
-    padding: 8px 12px; margin-bottom: 12px; font-size: 14px; }
-  details.help summary { cursor: pointer; font-weight: 600; color: var(--accent); }
-  details.help p { margin: 8px 0; }
-  details.help .up, details.help .down { font-weight: 700; }
-  .warn { color: var(--alert); font-size: 12px; margin-top: 4px; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 16px/1.45 "Schibsted Grotesk", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .delta, .track .pct { font-variant-numeric: tabular-nums; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+
+  /* header */
+  header { position: sticky; top: 0; z-index: 2; background: var(--paper); }
+  .top { max-width: 720px; margin: 0 auto; padding: 16px 16px 10px; display: flex;
+    align-items: baseline; justify-content: space-between; gap: 12px; }
+  h1 { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin: 0; }
+  #meta { color: var(--soft); font-size: 13px; text-align: right; }
+  .bar { max-width: 720px; margin: 0 auto; padding: 0 16px 12px; display: flex; gap: 10px;
+    align-items: center; justify-content: space-between; flex-wrap: wrap;
+    border-bottom: 1px solid var(--rule); }
+  .seg { display: inline-flex; background: var(--track); border-radius: 10px; padding: 3px; }
+  .seg button { font: inherit; font-size: 14px; font-weight: 600; color: var(--soft); background: none;
+    border: 0; border-radius: 7px; padding: 6px 12px; cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--sheet); color: var(--ink);
+    box-shadow: 0 1px 2px rgba(19, 32, 47, .12); }
+  .seg.small button { font-size: 13px; padding: 4px 10px; }
+
+  main { max-width: 720px; margin: 0 auto; padding: 4px 16px 48px; }
+
+  /* help */
+  details.help { margin: 14px 0 6px; font-size: 14px; color: var(--soft); }
+  details.help summary { cursor: pointer; font-weight: 600; color: var(--ink); width: max-content; }
+  details.help p { margin: 8px 0; max-width: 62ch; }
+  details.help b { color: var(--ink); }
+
+  /* rows */
+  .row { border-bottom: 1px solid var(--rule); }
+  .row > button { all: unset; box-sizing: border-box; display: block; width: 100%; cursor: pointer;
+    padding: 14px 0 12px; }
+  .row.hot { background: linear-gradient(90deg, var(--fresh-wash), transparent 70%);
+    box-shadow: inset 3px 0 0 var(--fresh); margin: 0 -16px; padding: 0 16px; }
+  .head { display: flex; gap: 14px; align-items: flex-start; }
+  .q { flex: 1; min-width: 0; font-weight: 600; font-size: 16px; line-height: 1.3; }
+  .ev { display: block; color: var(--soft); font-weight: 400; font-size: 13px; margin-top: 2px; }
+  .delta { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; white-space: nowrap; }
+  .up { color: var(--yes); } .down { color: var(--no); }
+
+  /* the probability track: where the Yes price was, and where it is now */
+  .track { position: relative; height: 30px; margin: 6px 0 0; }
+  .track .rail { position: absolute; left: 0; right: 0; top: 20px; height: 2px; background: var(--track); border-radius: 1px; }
+  .track .tick { position: absolute; top: 17px; width: 1px; height: 8px; background: var(--track); }
+  .track .move { position: absolute; top: 19px; height: 4px; border-radius: 2px; }
+  .track .from { position: absolute; top: 16px; width: 2px; height: 10px; border-radius: 1px; opacity: .55; }
+  .track .now { position: absolute; top: 15px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%;
+    border: 2px solid var(--paper); }
+  .track .pct { position: absolute; top: 0; font-size: 12px; font-weight: 600; transform: translateX(-50%);
+    white-space: nowrap; }
+
+  .line { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; color: var(--soft); margin-top: 8px; }
+  .line b { color: var(--ink); font-weight: 600; }
+  .line .win { color: var(--yes); font-weight: 600; }
+  .fresh { color: var(--fresh); font-weight: 600; }
+  .badge { display: inline-block; font-size: 12px; font-weight: 600; color: var(--fresh);
+    border: 1px solid var(--fresh); border-radius: 999px; padding: 0 7px; margin-bottom: 4px; }
+
+  /* expanded details */
+  .more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .2s ease; }
+  .row.open .more { grid-template-rows: 1fr; }
+  .more > div { overflow: hidden; }
+  .panel { padding: 0 0 14px; font-size: 14px; color: var(--soft); }
+  .panel dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; margin: 0; }
+  .panel dt { color: var(--soft); }
+  .panel dd { margin: 0; color: var(--ink); }
+  .panel .note { color: var(--soft); }
+  .panel .warn { color: var(--fresh); margin-top: 8px; }
+  .panel a.go { display: inline-block; margin-top: 10px; font-weight: 600; color: var(--focus); text-decoration: none; }
+  .panel a.go:hover { text-decoration: underline; }
+  .flowbar { height: 4px; background: var(--track); border-radius: 2px; margin-top: 4px; overflow: hidden; max-width: 220px; }
+  .flowbar i { display: block; height: 100%; background: var(--fresh); }
+
+  .logrow { display: block; padding: 14px 0 12px; text-decoration: none; }
+  .empty { color: var(--soft); padding: 48px 0; max-width: 40ch; }
+
+  @media (prefers-reduced-motion: reduce) { .more { transition: none; } }
 </style>
 </head>
 <body>
 <header>
-  <h1>📡 Polymarket Radar</h1>
-  <div id="meta">loading…</div>
-  <nav>
-    <button data-tab="1h">1h movers</button>
-    <button data-tab="24h">24h movers</button>
-    <button data-tab="7d">7d movers</button>
-    <button data-tab="log">Radar log</button>
-  </nav>
+  <div class="top">
+    <h1>Radar</h1>
+    <div id="meta">Loading…</div>
+  </div>
+  <div class="bar">
+    <div class="seg" id="tabs" role="group" aria-label="Window">
+      <button data-tab="1h">1h</button>
+      <button data-tab="24h">24h</button>
+      <button data-tab="7d">7d</button>
+      <button data-tab="log">Log</button>
+    </div>
+    <div class="seg small" id="sort" role="group" aria-label="Sort by">
+      <button data-sort="move">Biggest move</button>
+      <button data-sort="fresh">Fresh money</button>
+    </div>
+  </div>
 </header>
 <main id="list"></main>
 
 <script>
-let data = null;
-let tab = "24h", sort = "move", helpOpen = true;
-try { tab = localStorage.getItem("tab") || tab; sort = localStorage.getItem("sort") || sort;
-  helpOpen = localStorage.getItem("help") !== "closed"; } catch (e) {}
-
-// fresh wallets = <= 3 markets traded or account under 14 days old
-const hot = f => f && f.fresh_pct >= 0.5 && f.fresh_usd >= 2000;
+let data = null, tab = "24h", sort = "move", helpOpen = true;
+const opened = new Set();
+try {
+  tab = localStorage.getItem("tab") || tab;
+  sort = localStorage.getItem("sort") || sort;
+  helpOpen = localStorage.getItem("help") !== "closed";
+} catch (e) {}
 
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const pts = x => (x > 0 ? "+" : "") + (x * 100).toFixed(1);
+const pts = x => (x > 0 ? "+" : x < 0 ? "−" : "") + Math.abs(x * 100).toFixed(1);
 const cents = p => p == null ? "–" : Math.round(p * 100) + "¢";
 const money = v => "$" + Math.round(v).toLocaleString("en-US");
-const usd = v => "$" + (v >= 1e6 ? (v / 1e6).toFixed(1) + "M" : v >= 1e3 ? Math.round(v / 1e3) + "k" : Math.round(v));
+const short = v => "$" + (v >= 1e6 ? (v / 1e6).toFixed(1) + "M" : v >= 1e3 ? Math.round(v / 1e3) + "k" : Math.round(v));
+const clamp = x => Math.max(0, Math.min(1, x));
 function ago(ts) {
   const m = Math.round((Date.now() / 1000 - ts) / 60);
   if (m < 1) return "just now";
@@ -106,130 +159,183 @@ function ago(ts) {
   if (m < 1440) return Math.round(m / 60) + " h ago";
   return Math.round(m / 1440) + " d ago";
 }
-
-function flowLine(f) {
-  if (!f) return "";
-  if (!f.usd) return `<div class="flow">No trades ≥ $100 pushing this way; the book moved without much trading.</div>`;
-  const pct = Math.round(f.fresh_pct * 100);
-  const who = f.fresh_wallets
-    ? `<b>${pct}% from ${f.fresh_wallets} fresh wallet${f.fresh_wallets > 1 ? "s" : ""}</b>` +
-      (f.fresh_wallets > 1 ? ` (biggest ${usd(f.top_fresh)})` : "")
-    : "no fresh wallets";
-  return `<div class="flow">Behind the move: ${usd(f.usd)} · ${who}${f.partial ? " · partial" : ""}</div>
-    <div class="bar"><i style="width:${pct}%"></i></div>`;
+function until(ts) {
+  if (!ts) return null;
+  const d = Math.round((ts - Date.now() / 1000) / 86400);
+  return d < 1 ? "today" : d === 1 ? "tomorrow" : `in ${d} days`;
 }
 
-const days = ts => {
-  if (!ts) return "";
-  const d = Math.round((ts - Date.now() / 1000) / 86400);
-  return d < 1 ? " · resolves today" : ` · resolves in ${d}d`;
-};
+// fresh wallets = <= 3 markets traded or account under 14 days old
+const hot = f => f && f.fresh_pct >= 0.5 && f.fresh_usd >= 2000;
 
-function payLine(r) {
+function track(from, to) {
+  if (to == null) return "";
+  const a = clamp(from), b = clamp(to), up = b >= a;
+  const col = up ? "var(--yes)" : "var(--no)";
+  const lo = Math.min(a, b) * 100, w = Math.abs(b - a) * 100;
+  return `<div class="track" aria-hidden="true">
+      <div class="rail"></div>
+      ${[25, 50, 75].map(t => `<div class="tick" style="left:${t}%"></div>`).join("")}
+      <div class="from" style="left:${a * 100}%;background:${col}"></div>
+      <div class="move" style="left:${lo}%;width:${w}%;background:${col}"></div>
+      <div class="now" style="left:${b * 100}%;background:${col}"></div>
+      <div class="pct" style="left:${Math.min(Math.max(b * 100, 4), 96)}%;color:${col}">${cents(b)}</div>
+    </div>`;
+}
+
+function payTeaser(r) {
   const p = r.payoff;
   if (!p) return "";
-  const chips = p.stakes.map(x => {
-    const slip = x.avg && x.avg - p.best >= 0.02 ? ` <span class="thin">avg ${cents(x.avg)}</span>` : "";
-    return x.filled
-      ? `<span class="stake">${money(x.stake)} → <b>+${money(x.profit)}</b>${slip}</span>`
-      : `<span class="stake">${money(x.stake)} → <span class="thin">book only takes ${money(x.spent)}</span>, <b>+${money(x.profit)}</b></span>`;
-  }).join("");
-  // price of the side we'd buy implied by the headline YES price; a big gap means a thin, wide book
-  const fair = r.price == null ? null : (r.change > 0 ? r.price : 1 - r.price);
+  const first = p.stakes[0];
+  return `<span>Buy <b>${esc(p.side)}</b> at ${cents(p.best)}</span>
+    <span>${money(first.stake)} wins <span class="win">${money(first.profit)}</span></span>`;
+}
+
+function flowTeaser(f) {
+  if (!f || !f.usd) return "";
+  return hot(f)
+    ? `<span class="fresh">${Math.round(f.fresh_pct * 100)}% fresh money</span>`
+    : `<span>${short(f.usd)} behind it</span>`;
+}
+
+function panel(r) {
+  const f = r.flow, p = r.payoff, rows = [];
+  if (f) {
+    const pct = Math.round(f.fresh_pct * 100);
+    const who = !f.usd ? "No trades over $100 pushed it; the order book moved on its own."
+      : f.fresh_wallets
+        ? `${money(f.usd)} bought this way, ${pct}% of it from ${f.fresh_wallets} fresh wallet${f.fresh_wallets > 1 ? "s" : ""}` +
+          (f.fresh_wallets > 1 ? ` (biggest ${money(f.top_fresh)})` : "") + "."
+        : `${money(f.usd)} bought this way, none of it from fresh wallets.`;
+    rows.push(["Behind the move", `${who}${f.partial ? " Partial count." : ""}
+      ${f.usd ? `<div class="flowbar"><i style="width:${pct}%"></i></div>` : ""}`]);
+  }
+  if (p) {
+    const lines = p.stakes.map(x => x.filled
+      ? `${money(x.stake)} wins <b class="up">${money(x.profit)}</b>` +
+        (x.avg && x.avg - p.best >= 0.02 ? ` at an average ${cents(x.avg)}` : "")
+      : `${money(x.stake)}: sellers only have ${money(x.spent)} on offer, which wins <b class="up">${money(x.profit)}</b>`
+    ).join("<br>");
+    const other = p.side === "Yes" ? "No" : "Yes";
+    rows.push([`If ${esc(p.side)} wins`, `${lines}<br><span class="note">After fees. If ${other} wins you lose the stake.</span>`]);
+  }
+  const when = until(r.end);
+  if (when) rows.push(["Resolves", when]);
+  rows.push(["Traded", `${short(r.volume)} in this window`]);
+
+  const fair = r.price == null || !p ? null : (r.change > 0 ? r.price : 1 - r.price);
   const warn = fair != null && p.best - fair >= 0.05
-    ? `<div class="warn">Thin book: sellers ask ${cents(p.best)} vs ~${cents(fair)} fair. Real payoff is lower than the headline price suggests.</div>` : "";
-  return `<div class="pay"><span class="lbl">Follow the push:</span> buy <span class="side">${esc(p.side)}</span> at ${cents(p.best)}${days(r.end)}
-    <div class="stakes">${chips}</div>${warn}</div>`;
+    ? `<div class="warn">Thin order book: sellers ask ${cents(p.best)} for ${esc(p.side)}, about ${cents(fair)} would be fair. The real payoff is lower than the odds suggest.</div>` : "";
+  return `<dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${v}</dd>`).join("")}</dl>${warn}
+    <a class="go" href="${esc(r.link)}" target="_blank" rel="noopener">Open on Polymarket</a>`;
+}
+
+function help() {
+  return `<details class="help"${helpOpen ? " open" : ""}>
+    <summary>How to read this</summary>
+    <p>Every market is a yes/no question. A <b>Yes</b> share pays <b>$1</b> if the answer is yes and nothing if not,
+      so its price is the crowd's guess at the chance: 20¢ means about 20% likely.</p>
+    <p>The line under each question runs from 0¢ to $1. The faint mark is where Yes traded at the start of the window,
+      the dot is where it trades now. <span class="up">+9.0</span> means it rose 9¢, so people think it is more likely;
+      <span class="down">−9.0</span> means it fell 9¢.</p>
+    <p><span class="fresh">Fresh money</span> means at least half the buying behind the move came from wallets that are
+      under 14 days old or have traded 3 markets or fewer. That is the pattern insiders leave.</p>
+    <p><b>Buy Yes at 21¢, $100 wins $372</b> is what you would make if you bet the way the price is moving and it
+      resolves that way, priced against real sell orders after fees. Tap a market for the details.</p>
+  </details>`;
 }
 
 function movers(rows) {
-  if (!rows.length) return '<div class="empty">No movers above the volume filter.</div>';
+  if (!rows.length) return help() + '<div class="empty">No market moved at least 1¢ with enough trading in this window. Try 24h or 7d.</div>';
   rows = [...rows];
   if (sort === "fresh") rows.sort((a, b) => (b.flow?.fresh_usd || 0) - (a.flow?.fresh_usd || 0));
-  const bar = `<div id="sort">Sort:
-      <button data-sort="move" class="${sort === "move" ? "on" : ""}">Biggest move</button>
-      <button data-sort="fresh" class="${sort === "fresh" ? "on" : ""}">Most fresh money</button></div>
-    <details class="help"${helpOpen ? " open" : ""}>
-      <summary>How to read this</summary>
-      <p>Every market is a yes/no question. A <b>Yes</b> share pays <b>$1</b> if the answer is yes and
-        nothing if not. Its price (0–100¢) is the crowd's guess at the chance: 20¢ ≈ 20% likely.</p>
-      <p><span class="up">+9.0</span> = the Yes price rose 9¢ over this window, so people now think it is
-        <b>more</b> likely. <span class="down">−9.0</span> = it fell 9¢, so <b>less</b> likely.
-        "now 20¢" is today's price, i.e. today's guessed chance.</p>
-      <p><b>Behind the move</b> = the money that pushed the price that way. <span class="tag hot">fresh money</span>
-        = at least half of it came from fresh wallets (≤ 3 markets traded or &lt; 14 days old), the pattern insiders leave.</p>
-      <p><b>Follow the push</b> = buy Yes on green rows, No on red rows. Shows your profit if it resolves that way,
-        priced against the live order book after fees. If it resolves the other way you lose the stake.</p>
-    </details>`;
-  return bar + rows.map(r => `
-    <a class="row${hot(r.flow) ? " hot" : ""}" href="${esc(r.link)}" target="_blank" rel="noopener">
-      <div class="body">
-        <div class="q">${hot(r.flow) ? '<span class="tag hot">fresh money</span>' : ""}${esc(r.question)}</div>
-        <div class="sub">${r.event && r.event !== r.question ? esc(r.event) + " · " : ""}vol ${usd(r.volume)}</div>
-        ${flowLine(r.flow)}
-        ${payLine(r)}
-      </div>
-      <div class="num">
-        <div class="ch ${r.change >= 0 ? "up" : "down"}">${pts(r.change)}</div>
-        <div class="price">now ${cents(r.price)}</div>
-      </div>
-    </a>`).join("");
+  return help() + rows.map(r => {
+    const id = tab + ":" + r.cid, open = opened.has(id), isHot = hot(r.flow);
+    const ev = r.event && !r.question.toLowerCase().includes(r.event.toLowerCase().replace(/\?$/, ""))
+      ? `<span class="ev">${esc(r.event)}</span>` : "";
+    return `<div class="row${isHot ? " hot" : ""}${open ? " open" : ""}" data-id="${esc(id)}">
+      <button aria-expanded="${open}">
+        ${isHot ? '<span class="badge">Fresh money</span>' : ""}
+        <div class="head">
+          <div class="q">${esc(r.question)}${ev}</div>
+          <div class="delta ${r.change >= 0 ? "up" : "down"}">${pts(r.change)}</div>
+        </div>
+        ${r.price == null ? "" : track(r.price - r.change, r.price)}
+        <div class="line">${payTeaser(r)}${flowTeaser(r.flow)}</div>
+      </button>
+      <div class="more"><div><div class="panel">${panel(r)}</div></div></div>
+    </div>`;
+  }).join("");
 }
 
 function log(rows) {
-  if (!rows.length) return '<div class="empty">No radar alerts or big moves yet. They show up here as the scans find them.</div>';
+  if (!rows.length) return '<div class="empty">Nothing flagged yet. Suspicious buys and sudden price jumps land here and on your phone as the scans find them.</div>';
   return rows.map(r => r.kind === "alert" ? `
-    <a class="row alert" href="${esc(r.link)}" target="_blank" rel="noopener">
-      <div class="body">
-        <div class="q"><span class="tag alert">alert ${r.score}</span>${esc(r.market)}</div>
-        <div class="sub">BUY ${esc(r.outcome)} @ ${cents(r.price)} · ${esc(r.why)}</div>
-        <div class="sub">${esc(r.time)}${r.trader ? " · " + esc(r.trader) : ""}</div>
+    <div class="row hot"><a class="logrow" href="${esc(r.link)}" target="_blank" rel="noopener">
+      <span class="badge">Suspicious buy, score ${r.score}</span>
+      <div class="head">
+        <div class="q">${esc(r.market)}<span class="ev">${esc(r.time)}${r.trader ? ", " + esc(r.trader) : ""}</span></div>
+        <div class="delta">${short(r.usd)}</div>
       </div>
-      <div class="num"><div class="ch">${usd(r.usd)}</div></div>
-    </a>` : `
-    <a class="row" href="${esc(r.link)}" target="_blank" rel="noopener">
-      <div class="body">
-        <div class="q"><span class="tag move">move</span>${esc(r.question)}</div>
-        <div class="sub">${cents(r.old)} → ${cents(r.new)} · ${ago(r.at)}</div>
+      <div class="line"><span>Bought <b>${esc(r.outcome)}</b> at ${cents(r.price)}</span><span>${esc(r.why)}</span></div>
+    </a></div>` : `
+    <div class="row"><a class="logrow" href="${esc(r.link)}" target="_blank" rel="noopener">
+      <div class="head">
+        <div class="q">${esc(r.question)}<span class="ev">Jumped between two scans, ${ago(r.at)}</span></div>
+        <div class="delta ${r.new >= r.old ? "up" : "down"}">${pts(r.new - r.old)}</div>
       </div>
-      <div class="num"><div class="ch ${r.new >= r.old ? "up" : "down"}">${pts(r.new - r.old)}</div></div>
-    </a>`).join("");
+      ${track(r.old, r.new)}
+    </a></div>`).join("");
 }
 
 function render() {
-  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab));
+  document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.tab === tab));
+  document.querySelectorAll("#sort button").forEach(b => b.setAttribute("aria-pressed", b.dataset.sort === sort));
+  document.getElementById("sort").style.visibility = tab === "log" ? "hidden" : "visible";
   if (!data) return;
-  document.getElementById("meta").textContent =
-    `Updated ${ago(data.updated)} · ${data.markets.toLocaleString("en-US")} markets · change in points (¢)`;
-  document.getElementById("list").innerHTML = tab === "log" ? log(data.log) : movers(data.movers[tab] || []);
-  const help = document.querySelector("details.help");
-  if (help) help.ontoggle = () => {
-    helpOpen = help.open;
-    try { localStorage.setItem("help", help.open ? "open" : "closed"); } catch (e) {}
+  document.getElementById("meta").innerHTML =
+    `Scanned ${ago(data.updated)}<br>${data.markets.toLocaleString("en-US")} markets`;
+  const list = document.getElementById("list");
+  list.innerHTML = tab === "log" ? log(data.log) : movers(data.movers[tab] || []);
+  const h = list.querySelector("details.help");
+  if (h) h.ontoggle = () => {
+    helpOpen = h.open;
+    try { localStorage.setItem("help", h.open ? "open" : "closed"); } catch (e) {}
   };
-  document.querySelectorAll("#sort button").forEach(b => b.onclick = () => {
-    sort = b.dataset.sort;
-    try { localStorage.setItem("sort", sort); } catch (e) {}
-    render();
-  });
 }
+
+document.getElementById("list").addEventListener("click", e => {
+  const btn = e.target.closest(".row > button");
+  if (!btn) return;
+  const row = btn.parentElement, id = row.dataset.id;
+  const open = !row.classList.contains("open");
+  row.classList.toggle("open", open);
+  btn.setAttribute("aria-expanded", open);
+  open ? opened.add(id) : opened.delete(id);
+});
 
 async function load() {
   try {
     const r = await fetch("data.json?t=" + Date.now(), { cache: "no-store" });
     data = await r.json();
   } catch (e) {
-    document.getElementById("meta").textContent = "Could not load data.json";
+    document.getElementById("meta").textContent = "Couldn't load the latest scan. Reload to try again.";
   }
   render();
 }
 
-document.querySelectorAll("nav button").forEach(b => b.onclick = () => {
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => {
   tab = b.dataset.tab;
   try { localStorage.setItem("tab", tab); } catch (e) {}
   render();
   window.scrollTo(0, 0);
 });
+document.querySelectorAll("#sort button").forEach(b => b.onclick = () => {
+  sort = b.dataset.sort;
+  try { localStorage.setItem("sort", sort); } catch (e) {}
+  render();
+});
+render();
 load();
 setInterval(load, 120000);
 </script>

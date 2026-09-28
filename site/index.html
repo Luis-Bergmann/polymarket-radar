@@ -57,6 +57,14 @@
     border-radius: 999px; padding: 4px 10px; cursor: pointer; }
   #sort button.on { border-color: var(--accent); color: var(--accent); font-weight: 600; }
   .hint { color: var(--muted); font-size: 12px; margin: 0 0 12px; }
+  .pay { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line); font-size: 13px; }
+  .pay .lbl { color: var(--muted); }
+  .pay .side { font-weight: 700; }
+  .stakes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .stake { background: var(--bg); border-radius: 6px; padding: 3px 8px; font-variant-numeric: tabular-nums; }
+  .stake b { color: var(--up); }
+  .stake .thin { color: var(--muted); }
+  .warn { color: var(--alert); font-size: 12px; margin-top: 4px; }
 </style>
 </head>
 <body>
@@ -83,6 +91,7 @@ const hot = f => f && f.fresh_pct >= 0.5 && f.fresh_usd >= 2000;
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const pts = x => (x > 0 ? "+" : "") + (x * 100).toFixed(1);
 const cents = p => p == null ? "–" : Math.round(p * 100) + "¢";
+const money = v => "$" + Math.round(v).toLocaleString("en-US");
 const usd = v => "$" + (v >= 1e6 ? (v / 1e6).toFixed(1) + "M" : v >= 1e3 ? Math.round(v / 1e3) + "k" : Math.round(v));
 function ago(ts) {
   const m = Math.round((Date.now() / 1000 - ts) / 60);
@@ -104,6 +113,29 @@ function flowLine(f) {
     <div class="bar"><i style="width:${pct}%"></i></div>`;
 }
 
+const days = ts => {
+  if (!ts) return "";
+  const d = Math.round((ts - Date.now() / 1000) / 86400);
+  return d < 1 ? " · resolves today" : ` · resolves in ${d}d`;
+};
+
+function payLine(r) {
+  const p = r.payoff;
+  if (!p) return "";
+  const chips = p.stakes.map(x => {
+    const slip = x.avg && x.avg - p.best >= 0.02 ? ` <span class="thin">avg ${cents(x.avg)}</span>` : "";
+    return x.filled
+      ? `<span class="stake">${money(x.stake)} → <b>+${money(x.profit)}</b>${slip}</span>`
+      : `<span class="stake">${money(x.stake)} → <span class="thin">book only takes ${money(x.spent)}</span>, <b>+${money(x.profit)}</b></span>`;
+  }).join("");
+  // price of the side we'd buy implied by the headline YES price; a big gap means a thin, wide book
+  const fair = r.price == null ? null : (r.change > 0 ? r.price : 1 - r.price);
+  const warn = fair != null && p.best - fair >= 0.05
+    ? `<div class="warn">Thin book: sellers ask ${cents(p.best)} vs ~${cents(fair)} fair. Real payoff is lower than the headline price suggests.</div>` : "";
+  return `<div class="pay"><span class="lbl">Follow the push:</span> buy <span class="side">${esc(p.side)}</span> at ${cents(p.best)}${days(r.end)}
+    <div class="stakes">${chips}</div>${warn}</div>`;
+}
+
 function movers(rows) {
   if (!rows.length) return '<div class="empty">No movers above the volume filter.</div>';
   rows = [...rows];
@@ -112,13 +144,16 @@ function movers(rows) {
       <button data-sort="move" class="${sort === "move" ? "on" : ""}">Biggest move</button>
       <button data-sort="fresh" class="${sort === "fresh" ? "on" : ""}">Most fresh money</button></div>
     <p class="hint">Orange = at least half the money pushing the price came from fresh wallets
-      (≤ 3 markets or &lt; 14 days old). That is the pattern insiders leave.</p>`;
+      (≤ 3 markets or &lt; 14 days old). That is the pattern insiders leave.<br>
+      "Follow the push" = profit if you buy the side the price is moving to and it resolves that way,
+      priced against the live order book after taker fees. If it resolves the other way you lose the stake.</p>`;
   return bar + rows.map(r => `
     <a class="row${hot(r.flow) ? " hot" : ""}" href="${esc(r.link)}" target="_blank" rel="noopener">
       <div class="body">
         <div class="q">${hot(r.flow) ? '<span class="tag hot">fresh money</span>' : ""}${esc(r.question)}</div>
         <div class="sub">${r.event && r.event !== r.question ? esc(r.event) + " · " : ""}vol ${usd(r.volume)}</div>
         ${flowLine(r.flow)}
+        ${payLine(r)}
       </div>
       <div class="num">
         <div class="ch ${r.change >= 0 ? "up" : "down"}">${pts(r.change)}</div>
@@ -151,7 +186,7 @@ function render() {
   document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.tab === tab));
   if (!data) return;
   document.getElementById("meta").textContent =
-    `Updated ${ago(data.updated)} · ${data.markets.toLocaleString()} markets · change in points (¢)`;
+    `Updated ${ago(data.updated)} · ${data.markets.toLocaleString("en-US")} markets · change in points (¢)`;
   document.getElementById("list").innerHTML = tab === "log" ? log(data.log) : movers(data.movers[tab] || []);
   document.querySelectorAll("#sort button").forEach(b => b.onclick = () => {
     sort = b.dataset.sort;

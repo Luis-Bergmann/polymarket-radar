@@ -31,6 +31,7 @@ from datetime import datetime, timezone
 
 GAMMA = "https://gamma-api.polymarket.com"
 DATA = "https://data-api.polymarket.com"
+CLOB = "https://clob.polymarket.com"
 HERE = os.path.dirname(os.path.abspath(__file__))
 STATE_FILE = os.path.join(HERE, "radar_state.json")
 ALERTS_CSV = os.path.join(HERE, "alerts.csv")
@@ -160,6 +161,24 @@ def midpoint(m):
     return round((bid + ask) / 2, 4)
 
 
+def json_list(v):
+    """Gamma stores some lists as JSON strings."""
+    if isinstance(v, str):
+        try:
+            v = json.loads(v)
+        except ValueError:
+            return []
+    return v if isinstance(v, list) else []
+
+
+def fee_schedule(m):
+    """(rate, exponent) of the taker fee; fee per share = rate * (p * (1 - p)) ** exponent."""
+    sched = m.get("feeSchedule") or {}
+    if not m.get("feesEnabled") or not sched:
+        return (0.0, 1.0)
+    return (num(sched.get("rate")) or 0.0, num(sched.get("exponent")) or 1.0)
+
+
 def market_index(events):
     """condition_id -> {question, end, price, link, changes, volume} from the events' markets."""
     idx = {}
@@ -185,6 +204,9 @@ def market_index(events):
                 "vol_1d": num(m.get("volume24hr")) or 0,
                 "vol_1w": num(m.get("volume1wk")) or 0,
                 "live": m.get("acceptingOrders") is not False,
+                "tokens": json_list(m.get("clobTokenIds")),
+                "outcomes": json_list(m.get("outcomes")) or ["Yes", "No"],
+                "fee": fee_schedule(m),
             }
     return idx
 
@@ -420,7 +442,7 @@ def top_movers(markets, key, vol_key, min_vol, now, n=40):
             continue
         if m["end"] and m["end"] < now:
             continue
-        rows.append({"cid": cid, "question": m["question"], "event": m["event"],
+        rows.append({"cid": cid, "question": m["question"], "event": m["event"], "end": m["end"],
                      "price": m["mid"] if m["mid"] is not None else m["price"],
                      "change": round(ch, 4), "volume": round(m[vol_key]), "link": m["link"]})
     rows.sort(key=lambda r: -abs(r["change"]))
@@ -482,6 +504,60 @@ def add_flow(rows, window, min_usd, args, now):
         }
 
 
+def fill(asks, stake, fee):
+    """Spend `stake` USDC on the cheapest asks, paying the taker fee on top.
+    Returns (shares, usdc spent)."""
+    rate, exp = fee
+    shares = spent = 0.0
+    for price, size in asks:
+        per_share = price + rate * (price * (1 - price)) ** exp
+        take = min(size, (stake - spent) / per_share)
+        shares += take
+        spent += take * per_share
+        if stake - spent < 0.01:
+            break
+    return shares, spent
+
+
+def add_payoff(rows, markets, stakes):
+    """If you follow the push now and the market resolves that way, what do you make?"""
+    wanted = {}
+    for r in rows:
+        m = markets[r["cid"]]
+        side = 0 if r["change"] > 0 else 1
+        if len(m["tokens"]) == 2:
+            wanted[(r["cid"], side)] = m["tokens"][side]
+    books = {}
+
+    def load(item):
+        key, token = item
+        b = get(CLOB, "/book", {"token_id": token}) or {}
+        asks = sorted((float(a["price"]), float(a["size"])) for a in b.get("asks") or [])
+        books[key] = asks
+
+    with ThreadPoolExecutor(8) as pool:
+        list(pool.map(load, wanted.items()))
+
+    for r in rows:
+        m = markets[r["cid"]]
+        side = 0 if r["change"] > 0 else 1
+        asks = books.get((r["cid"], side))
+        if not asks:
+            continue
+        out = []
+        for stake in stakes:
+            shares, spent = fill(asks, stake, m["fee"])
+            out.append({
+                "stake": stake,
+                "spent": round(spent, 2),
+                "avg": round(spent / shares, 4) if shares else None,
+                "profit": round(shares - spent, 2),
+                "filled": spent >= stake - 0.01,
+            })
+        r["payoff"] = {"side": m["outcomes"][side], "best": asks[0][0],
+                       "fee_rate": m["fee"][0], "stakes": out}
+
+
 def write_site(site_dir, markets, state, args):
     """Write data.json for the static dashboard in site/index.html."""
     now = int(time.time())
@@ -496,6 +572,10 @@ def write_site(site_dir, markets, state, args):
     add_flow(movers["24h"], 86400, args.flow_min_usd, args, now)
     add_flow(movers["7d"], 7 * 86400, args.flow_min_usd * 5, args, now)
     print(f"  move flow analysed in {time.time() - t0:.0f}s ({len(_wallet_cache)} wallets cached)")
+    t0 = time.time()
+    for rows in movers.values():
+        add_payoff(rows, markets, args.stakes)
+    print(f"  payoffs priced off order books in {time.time() - t0:.0f}s")
     data = {
         "updated": now,
         "markets": len(markets),
@@ -602,6 +682,8 @@ def main():
                    help="dashboard movers: min 24h volume in USD (7d list uses 5x)")
     p.add_argument("--flow-min-usd", type=float, default=100,
                    help="dashboard flow: ignore trades smaller than this (7d uses 5x)")
+    p.add_argument("--stakes", type=float, nargs="+", default=[100, 1000],
+                   help="dashboard: stakes (USD) to price 'follow the push' payoffs for")
     p.add_argument("--flow-pages", type=int, default=10,
                    help="dashboard flow: max pages of 500 trades per 20 markets")
     args = p.parse_args()

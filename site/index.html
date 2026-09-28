@@ -110,6 +110,26 @@
   .flowbar { height: 4px; background: var(--track); border-radius: 2px; margin-top: 4px; overflow: hidden; max-width: 220px; }
   .flowbar i { display: block; height: 100%; background: var(--fresh); }
 
+  /* evidence */
+  .intro { color: var(--soft); font-size: 14px; max-width: 62ch; margin: 14px 0 4px; }
+  .hyp { border-bottom: 1px solid var(--rule); padding: 18px 0 16px; }
+  .hyp h2 { font-size: 18px; font-weight: 800; letter-spacing: -0.01em; margin: 0 0 4px; line-height: 1.25; }
+  .hyp .id { color: var(--soft); font-weight: 600; margin-right: 6px; }
+  .hyp .claim { color: var(--soft); font-size: 14px; margin: 0 0 12px; max-width: 62ch; }
+  .tests { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 560px) { .tests { grid-template-columns: 1fr; gap: 14px; } }
+  .test h3 { font-size: 13px; font-weight: 600; color: var(--soft); margin: 0 0 4px; }
+  .verdict { font-weight: 800; font-size: 16px; }
+  .verdict.yes { color: var(--yes); } .verdict.no { color: var(--no); } .verdict.wait { color: var(--soft); }
+  .test p { margin: 4px 0 0; font-size: 14px; color: var(--soft); }
+  .test p b { color: var(--ink); font-weight: 600; }
+  .test details { margin-top: 6px; font-size: 13px; color: var(--soft); }
+  .test details summary { cursor: pointer; }
+  .test table { border-collapse: collapse; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .test td, .test th { padding: 2px 10px 2px 0; text-align: left; font-weight: 400; }
+  .test th { color: var(--soft); }
+  h2.sec { font-size: 16px; font-weight: 800; margin: 28px 0 0; }
+  .status-won { color: var(--yes); } .status-lost { color: var(--no); } .status-open { color: var(--soft); }
   .logrow { display: block; padding: 14px 0 12px; text-decoration: none; }
   .empty { color: var(--soft); padding: 48px 0; max-width: 40ch; }
 
@@ -128,6 +148,7 @@
       <button data-tab="24h">24h</button>
       <button data-tab="7d">7d</button>
       <button data-tab="log">Log</button>
+      <button data-tab="evidence">Evidence</button>
     </div>
     <div class="seg small" id="sort" role="group" aria-label="Sort by">
       <button data-sort="move">Biggest move</button>
@@ -168,7 +189,7 @@ function until(ts) {
 // fresh wallets = <= 3 markets traded or account under 14 days old
 const hot = f => f && f.fresh_pct >= 0.5 && f.fresh_usd >= 2000;
 
-function track(from, to) {
+function track(from, to, unit = "¢") {
   if (to == null) return "";
   const a = clamp(from), b = clamp(to), up = b >= a;
   const col = up ? "var(--yes)" : "var(--no)";
@@ -179,7 +200,7 @@ function track(from, to) {
       <div class="from" style="left:${a * 100}%;background:${col}"></div>
       <div class="move" style="left:${lo}%;width:${w}%;background:${col}"></div>
       <div class="now" style="left:${b * 100}%;background:${col}"></div>
-      <div class="pct" style="left:${Math.min(Math.max(b * 100, 4), 96)}%;color:${col}">${cents(b)}</div>
+      <div class="pct" style="left:${Math.min(Math.max(b * 100, 4), 96)}%;color:${col}">${Math.round(b * 100)}${unit}</div>
     </div>`;
 }
 
@@ -202,7 +223,7 @@ function panel(r) {
   const f = r.flow, p = r.payoff, rows = [];
   if (f) {
     const pct = Math.round(f.fresh_pct * 100);
-    const who = !f.usd ? "No trades over $100 pushed it; the order book moved on its own."
+    const who = !f.usd ? "No trades of $500 or more pushed it; the order book moved on its own."
       : f.fresh_wallets
         ? `${money(f.usd)} bought this way, ${pct}% of it from ${f.fresh_wallets} fresh wallet${f.fresh_wallets > 1 ? "s" : ""}` +
           (f.fresh_wallets > 1 ? ` (biggest ${money(f.top_fresh)})` : "") + "."
@@ -239,7 +260,8 @@ function help() {
       the dot is where it trades now. <span class="up">+9.0</span> means it rose 9¢, so people think it is more likely;
       <span class="down">−9.0</span> means it fell 9¢.</p>
     <p><span class="fresh">Fresh money</span> means at least half the buying behind the move came from wallets that are
-      under 14 days old or have traded 3 markets or fewer. That is the pattern insiders leave.</p>
+      under 14 days old or have traded 3 markets or fewer, counting trades of $500 or more.
+      That is the pattern insiders leave. Whether it actually predicts anything is tested on the Evidence tab.</p>
     <p><b>Buy Yes at 21¢, $100 wins $372</b> is what you would make if you bet the way the price is moving and it
       resolves that way, priced against real sell orders after fees. Tap a market for the details.</p>
   </details>`;
@@ -288,15 +310,73 @@ function log(rows) {
     </a></div>`).join("");
 }
 
+const VERDICT = {
+  supported: ["Supported", "yes"],
+  not_supported: ["Not supported", "no"],
+  too_few: ["Too few to tell yet", "wait"],
+  untested: ["Nothing resolved yet", "wait"],
+};
+const pct = x => Math.round(x * 100) + "%";
+const signed = v => (v >= 0 ? "+" : "−") + money(Math.abs(v));
+
+function testBlock(title, r, rules, emptyText) {
+  if (!r) return `<div class="test"><h3>${title}</h3><p>${emptyText}</p></div>`;
+  const [label, cls] = VERDICT[r.verdict] || VERDICT.untested;
+  if (!r.n) return `<div class="test"><h3>${title}</h3><div class="verdict ${cls}">${label}</div>
+    <p>${r.open ? `${r.open} signal${r.open > 1 ? "s" : ""} waiting for their markets to resolve.` : "No signals yet."}</p></div>`;
+  const luck = r.p < 0.001 ? "under 0.1%" : r.p < 0.01 ? (r.p * 100).toFixed(1) + "%" : pct(r.p);
+  const buckets = (r.buckets || []).map(b =>
+    `<tr><td>${Math.round(b.lo * 100)}–${Math.round(b.hi * 100)}¢</td><td>${b.n}</td><td>${b.won}</td><td>${Math.round(b.expected)}</td></tr>`).join("");
+  return `<div class="test"><h3>${title}</h3>
+    <div class="verdict ${cls}">${label}${r.verdict === "too_few" ? ` <span style="font-weight:400;font-size:14px">(${r.n} of ${rules.min_n})</span>` : ""}</div>
+    ${track(r.implied, r.win_rate, "%")}
+    <p>Won <b>${r.won} of ${r.n}</b> (${pct(r.win_rate)}). The prices said ${pct(r.implied)}.</p>
+    <p>$100 on each: <b class="${r.profit_100 >= 0 ? "up" : "down"}">${signed(r.profit_100)}</b> total, ${signed(r.per_bet)} a bet.</p>
+    <p>Chance a result this good is luck: <b>${luck}</b>${r.open ? `. ${r.open} more still open` : ""}.</p>
+    ${buckets ? `<details><summary>By entry price</summary><table>
+      <tr><th>Price</th><th>Signals</th><th>Won</th><th>Price said</th></tr>${buckets}</table></details>` : ""}
+  </div>`;
+}
+
+function evidence(ev) {
+  if (!ev) return '<div class="empty">The evidence tracker starts with the next scan.</div>';
+  const since = new Date(ev.since * 1000).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  const bt = ev.backtest;
+  const btTitle = bt ? `Backtest: ${bt.markets.toLocaleString("en-US")} markets resolved in the last ${bt.days} days` : "Backtest";
+  const intro = `<p class="intro">Each claim is tested two ways: replayed on markets that already resolved, and on every
+    signal the radar has raised since ${since}. The faint mark is how often the entry prices said the signal should win,
+    the dot is how often it did. A claim counts as supported only with at least ${ev.rules.min_n} resolved signals and
+    under a ${Math.round(ev.rules.alpha * 100)}% chance that the result is luck.</p>`;
+  const hyps = ev.hypotheses.map(h => `<section class="hyp">
+      <h2><span class="id">${h.id}</span>${esc(h.title)}</h2>
+      <p class="claim">${esc(h.claim)}${h.note ? " " + esc(h.note) : ""}</p>
+      <div class="tests">
+        ${testBlock(btTitle, h.backtest, ev.rules, "Hasn't run yet. It runs every Monday.")}
+        ${testBlock(`Live since ${since}`, h.live, ev.rules)}
+      </div>
+    </section>`).join("");
+  const recent = ev.recent.length ? ev.recent.map(s => {
+    const st = s.won === null ? ["Open", "open"] : s.won ? ["Won", "won"] : ["Lost", "lost"];
+    return `<div class="row"><a class="logrow" href="${esc(s.link)}" target="_blank" rel="noopener">
+      <div class="head">
+        <div class="q">${esc(s.question)}<span class="ev">${s.h}: bought ${esc(s.side_name)} at ${cents(s.entry)}, ${ago(s.at)}</span></div>
+        <div class="delta status-${st[1]}" style="font-size:16px">${st[0]}</div>
+      </div></a></div>`;
+  }).join("") : '<div class="empty">No live signals yet. They are logged here the moment a scan raises one.</div>';
+  return intro + hyps + `<h2 class="sec">Latest live signals</h2>` + recent;
+}
+
 function render() {
   document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-pressed", b.dataset.tab === tab));
   document.querySelectorAll("#sort button").forEach(b => b.setAttribute("aria-pressed", b.dataset.sort === sort));
-  document.getElementById("sort").style.visibility = tab === "log" ? "hidden" : "visible";
+  document.getElementById("sort").style.visibility = tab === "log" || tab === "evidence" ? "hidden" : "visible";
   if (!data) return;
   document.getElementById("meta").innerHTML =
     `Scanned ${ago(data.updated)}<br>${data.markets.toLocaleString("en-US")} markets`;
   const list = document.getElementById("list");
-  list.innerHTML = tab === "log" ? log(data.log) : movers(data.movers[tab] || []);
+  list.innerHTML = tab === "log" ? log(data.log)
+    : tab === "evidence" ? evidence(data.evidence)
+    : movers(data.movers[tab] || []);
   const h = list.querySelector("details.help");
   if (h) h.ontoggle = () => {
     helpOpen = h.open;

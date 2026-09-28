@@ -6,7 +6,7 @@ on:
   workflow_dispatch:          # "Run workflow" button for manual tests
 
 permissions:
-  contents: read
+  contents: write  # track record lives on the track-record branch
   actions: write   # keepalive step below
   pages: write     # publish the dashboard
   id-token: write
@@ -25,6 +25,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # live track record: every signal and how it resolved
+      - uses: actions/checkout@v4
+        with:
+          ref: track-record
+          path: track
+
       # bring back what the last run saw (seen trades, last prices)
       - uses: actions/cache/restore@v4
         with:
@@ -35,9 +41,12 @@ jobs:
           restore-keys: radar-state-
 
       - name: Scan
-        run: python3 radar.py --hours 2 --site _site
+        run: python3 radar.py --hours 2 --site _site --track track
         env:
           RADAR_NTFY: ${{ secrets.RADAR_NTFY }}
+
+      - name: Save track record
+        run: .github/push-track.sh "Live signals $(date -u +%Y-%m-%dT%H:%MZ)"
 
       # GitHub pauses cron workflows in public repos after 60 days without
       # commits; re-enabling resets that clock.

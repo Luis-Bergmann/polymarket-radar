@@ -38,6 +38,9 @@ ALERTS_CSV = os.path.join(HERE, "alerts.csv")
 
 DEFAULT_TAGS = ["politics", "geopolitics", "elections", "world"]
 
+# evidence.py imports this file as "radar"; make that the running copy, not a second one
+sys.modules.setdefault("radar", sys.modules[__name__])
+
 
 # ---------------------------------------------------------------- HTTP
 
@@ -274,7 +277,8 @@ def wallet_profile(addr):
     d = (resp or {}).get("data") if isinstance(resp, dict) else None
     join = pick(d or {}, "join_date", "joinDate")
     prof = {
-        "markets": int(pick(d or {}, "trades", default=0) or 0),
+        # no stats = unknown wallet; don't let a failed lookup count as fresh
+        "markets": int(pick(d, "trades", default=0) or 0) if d else 999,
         "join": int(join) if join else None,
         "fetched": int(time.time()),
     }
@@ -558,7 +562,7 @@ def add_payoff(rows, markets, stakes):
                        "fee_rate": m["fee"][0], "stakes": out}
 
 
-def write_site(site_dir, markets, state, args):
+def write_site(site_dir, markets, state, args, trades):
     """Write data.json for the static dashboard in site/index.html."""
     now = int(time.time())
     min_vol = args.site_min_vol
@@ -576,10 +580,15 @@ def write_site(site_dir, markets, state, args):
     for rows in movers.values():
         add_payoff(rows, markets, args.stakes)
     print(f"  payoffs priced off order books in {time.time() - t0:.0f}s")
+    evidence_block = None
+    if args.track:
+        import evidence
+        evidence_block = evidence.update_live(args.track, state, markets, movers["24h"], trades, now)
     data = {
         "updated": now,
         "markets": len(markets),
         "movers": movers,
+        "evidence": evidence_block,
         "log": list(reversed(state.get("log", []))),
     }
     os.makedirs(site_dir, exist_ok=True)
@@ -650,7 +659,7 @@ def scan(args, state):
         log_events(state, "alert", alerts)
     state["seen"].extend(pick(t, "transaction_hash", "transactionHash", default="") for t in trades)
     if args.site:
-        write_site(args.site, markets, state, args)
+        write_site(args.site, markets, state, args, trades)
     dump_wallets(state)
     save_state(state)
 
@@ -680,7 +689,8 @@ def main():
     p.add_argument("--site", help="write dashboard data.json into this folder")
     p.add_argument("--site-min-vol", type=float, default=5000,
                    help="dashboard movers: min 24h volume in USD (7d list uses 5x)")
-    p.add_argument("--flow-min-usd", type=float, default=100,
+    p.add_argument("--track", help="folder for the live track record (signals.json, backtest.json)")
+    p.add_argument("--flow-min-usd", type=float, default=500,
                    help="dashboard flow: ignore trades smaller than this (7d uses 5x)")
     p.add_argument("--stakes", type=float, nargs="+", default=[100, 1000],
                    help="dashboard: stakes (USD) to price 'follow the push' payoffs for")

@@ -1,0 +1,55 @@
+name: backtest
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"   # Mondays 03:17 UTC
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Markets resolved within this many days"
+        default: "180"
+      min_volume:
+        description: "Skip markets with less lifetime volume (USD)"
+        default: "50000"
+
+permissions:
+  contents: write   # writes backtest.json to the track-record branch
+
+concurrency:
+  group: backtest
+  cancel-in-progress: false
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: track-record
+          path: track
+
+      # wallet lookups are the slow part; keep them between weekly runs
+      - uses: actions/cache/restore@v4
+        with:
+          path: backtest_wallets.json
+          key: backtest-wallets-${{ github.run_id }}
+          restore-keys: backtest-wallets-
+
+      - name: Replay resolved markets
+        run: >
+          python3 evidence.py backtest
+          --days ${{ inputs.days || '180' }}
+          --min-volume ${{ inputs.min_volume || '50000' }}
+          --out track/backtest.json
+          --wallets backtest_wallets.json
+
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: backtest_wallets.json
+          key: backtest-wallets-${{ github.run_id }}
+
+      - name: Save backtest
+        run: .github/push-track.sh "Backtest $(date -u +%Y-%m-%d)"

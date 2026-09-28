@@ -64,6 +64,11 @@
   .stake { background: var(--bg); border-radius: 6px; padding: 3px 8px; font-variant-numeric: tabular-nums; }
   .stake b { color: var(--up); }
   .stake .thin { color: var(--muted); }
+  details.help { background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 8px 12px; margin-bottom: 12px; font-size: 14px; }
+  details.help summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+  details.help p { margin: 8px 0; }
+  details.help .up, details.help .down { font-weight: 700; }
   .warn { color: var(--alert); font-size: 12px; margin-top: 4px; }
 </style>
 </head>
@@ -82,8 +87,9 @@
 
 <script>
 let data = null;
-let tab = "24h", sort = "move";
-try { tab = localStorage.getItem("tab") || tab; sort = localStorage.getItem("sort") || sort; } catch (e) {}
+let tab = "24h", sort = "move", helpOpen = true;
+try { tab = localStorage.getItem("tab") || tab; sort = localStorage.getItem("sort") || sort;
+  helpOpen = localStorage.getItem("help") !== "closed"; } catch (e) {}
 
 // fresh wallets = <= 3 markets traded or account under 14 days old
 const hot = f => f && f.fresh_pct >= 0.5 && f.fresh_usd >= 2000;
@@ -143,10 +149,18 @@ function movers(rows) {
   const bar = `<div id="sort">Sort:
       <button data-sort="move" class="${sort === "move" ? "on" : ""}">Biggest move</button>
       <button data-sort="fresh" class="${sort === "fresh" ? "on" : ""}">Most fresh money</button></div>
-    <p class="hint">Orange = at least half the money pushing the price came from fresh wallets
-      (≤ 3 markets or &lt; 14 days old). That is the pattern insiders leave.<br>
-      "Follow the push" = profit if you buy the side the price is moving to and it resolves that way,
-      priced against the live order book after taker fees. If it resolves the other way you lose the stake.</p>`;
+    <details class="help"${helpOpen ? " open" : ""}>
+      <summary>How to read this</summary>
+      <p>Every market is a yes/no question. A <b>Yes</b> share pays <b>$1</b> if the answer is yes and
+        nothing if not. Its price (0–100¢) is the crowd's guess at the chance: 20¢ ≈ 20% likely.</p>
+      <p><span class="up">+9.0</span> = the Yes price rose 9¢ over this window, so people now think it is
+        <b>more</b> likely. <span class="down">−9.0</span> = it fell 9¢, so <b>less</b> likely.
+        "now 20¢" is today's price, i.e. today's guessed chance.</p>
+      <p><b>Behind the move</b> = the money that pushed the price that way. <span class="tag hot">fresh money</span>
+        = at least half of it came from fresh wallets (≤ 3 markets traded or &lt; 14 days old), the pattern insiders leave.</p>
+      <p><b>Follow the push</b> = buy Yes on green rows, No on red rows. Shows your profit if it resolves that way,
+        priced against the live order book after fees. If it resolves the other way you lose the stake.</p>
+    </details>`;
   return bar + rows.map(r => `
     <a class="row${hot(r.flow) ? " hot" : ""}" href="${esc(r.link)}" target="_blank" rel="noopener">
       <div class="body">
@@ -188,6 +202,11 @@ function render() {
   document.getElementById("meta").textContent =
     `Updated ${ago(data.updated)} · ${data.markets.toLocaleString("en-US")} markets · change in points (¢)`;
   document.getElementById("list").innerHTML = tab === "log" ? log(data.log) : movers(data.movers[tab] || []);
+  const help = document.querySelector("details.help");
+  if (help) help.ontoggle = () => {
+    helpOpen = help.open;
+    try { localStorage.setItem("help", help.open ? "open" : "closed"); } catch (e) {}
+  };
   document.querySelectorAll("#sort button").forEach(b => b.onclick = () => {
     sort = b.dataset.sort;
     try { localStorage.setItem("sort", sort); } catch (e) {}

@@ -157,6 +157,34 @@
 "end":1798779540,
 "won":null,
 "event":"will-the-unsc-adopt-a-resolution-endorsing-the-final-us-iran-deal-by-date"
+},
+{
+"h":"H3",
+"cid":"0x741bb46008b72234857c5118c8365ab3c2f69dbf28b30b59de04f173b8a778de",
+"side":0,
+"side_name":"Yes",
+"entry":0.29,
+"at":1790626405,
+"strength":4331.1529,
+"question":"Will Dan Sullivan win the Alaska Senate race in 2026?",
+"link":"https://polymarket.com/event/alaska-senate-election-winner",
+"end":1793664000,
+"won":null,
+"event":"alaska-senate-election-winner"
+},
+{
+"h":"H3",
+"cid":"0x7586a96520578acaaaa4ea84a2582f197f84255da1f3392a7aa300386c187b37",
+"side":0,
+"side_name":"Yes",
+"entry":0.3,
+"at":1790626405,
+"strength":1438.65,
+"question":"Will Benjamin Netanyahu be the next Prime Minister of Israel?",
+"link":"https://polymarket.com/event/who-will-be-the-next-prime-minister-of-israel-after-the-next-election",
+"end":1793145540,
+"won":null,
+"event":"who-will-be-the-next-prime-minister-of-israel-after-the-next-election"
 }
 ]
 }

@@ -45,6 +45,18 @@
   .tag.alert { color: var(--alert); border: 1px solid var(--alert); }
   .tag.move { color: var(--accent); border: 1px solid var(--accent); }
   .empty { color: var(--muted); text-align: center; padding: 40px 0; }
+  .flow { font-size: 13px; margin-top: 4px; color: var(--muted); }
+  .flow b { color: var(--text); }
+  .row.hot { border-color: var(--alert); box-shadow: inset 3px 0 0 var(--alert); }
+  .row.hot .flow b { color: var(--alert); }
+  .tag.hot { color: var(--alert); border: 1px solid var(--alert); }
+  .bar { height: 4px; border-radius: 2px; background: var(--line); margin-top: 5px; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: var(--alert); }
+  #sort { display: flex; gap: 6px; margin-bottom: 10px; font-size: 13px; color: var(--muted); align-items: center; }
+  #sort button { font: inherit; border: 1px solid var(--line); background: var(--card); color: var(--text);
+    border-radius: 999px; padding: 4px 10px; cursor: pointer; }
+  #sort button.on { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+  .hint { color: var(--muted); font-size: 12px; margin: 0 0 12px; }
 </style>
 </head>
 <body>
@@ -62,8 +74,11 @@
 
 <script>
 let data = null;
-let tab = "24h";
-try { tab = localStorage.getItem("tab") || tab; } catch (e) {}
+let tab = "24h", sort = "move";
+try { tab = localStorage.getItem("tab") || tab; sort = localStorage.getItem("sort") || sort; } catch (e) {}
+
+// fresh wallets = <= 3 markets traded or account under 14 days old
+const hot = f => f && f.fresh_pct >= 0.5 && f.fresh_usd >= 2000;
 
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const pts = x => (x > 0 ? "+" : "") + (x * 100).toFixed(1);
@@ -77,13 +92,33 @@ function ago(ts) {
   return Math.round(m / 1440) + " d ago";
 }
 
+function flowLine(f) {
+  if (!f) return "";
+  if (!f.usd) return `<div class="flow">No trades ≥ $100 pushing this way; the book moved without much trading.</div>`;
+  const pct = Math.round(f.fresh_pct * 100);
+  const who = f.fresh_wallets
+    ? `<b>${pct}% from ${f.fresh_wallets} fresh wallet${f.fresh_wallets > 1 ? "s" : ""}</b>` +
+      (f.fresh_wallets > 1 ? ` (biggest ${usd(f.top_fresh)})` : "")
+    : "no fresh wallets";
+  return `<div class="flow">Behind the move: ${usd(f.usd)} · ${who}${f.partial ? " · partial" : ""}</div>
+    <div class="bar"><i style="width:${pct}%"></i></div>`;
+}
+
 function movers(rows) {
   if (!rows.length) return '<div class="empty">No movers above the volume filter.</div>';
-  return rows.map(r => `
-    <a class="row" href="${esc(r.link)}" target="_blank" rel="noopener">
+  rows = [...rows];
+  if (sort === "fresh") rows.sort((a, b) => (b.flow?.fresh_usd || 0) - (a.flow?.fresh_usd || 0));
+  const bar = `<div id="sort">Sort:
+      <button data-sort="move" class="${sort === "move" ? "on" : ""}">Biggest move</button>
+      <button data-sort="fresh" class="${sort === "fresh" ? "on" : ""}">Most fresh money</button></div>
+    <p class="hint">Orange = at least half the money pushing the price came from fresh wallets
+      (≤ 3 markets or &lt; 14 days old). That is the pattern insiders leave.</p>`;
+  return bar + rows.map(r => `
+    <a class="row${hot(r.flow) ? " hot" : ""}" href="${esc(r.link)}" target="_blank" rel="noopener">
       <div class="body">
-        <div class="q">${esc(r.question)}</div>
+        <div class="q">${hot(r.flow) ? '<span class="tag hot">fresh money</span>' : ""}${esc(r.question)}</div>
         <div class="sub">${r.event && r.event !== r.question ? esc(r.event) + " · " : ""}vol ${usd(r.volume)}</div>
+        ${flowLine(r.flow)}
       </div>
       <div class="num">
         <div class="ch ${r.change >= 0 ? "up" : "down"}">${pts(r.change)}</div>
@@ -118,6 +153,11 @@ function render() {
   document.getElementById("meta").textContent =
     `Updated ${ago(data.updated)} · ${data.markets.toLocaleString()} markets · change in points (¢)`;
   document.getElementById("list").innerHTML = tab === "log" ? log(data.log) : movers(data.movers[tab] || []);
+  document.querySelectorAll("#sort button").forEach(b => b.onclick = () => {
+    sort = b.dataset.sort;
+    try { localStorage.setItem("sort", sort); } catch (e) {}
+    render();
+  });
 }
 
 async function load() {

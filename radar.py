@@ -26,6 +26,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 
 GAMMA = "https://gamma-api.polymarket.com"
@@ -151,11 +152,21 @@ def num(v):
         return None
 
 
+def midpoint(m):
+    """Mid of best bid/ask when the book is tight enough to trust, else None."""
+    bid, ask = num(m.get("bestBid")), num(m.get("bestAsk"))
+    if bid is None or ask is None or ask < bid or ask - bid > 0.10:
+        return None
+    return round((bid + ask) / 2, 4)
+
+
 def market_index(events):
     """condition_id -> {question, end, price, link, changes, volume} from the events' markets."""
     idx = {}
     for e in events.values():
         e_end = parse_ts(e.get("endDate"))
+        # scheduled votes: everyone knows when they resolve, so "resolves soon" means nothing
+        election = any("election" in str(t.get("slug", "")) for t in e.get("tags") or [])
         for m in e.get("markets") or []:
             cid = m.get("conditionId") or m.get("condition_id")
             if not cid or m.get("closed"):
@@ -164,6 +175,8 @@ def market_index(events):
                 "question": m.get("question") or e.get("title") or "?",
                 "end": parse_ts(m.get("endDate")) or e_end,
                 "price": yes_price(m),
+                "mid": midpoint(m),
+                "election": election,
                 "link": "https://polymarket.com/event/" + str(e.get("slug") or ""),
                 "event": e.get("title") or "",
                 "ch_1h": num(m.get("oneHourPriceChange")),
@@ -217,20 +230,52 @@ def recent_trades(event_ids, since_ts, min_usd):
 
 
 _wallet_cache = {}
+WALLET_TTL = 2 * 86400  # re-check a wallet's history after this long
+
+
+def load_wallets(state, now):
+    """Seed the wallet cache from the previous runs, dropping stale entries."""
+    for addr, (markets, join, fetched) in state.get("wallets", {}).items():
+        if now - fetched < WALLET_TTL:
+            _wallet_cache[addr] = {"markets": markets, "join": join, "fetched": fetched}
+
+
+def dump_wallets(state):
+    state["wallets"] = {a: [p["markets"], p["join"], p["fetched"]] for a, p in _wallet_cache.items()}
 
 
 def wallet_profile(addr):
-    """Distinct markets traded and join date, cached per run."""
+    """Distinct markets traded and join date, cached across runs via the state file."""
     if addr in _wallet_cache:
         return _wallet_cache[addr]
     resp = get(DATA, "/v2/user-stats", {"user": addr})
     d = (resp or {}).get("data") if isinstance(resp, dict) else None
+    join = pick(d or {}, "join_date", "joinDate")
     prof = {
         "markets": int(pick(d or {}, "trades", default=0) or 0),
-        "join": pick(d or {}, "join_date", "joinDate"),
+        "join": int(join) if join else None,
+        "fetched": int(time.time()),
     }
     _wallet_cache[addr] = prof
     return prof
+
+
+def prefetch_wallets(addrs):
+    """Look up many uncached wallets in parallel."""
+    todo = [a for a in set(addrs) if a and a not in _wallet_cache]
+    if todo:
+        with ThreadPoolExecutor(8) as pool:
+            list(pool.map(wallet_profile, todo))
+    return len(todo)
+
+
+def wallet_age_days(prof, now):
+    return (now - prof["join"]) / 86400 if prof["join"] else None
+
+
+def is_fresh(prof, args, now):
+    age = wallet_age_days(prof, now)
+    return prof["markets"] <= args.fresh_markets or (age is not None and age <= args.fresh_days)
 
 
 # ---------------------------------------------------------------- Scoring
@@ -247,15 +292,14 @@ def score_trades(trades, args, now, markets=None):
     alerts = []
     # pass 1: per-trade signals
     enriched = []
+    prefetch_wallets(pick(t, "proxy_wallet", "proxyWallet") for t in trades)
     for t in trades:
         wallet = pick(t, "proxy_wallet", "proxyWallet", default="")
         price = float(pick(t, "price", default=0))
         usd = usd_of(t)
         prof = wallet_profile(wallet) if wallet else {"markets": 999, "join": None}
-        age_days = None
-        if prof["join"]:
-            age_days = (now - int(prof["join"])) / 86400
-        fresh = prof["markets"] <= args.fresh_markets or (age_days is not None and age_days <= args.fresh_days)
+        age_days = wallet_age_days(prof, now)
+        fresh = is_fresh(prof, args, now)
 
         score, why = 0, []
         if price <= args.longshot:
@@ -278,7 +322,7 @@ def score_trades(trades, args, now, markets=None):
                 why.append(f"pays ${payoff:,.0f} if right")
         # insider bets cluster on markets that resolve soon ("strike by Friday")
         info = (markets or {}).get(pick(t, "condition_id", "conditionId"))
-        if info and info["end"]:
+        if info and info["end"] and not info["election"]:
             days_left = (info["end"] - now) / 86400
             if 0 <= days_left <= args.soon_days:
                 score += 2
@@ -299,6 +343,9 @@ def score_trades(trades, args, now, markets=None):
         if n >= args.cluster:
             score += 3
             why.append(f"{n} fresh wallets on this side")
+        # big bets on favourites are just conviction; the insider tell is buying the unlikely side
+        elif price > args.max_price:
+            continue
         if score >= args.threshold:
             alerts.append({
                 "score": score,
@@ -367,29 +414,92 @@ def log_events(state, kind, items):
 
 def top_movers(markets, key, vol_key, min_vol, now, n=40):
     rows = []
-    for m in markets.values():
+    for cid, m in markets.items():
         ch = m[key]
-        if ch is None or not m["live"] or m[vol_key] < min_vol:
+        if ch is None or abs(ch) < 0.01 or not m["live"] or m[vol_key] < min_vol:
             continue
         if m["end"] and m["end"] < now:
             continue
-        rows.append({"question": m["question"], "event": m["event"], "price": m["price"],
+        rows.append({"cid": cid, "question": m["question"], "event": m["event"],
+                     "price": m["mid"] if m["mid"] is not None else m["price"],
                      "change": round(ch, 4), "volume": round(m[vol_key]), "link": m["link"]})
     rows.sort(key=lambda r: -abs(r["change"]))
     return rows[:n]
 
 
-def write_site(site_dir, markets, state, min_vol):
+def window_trades(cids, since_ts, min_usd, max_pages):
+    """Trades (both sides) >= min_usd since since_ts on these markets. Returns (trades, capped)."""
+    out, capped = [], False
+    for i in range(0, len(cids), 20):
+        cursor, pages = None, 0
+        while True:
+            params = {"condition": ",".join(cids[i:i + 20]), "filter_type": "CASH",
+                      "filter_amount": min_usd, "limit": 500, "cursor": cursor}
+            rows, cursor = data_rows(get(DATA, "/v2/trades", params))
+            fresh = [r for r in rows if int(pick(r, "timestamp", default=0)) >= since_ts]
+            out.extend(fresh)
+            pages += 1
+            if not cursor or len(fresh) < len(rows):
+                break
+            if pages >= max_pages:
+                capped = True
+                break
+    return out, capped
+
+
+def add_flow(rows, window, min_usd, args, now):
+    """Annotate movers with who bought in the direction of the move: how much came from fresh wallets."""
+    if not rows:
+        return
+    trades, capped = window_trades([r["cid"] for r in rows], now - window, min_usd, args.flow_pages)
+    prefetch_wallets(pick(t, "proxy_wallet", "proxyWallet") for t in trades)
+    by_cid = defaultdict(list)
+    for t in trades:
+        by_cid[pick(t, "condition_id", "conditionId")].append(t)
+    for r in rows:
+        up = r["change"] > 0
+        total = fresh_usd = 0.0
+        fresh_wallets = defaultdict(float)
+        for t in by_cid.get(r["cid"], []):
+            # buying YES or selling NO pushes the YES price up
+            yes_side = int(pick(t, "outcome_index", "outcomeIndex", default=0)) == 0
+            pushes_up = (pick(t, "side") == "BUY") == yes_side
+            if pushes_up != up:
+                continue
+            usd = usd_of(t)
+            total += usd
+            wallet = pick(t, "proxy_wallet", "proxyWallet", default="")
+            if wallet and is_fresh(wallet_profile(wallet), args, now):
+                fresh_usd += usd
+                fresh_wallets[wallet] += usd
+        r["flow"] = {
+            "usd": round(total),
+            "fresh_usd": round(fresh_usd),
+            "fresh_pct": round(fresh_usd / total, 3) if total else 0,
+            "fresh_wallets": len(fresh_wallets),
+            "top_fresh": round(max(fresh_wallets.values())) if fresh_wallets else 0,
+            "partial": capped,
+        }
+
+
+def write_site(site_dir, markets, state, args):
     """Write data.json for the static dashboard in site/index.html."""
     now = int(time.time())
+    min_vol = args.site_min_vol
+    movers = {
+        "1h": top_movers(markets, "ch_1h", "vol_1d", min_vol, now),
+        "24h": top_movers(markets, "ch_1d", "vol_1d", min_vol, now),
+        "7d": top_movers(markets, "ch_1w", "vol_1w", min_vol * 5, now),
+    }
+    t0 = time.time()
+    add_flow(movers["1h"], 3600, args.flow_min_usd, args, now)
+    add_flow(movers["24h"], 86400, args.flow_min_usd, args, now)
+    add_flow(movers["7d"], 7 * 86400, args.flow_min_usd * 5, args, now)
+    print(f"  move flow analysed in {time.time() - t0:.0f}s ({len(_wallet_cache)} wallets cached)")
     data = {
         "updated": now,
         "markets": len(markets),
-        "movers": {
-            "1h": top_movers(markets, "ch_1h", "vol_1d", min_vol, now),
-            "24h": top_movers(markets, "ch_1d", "vol_1d", min_vol, now),
-            "7d": top_movers(markets, "ch_1w", "vol_1w", min_vol * 5, now),
-        },
+        "movers": movers,
         "log": list(reversed(state.get("log", []))),
     }
     os.makedirs(site_dir, exist_ok=True)
@@ -400,18 +510,20 @@ def write_site(site_dir, markets, state, min_vol):
 
 # ---------------------------------------------------------------- Main
 
-def price_moves(markets, state, min_move):
-    """Compare YES prices to the previous scan; return big moves and store new prices."""
-    old = state.get("prices", {})
+def price_moves(markets, state, min_move, min_vol):
+    """Compare order-book midpoints to the previous scan; return big moves and store new mids.
+    Midpoints ignore one-off odd trades, and the volume floor skips markets too thin to matter."""
+    old = state.get("mids", {})
     moves = []
     if min_move > 0:
         for cid, m in markets.items():
-            p = m["price"]
-            if p is None or cid not in old:
+            p = m["mid"]
+            if p is None or cid not in old or m["vol_1d"] < min_vol:
                 continue
             if abs(p - old[cid]) >= min_move:
                 moves.append({"old": old[cid], "new": p, "question": m["question"], "link": m["link"]})
-    state["prices"] = {cid: m["price"] for cid, m in markets.items() if m["price"] is not None}
+    state["mids"] = {cid: m["mid"] for cid, m in markets.items() if m["mid"] is not None}
+    state.pop("prices", None)
     moves.sort(key=lambda mv: -abs(mv["new"] - mv["old"]))
     return moves
 
@@ -419,6 +531,7 @@ def price_moves(markets, state, min_move):
 def scan(args, state):
     now = int(time.time())
     since = now - int(args.hours * 3600)
+    load_wallets(state, now)
     print(f"\n=== scan {datetime.now().strftime('%Y-%m-%d %H:%M')}, last {args.hours:g}h ===")
 
     tags = tag_ids(args.tags)
@@ -433,7 +546,7 @@ def scan(args, state):
     print(f"  watching {len(events)} open events ({len(markets)} markets) across tags: {', '.join(tags)}")
 
     # price moves since the previous scan
-    moves = price_moves(markets, state, args.move)
+    moves = price_moves(markets, state, args.move, args.move_min_vol)
     if moves:
         print(f"\n  price moves >= {args.move * 100:.0f} pts since last scan:")
         for mv in moves:
@@ -456,9 +569,10 @@ def scan(args, state):
                    f"{a['market']}\n{a['why']}", a["link"])
         log_events(state, "alert", alerts)
     state["seen"].extend(pick(t, "transaction_hash", "transactionHash", default="") for t in trades)
-    save_state(state)
     if args.site:
-        write_site(args.site, markets, state, args.site_min_vol)
+        write_site(args.site, markets, state, args)
+    dump_wallets(state)
+    save_state(state)
 
 
 def main():
@@ -474,14 +588,22 @@ def main():
     p.add_argument("--fresh-days", type=float, default=14, help="wallet younger than N days = fresh")
     p.add_argument("--cluster", type=int, default=3, help="fresh wallets on one side = cluster")
     p.add_argument("--threshold", type=int, default=6, help="minimum score to alert")
+    p.add_argument("--max-price", type=float, default=0.35,
+                   help="only alert on buys at or below this price (fresh-wallet clusters excepted)")
     p.add_argument("--soon-days", type=float, default=14, help="market ending within N days = +2")
     p.add_argument("--move", type=float, default=0.10,
                    help="alert when a price moves this much between scans (0.10 = 10 pts, 0 = off)")
+    p.add_argument("--move-min-vol", type=float, default=10000,
+                   help="price-move pushes: ignore markets with less 24h volume (USD)")
     p.add_argument("--ntfy", default=os.environ.get("RADAR_NTFY"),
                    help="ntfy.sh topic for phone pushes (or set RADAR_NTFY)")
     p.add_argument("--site", help="write dashboard data.json into this folder")
     p.add_argument("--site-min-vol", type=float, default=5000,
                    help="dashboard movers: min 24h volume in USD (7d list uses 5x)")
+    p.add_argument("--flow-min-usd", type=float, default=100,
+                   help="dashboard flow: ignore trades smaller than this (7d uses 5x)")
+    p.add_argument("--flow-pages", type=int, default=10,
+                   help="dashboard flow: max pages of 500 trades per 20 markets")
     args = p.parse_args()
 
     state = load_state()

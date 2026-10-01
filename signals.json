@@ -731,6 +731,20 @@
 "end":1793664000,
 "won":null,
 "event":"wisconsin-governor-winner-2026"
+},
+{
+"h":"H2",
+"cid":"0x8ee27c276a1bee094293751285d8a6697674b023196cb21fdd14bf3ca12f6ec0",
+"side":0,
+"side_name":"Yes",
+"entry":0.3265,
+"at":1790815636,
+"strength":0.072,
+"question":"Will Luiz In\u00e1cio Lula da Silva finish in second place in the first round of the 2026 Brazilian presidential election?",
+"link":"https://polymarket.com/event/brazil-presidential-election-first-round-2nd-place",
+"end":1791172740,
+"won":null,
+"event":"brazil-presidential-election-first-round-2nd-place"
 }
 ]
 }

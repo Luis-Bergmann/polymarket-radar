@@ -337,8 +337,10 @@
 "question":"Iran charges Hormuz fees by September 30?",
 "link":"https://polymarket.com/event/iran-charges-hormuz-fees-byptptpt-20260625175035466",
 "end":1790827140,
-"won":null,
-"event":"iran-charges-hormuz-fees-byptptpt-20260625175035466"
+"won":false,
+"event":"iran-charges-hormuz-fees-byptptpt-20260625175035466",
+"void":false,
+"closed":1790834594
 },
 {
 "h":"H2",
@@ -745,6 +747,48 @@
 "end":1791172740,
 "won":null,
 "event":"brazil-presidential-election-first-round-2nd-place"
+},
+{
+"h":"H2",
+"cid":"0xf43c1ec924a35e1f55453c31b662ea65e623ca9d21aeec1b2af24844567f15c9",
+"side":1,
+"side_name":"No",
+"entry":0.8845,
+"at":1790836690,
+"strength":0.069,
+"question":"Will Sudan's Emergency Response Rooms win the Nobel Peace Prize in 2026?",
+"link":"https://polymarket.com/event/nobel-peace-prize-winner-2026-139",
+"end":1791590400,
+"won":null,
+"event":"nobel-peace-prize-winner-2026-139"
+},
+{
+"h":"H2",
+"cid":"0x190aad2ac982a1580aa8898eff5b5145bea98410efb1c27fa48b9855b0816816",
+"side":0,
+"side_name":"Yes",
+"entry":0.14,
+"at":1790836690,
+"strength":0.065,
+"question":"Will the Republican Party win the NY-03 House seat?",
+"link":"https://polymarket.com/event/ny-03-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"ny-03-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0xb818eb1084fdbc85161dda72c93e1e2da6eb3cc675aa815becb69f45f30683c9",
+"side":1,
+"side_name":"No",
+"entry":0.895,
+"at":1790836690,
+"strength":0.05,
+"question":"Iran charges Hormuz fees by October 31?",
+"link":"https://polymarket.com/event/iran-charges-hormuz-fees-byptptpt-20260625175035466",
+"end":1793505540,
+"won":null,
+"event":"iran-charges-hormuz-fees-byptptpt-20260625175035466"
 }
 ]
 }

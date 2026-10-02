@@ -1069,6 +1069,34 @@
 "end":1793768340,
 "won":null,
 "event":"california-governor-election-2026"
+},
+{
+"h":"H2",
+"cid":"0x5554740293afa7aafd5fed10fd2de43a898e2884c1f98bd65185e703f371b9db",
+"side":1,
+"side_name":"No",
+"entry":0.745,
+"at":1790908259,
+"strength":0.05,
+"question":"Will an independent win the Nebraska Senate race in 2026?",
+"link":"https://polymarket.com/event/nebraska-senate-election-winner",
+"end":1793768340,
+"won":null,
+"event":"nebraska-senate-election-winner"
+},
+{
+"h":"H2",
+"cid":"0xd7e7300ecc03a88948a89186d7f06b1000750a7f4a0778e40566d50af9ef3147",
+"side":1,
+"side_name":"No",
+"entry":0.135,
+"at":1790908259,
+"strength":0.05,
+"question":"Will the Democratic Party win the NY-03 House seat?",
+"link":"https://polymarket.com/event/ny-03-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"ny-03-house-election-winner"
 }
 ]
 }

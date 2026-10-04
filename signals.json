@@ -1829,6 +1829,34 @@
 "end":1793768340,
 "won":null,
 "event":"balance-of-power-2026-midterms"
+},
+{
+"h":"H2",
+"cid":"0x528e6245ca3aa682adf6147face9a8f0fed034708baab334aeb72e3d92e11995",
+"side":0,
+"side_name":"Yes",
+"entry":0.3,
+"at":1791112929,
+"strength":0.205,
+"question":"Will Gadi Eizenkot be the next Israeli Minister of Foreign Affairs?",
+"link":"https://polymarket.com/event/next-israeli-minister-of-foreign-affairs",
+"end":1803877140,
+"won":null,
+"event":"next-israeli-minister-of-foreign-affairs"
+},
+{
+"h":"H2",
+"cid":"0x42612a9da43ec1ed1838aa1d7c30e7e68c6c47d891b6b01bc97204d55692c1c3",
+"side":0,
+"side_name":"Yes",
+"entry":0.1325,
+"at":1791112929,
+"strength":0.05,
+"question":"Will Renan Santos win less than 2% of the valid vote in the first round of the 2026 Brazilian presidential election?",
+"link":"https://polymarket.com/event/brazil-presidential-election-first-round-renan-santos-vote-share",
+"end":1791158340,
+"won":null,
+"event":"brazil-presidential-election-first-round-renan-santos-vote-share"
 }
 ]
 }

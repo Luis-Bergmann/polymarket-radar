@@ -283,8 +283,10 @@
 "question":"Lula or Bolsonaro favored on October 3?",
 "link":"https://polymarket.com/event/lula-or-bolsonaro-favored-on",
 "end":1791028800,
-"won":null,
-"event":"lula-or-bolsonaro-favored-on"
+"won":true,
+"event":"lula-or-bolsonaro-favored-on",
+"void":false,
+"closed":1791123096
 },
 {
 "h":"H2",
@@ -1857,6 +1859,48 @@
 "end":1791158340,
 "won":null,
 "event":"brazil-presidential-election-first-round-renan-santos-vote-share"
+},
+{
+"h":"H2",
+"cid":"0x4a7d4db2ecdb3a14522d5812f5714e3cdf309dd1fe22aaa26fdb415e50931751",
+"side":0,
+"side_name":"Yes",
+"entry":0.415,
+"at":1791129439,
+"strength":0.26,
+"question":"Will Fl\u00e1vio Bolsonaro win between 45% and 48% of the valid vote in the first round of the 2026 Brazilian presidential election?",
+"link":"https://polymarket.com/event/brazil-presidential-election-first-round-flavio-bolsonaro-vote-share-higher-strikes",
+"end":1791169140,
+"won":null,
+"event":"brazil-presidential-election-first-round-flavio-bolsonaro-vote-share-higher-strikes"
+},
+{
+"h":"H2",
+"cid":"0xbc0070bd88b113d9beedbae5efd78df0e605ca029aff8ef470c881010c923a24",
+"side":0,
+"side_name":"Yes",
+"entry":0.405,
+"at":1791129439,
+"strength":0.1715,
+"question":"Will Augusto Cury finish in third place in the first round of the 2026 Brazilian presidential election?",
+"link":"https://polymarket.com/event/brazil-presidential-election-first-round-3rd-place",
+"end":1791172740,
+"won":null,
+"event":"brazil-presidential-election-first-round-3rd-place"
+},
+{
+"h":"H2",
+"cid":"0xb8b5349814450b8bba2ecdda2eeb9f48bd3c795bfb858bedf7a383712b877743",
+"side":0,
+"side_name":"Yes",
+"entry":0.665,
+"at":1791129439,
+"strength":0.05,
+"question":"Will the Republicans win the Kansas Senate race in 2026?",
+"link":"https://polymarket.com/event/kansas-senate-election-winner",
+"end":1793768340,
+"won":null,
+"event":"kansas-senate-election-winner"
 }
 ]
 }

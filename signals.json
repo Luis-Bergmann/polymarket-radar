@@ -241,8 +241,10 @@
 "question":"Will Renan Santos finish in third place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-3rd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-3rd-place"
+"won":false,
+"event":"brazil-presidential-election-first-round-3rd-place",
+"void":false,
+"closed":1791185531
 },
 {
 "h":"H2",
@@ -255,8 +257,10 @@
 "question":"Will Augusto Cury finish in third place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-3rd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-3rd-place"
+"won":false,
+"event":"brazil-presidential-election-first-round-3rd-place",
+"void":false,
+"closed":1791185503
 },
 {
 "h":"H2",
@@ -539,8 +543,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the first round of the 2026 Brazilian presidential election by less than 5%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-margin-of-victory",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-margin-of-victory"
+"won":true,
+"event":"brazil-presidential-election-first-round-margin-of-victory",
+"void":false,
+"closed":1791187210
 },
 {
 "h":"H2",
@@ -667,8 +673,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro finish in second place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-2nd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-2nd-place"
+"won":true,
+"event":"brazil-presidential-election-first-round-2nd-place",
+"void":false,
+"closed":1791185441
 },
 {
 "h":"H1",
@@ -681,8 +689,10 @@
 "question":"Will Renan Santos finish in third place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-3rd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-3rd-place"
+"won":false,
+"event":"brazil-presidential-election-first-round-3rd-place",
+"void":false,
+"closed":1791185531
 },
 {
 "h":"H3",
@@ -695,8 +705,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro finish in second place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-2nd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-2nd-place"
+"won":true,
+"event":"brazil-presidential-election-first-round-2nd-place",
+"void":false,
+"closed":1791185441
 },
 {
 "h":"H2",
@@ -949,8 +961,10 @@
 "question":"Will Renan Santos finish in third place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-3rd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-3rd-place"
+"won":true,
+"event":"brazil-presidential-election-first-round-3rd-place",
+"void":false,
+"closed":1791185531
 },
 {
 "h":"H3",
@@ -1021,8 +1035,10 @@
 "question":"Will Renan Santos win between 2% and 4% of the valid vote in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-renan-santos-vote-share",
 "end":1791158340,
-"won":null,
-"event":"brazil-presidential-election-first-round-renan-santos-vote-share"
+"won":false,
+"event":"brazil-presidential-election-first-round-renan-santos-vote-share",
+"void":false,
+"closed":1791207340
 },
 {
 "h":"H2",
@@ -1191,8 +1207,10 @@
 "question":"Will Lula win 44% or more of the valid vote in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-lula-da-silva-vote-share",
 "end":1791158340,
-"won":null,
-"event":"brazil-presidential-election-first-round-lula-da-silva-vote-share"
+"won":true,
+"event":"brazil-presidential-election-first-round-lula-da-silva-vote-share",
+"void":false,
+"closed":1791192430
 },
 {
 "h":"H2",
@@ -1277,8 +1295,10 @@
 "question":"Will Renan Santos win between 2% and 4% of the valid vote in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-renan-santos-vote-share",
 "end":1791158340,
-"won":null,
-"event":"brazil-presidential-election-first-round-renan-santos-vote-share"
+"won":true,
+"event":"brazil-presidential-election-first-round-renan-santos-vote-share",
+"void":false,
+"closed":1791207340
 },
 {
 "h":"H2",
@@ -1307,8 +1327,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the first round of the 2026 Brazilian presidential election by less than 5%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-margin-of-victory",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-first-round-margin-of-victory",
+"void":false,
+"closed":1791187210
 },
 {
 "h":"H2",
@@ -1351,8 +1373,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro finish in second place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-2nd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-2nd-place"
+"won":false,
+"event":"brazil-presidential-election-first-round-2nd-place",
+"void":false,
+"closed":1791185441
 },
 {
 "h":"H1",
@@ -1365,8 +1389,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro finish in second place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-2nd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-2nd-place"
+"won":false,
+"event":"brazil-presidential-election-first-round-2nd-place",
+"void":false,
+"closed":1791185441
 },
 {
 "h":"H4",
@@ -1493,8 +1519,10 @@
 "question":"Will Ronaldo Caiado finish in third place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-3rd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-3rd-place"
+"won":false,
+"event":"brazil-presidential-election-first-round-3rd-place",
+"void":false,
+"closed":1791185531
 },
 {
 "h":"H3",
@@ -1877,8 +1905,10 @@
 "question":"Will Renan Santos win less than 2% of the valid vote in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-renan-santos-vote-share",
 "end":1791158340,
-"won":null,
-"event":"brazil-presidential-election-first-round-renan-santos-vote-share"
+"won":false,
+"event":"brazil-presidential-election-first-round-renan-santos-vote-share",
+"void":false,
+"closed":1791207340
 },
 {
 "h":"H2",
@@ -1891,8 +1921,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win between 45% and 48% of the valid vote in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-flavio-bolsonaro-vote-share-higher-strikes",
 "end":1791169140,
-"won":null,
-"event":"brazil-presidential-election-first-round-flavio-bolsonaro-vote-share-higher-strikes"
+"won":true,
+"event":"brazil-presidential-election-first-round-flavio-bolsonaro-vote-share-higher-strikes",
+"void":false,
+"closed":1791193720
 },
 {
 "h":"H2",
@@ -1905,8 +1937,10 @@
 "question":"Will Augusto Cury finish in third place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-3rd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-3rd-place"
+"won":true,
+"event":"brazil-presidential-election-first-round-3rd-place",
+"void":false,
+"closed":1791185503
 },
 {
 "h":"H2",
@@ -1933,8 +1967,10 @@
 "question":"Will Ronaldo Caiado finish in third place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-3rd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-3rd-place"
+"won":true,
+"event":"brazil-presidential-election-first-round-3rd-place",
+"void":false,
+"closed":1791185531
 },
 {
 "h":"H2",
@@ -1961,8 +1997,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro finish in second place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-2nd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-2nd-place"
+"won":false,
+"event":"brazil-presidential-election-first-round-2nd-place",
+"void":false,
+"closed":1791185441
 },
 {
 "h":"H2",
@@ -1989,8 +2027,10 @@
 "question":"Will Lula win between 41% and 44% of the valid vote in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-lula-da-silva-vote-share",
 "end":1791158340,
-"won":null,
-"event":"brazil-presidential-election-first-round-lula-da-silva-vote-share"
+"won":true,
+"event":"brazil-presidential-election-first-round-lula-da-silva-vote-share",
+"void":false,
+"closed":1791192430
 },
 {
 "h":"H2",
@@ -2105,6 +2145,48 @@
 "end":1798779540,
 "won":null,
 "event":"will-russia-capture-all-of-kostyantynivka-by"
+},
+{
+"h":"H2",
+"cid":"0x0ea6e9ff415871b64273a991ad7560f19d38a25449b996fa83655a5e8f818821",
+"side":0,
+"side_name":"Yes",
+"entry":0.1935,
+"at":1791216703,
+"strength":0.0705,
+"question":"Will Pedro S\u00e1nchez be the next leader out before 2027?",
+"link":"https://polymarket.com/event/next-leader-out-of-power-before-2027-no-starmer-or-petro-20260630194619406",
+"end":1798779540,
+"won":null,
+"event":"next-leader-out-of-power-before-2027-no-starmer-or-petro-20260630194619406"
+},
+{
+"h":"H2",
+"cid":"0x0716a90a7a2e642eb65255c22187174165da4518ad3811c543df3eabcd08c9dc",
+"side":0,
+"side_name":"Yes",
+"entry":0.0655,
+"at":1791216703,
+"strength":0.058,
+"question":"Will Luiz In\u00e1cio Lula da Silva be the next leader out before 2027?",
+"link":"https://polymarket.com/event/next-leader-out-of-power-before-2027-no-starmer-or-petro-20260630194619406",
+"end":1798779540,
+"won":null,
+"event":"next-leader-out-of-power-before-2027-no-starmer-or-petro-20260630194619406"
+},
+{
+"h":"H2",
+"cid":"0xb7d6db12a48e282585501f57871e6e482b9e2c41c68d1d5019bdbd2902209b69",
+"side":0,
+"side_name":"Yes",
+"entry":0.355,
+"at":1791216703,
+"strength":0.05,
+"question":"Will Russia enter Druzkhivka by December 31, 2026?",
+"link":"https://polymarket.com/event/which-cities-will-russia-enter-by-december-31",
+"end":1798779540,
+"won":null,
+"event":"which-cities-will-russia-enter-by-december-31"
 }
 ]
 }

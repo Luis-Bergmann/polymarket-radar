@@ -2013,6 +2013,34 @@
 "end":1791172740,
 "won":null,
 "event":"will-any-presidential-candidate-win-outright-in-the-first-round-of-the-brazil-election"
+},
+{
+"h":"H3",
+"cid":"0xb3298af85e00aafad937c119444a5f2800a55343b7482eb75581f6e454432501",
+"side":0,
+"side_name":"Yes",
+"entry":0.04,
+"at":1791163027,
+"strength":1000.0,
+"question":"Will Kamala Harris win the 2028 US Presidential Election?",
+"link":"https://polymarket.com/event/presidential-election-winner-2028",
+"end":1857272340,
+"won":null,
+"event":"presidential-election-winner-2028"
+},
+{
+"h":"H3",
+"cid":"0xf232b565995e4b3a3e7fa6cef775eeff1cecd20ad7c013cb9fc8dadabfe279a9",
+"side":0,
+"side_name":"Yes",
+"entry":0.1441,
+"at":1791163027,
+"strength":4500.0,
+"question":"Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?",
+"link":"https://polymarket.com/event/presidential-election-winner-2028",
+"end":1857272340,
+"won":null,
+"event":"presidential-election-winner-2028"
 }
 ]
 }

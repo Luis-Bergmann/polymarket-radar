@@ -2187,6 +2187,34 @@
 "end":1798779540,
 "won":null,
 "event":"which-cities-will-russia-enter-by-december-31"
+},
+{
+"h":"H2",
+"cid":"0x7a70fc60ee280fa7b4312f5dd128d148d74ae5b3e4a2e8215ccf0030a08ebb04",
+"side":0,
+"side_name":"Yes",
+"entry":0.4,
+"at":1791240382,
+"strength":0.065,
+"question":"US announces end of Iranian blockade by November 30, 2026?",
+"link":"https://polymarket.com/event/us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+"end":1796101140,
+"won":null,
+"event":"us-announces-end-of-iranian-blockade-byptptpt-20260713152715080"
+},
+{
+"h":"H2",
+"cid":"0x2dc5b4353fe863db7a4151dbb81cb040d2c86f55558633fcd200c6d3c7518e41",
+"side":1,
+"side_name":"No",
+"entry":0.9,
+"at":1791240382,
+"strength":0.055,
+"question":"Will Russia capture Oleksiievo-Druzhkivka by December 31, 2026?",
+"link":"https://polymarket.com/event/will-russia-capture-oleksiievo-druzhkivka-byptptpt-20260706174556069",
+"end":1798779540,
+"won":null,
+"event":"will-russia-capture-oleksiievo-druzhkivka-byptptpt-20260706174556069"
 }
 ]
 }

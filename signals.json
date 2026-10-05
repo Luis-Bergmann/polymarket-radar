@@ -609,8 +609,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the first round of the 2026 Brazilian presidential election by 5\u201310%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-margin-of-victory",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-first-round-margin-of-victory",
+"void":false,
+"closed":1791176080
 },
 {
 "h":"H2",
@@ -749,8 +751,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva finish in second place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-2nd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-2nd-place"
+"won":true,
+"event":"brazil-presidential-election-first-round-2nd-place",
+"void":false,
+"closed":1791172990
 },
 {
 "h":"H2",
@@ -1031,8 +1035,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva finish in second place in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-2nd-place",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-2nd-place"
+"won":false,
+"event":"brazil-presidential-election-first-round-2nd-place",
+"void":false,
+"closed":1791172990
 },
 {
 "h":"H2",
@@ -1255,8 +1261,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the first round of the 2026 Brazilian presidential election by less than 5%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-margin-of-victory",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-first-round-margin-of-victory",
+"void":false,
+"closed":1791176080
 },
 {
 "h":"H2",
@@ -1283,8 +1291,10 @@
 "question":"Will Renan Santos win between 4% and 6% of the valid vote in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-renan-santos-vote-share",
 "end":1791158340,
-"won":null,
-"event":"brazil-presidential-election-first-round-renan-santos-vote-share"
+"won":true,
+"event":"brazil-presidential-election-first-round-renan-santos-vote-share",
+"void":false,
+"closed":1791183640
 },
 {
 "h":"H2",
@@ -1311,8 +1321,10 @@
 "question":"Will Renan Santos win between 6% and 8% of the valid vote in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-renan-santos-vote-share",
 "end":1791158340,
-"won":null,
-"event":"brazil-presidential-election-first-round-renan-santos-vote-share"
+"won":true,
+"event":"brazil-presidential-election-first-round-renan-santos-vote-share",
+"void":false,
+"closed":1791183640
 },
 {
 "h":"H2",
@@ -1465,8 +1477,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the first round of the 2026 Brazilian presidential election by 5\u201310%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-margin-of-victory",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-margin-of-victory"
+"won":true,
+"event":"brazil-presidential-election-first-round-margin-of-victory",
+"void":false,
+"closed":1791176080
 },
 {
 "h":"H2",
@@ -1647,8 +1661,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the first round of the 2026 Brazilian presidential election by less than 5%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-margin-of-victory",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election-first-round-margin-of-victory"
+"won":true,
+"event":"brazil-presidential-election-first-round-margin-of-victory",
+"void":false,
+"closed":1791176080
 },
 {
 "h":"H3",
@@ -1689,8 +1705,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win between 36% and 39% of the valid vote in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-flavio-bolsonaro-vote-share",
 "end":1791158340,
-"won":null,
-"event":"brazil-presidential-election-first-round-flavio-bolsonaro-vote-share"
+"won":true,
+"event":"brazil-presidential-election-first-round-flavio-bolsonaro-vote-share",
+"void":false,
+"closed":1791175600
 },
 {
 "h":"H2",
@@ -1745,8 +1763,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win 39% or more of the valid vote in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-flavio-bolsonaro-vote-share",
 "end":1791158340,
-"won":null,
-"event":"brazil-presidential-election-first-round-flavio-bolsonaro-vote-share"
+"won":true,
+"event":"brazil-presidential-election-first-round-flavio-bolsonaro-vote-share",
+"void":false,
+"closed":1791175600
 },
 {
 "h":"H3",
@@ -2011,8 +2031,10 @@
 "question":"Will any presidential candidate win outright in the first round of the Brazil election?",
 "link":"https://polymarket.com/event/will-any-presidential-candidate-win-outright-in-the-first-round-of-the-brazil-election",
 "end":1791172740,
-"won":null,
-"event":"will-any-presidential-candidate-win-outright-in-the-first-round-of-the-brazil-election"
+"won":false,
+"event":"will-any-presidential-candidate-win-outright-in-the-first-round-of-the-brazil-election",
+"void":false,
+"closed":1791168536
 },
 {
 "h":"H3",
@@ -2041,6 +2063,48 @@
 "end":1857272340,
 "won":null,
 "event":"presidential-election-winner-2028"
+},
+{
+"h":"H2",
+"cid":"0xf994a121c3091ebae554694d55037e297bb90aba124de5c25d2b98b94b31ae59",
+"side":1,
+"side_name":"No",
+"entry":0.968,
+"at":1791184401,
+"strength":0.438,
+"question":"Lula flips Bolsonaro for Brazil president by October 15?",
+"link":"https://polymarket.com/event/lula-flips-bolsonaro-for-brazil-president-by",
+"end":1792123140,
+"won":null,
+"event":"lula-flips-bolsonaro-for-brazil-president-by"
+},
+{
+"h":"H2",
+"cid":"0xb831b50df10b0d543663b115808e0469014ed5141f475ed8bbe433e4dcf6eea7",
+"side":1,
+"side_name":"No",
+"entry":0.68,
+"at":1791184401,
+"strength":0.295,
+"question":"Quebec General Election: PQ Wins a Majority?",
+"link":"https://polymarket.com/event/will-the-pq-win-a-majority-in-the-2026-quebec-general-election",
+"end":1791244740,
+"won":null,
+"event":"will-the-pq-win-a-majority-in-the-2026-quebec-general-election"
+},
+{
+"h":"H2",
+"cid":"0x627ed310dc3977b2d71d96a4f2fccd6050553f6f165efd6c29578f5678f3f863",
+"side":1,
+"side_name":"No",
+"entry":0.845,
+"at":1791184401,
+"strength":0.05,
+"question":"Will Russia capture all of Kostyantynivka by December 31, 2026?",
+"link":"https://polymarket.com/event/will-russia-capture-all-of-kostyantynivka-by",
+"end":1798779540,
+"won":null,
+"event":"will-russia-capture-all-of-kostyantynivka-by"
 }
 ]
 }

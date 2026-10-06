@@ -1721,8 +1721,10 @@
 "question":"Will Luis In\u00e1cio (Lula) da Silva win between 44% and 47% of the valid vote in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-lula-da-silva-vote-share-higher-strikes-20261002141337150",
 "end":1791169140,
-"won":null,
-"event":"brazil-presidential-election-first-round-lula-da-silva-vote-share-higher-strikes-20261002141337150"
+"won":true,
+"event":"brazil-presidential-election-first-round-lula-da-silva-vote-share-higher-strikes-20261002141337150",
+"void":false,
+"closed":1791301001
 },
 {
 "h":"H2",
@@ -2015,8 +2017,10 @@
 "question":"Will Luis In\u00e1cio (Lula) da Silva win less than 44% of the valid vote in the first round of the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election-first-round-lula-da-silva-vote-share-higher-strikes-20261002141337150",
 "end":1791169140,
-"won":null,
-"event":"brazil-presidential-election-first-round-lula-da-silva-vote-share-higher-strikes-20261002141337150"
+"won":true,
+"event":"brazil-presidential-election-first-round-lula-da-silva-vote-share-higher-strikes-20261002141337150",
+"void":false,
+"closed":1791301001
 },
 {
 "h":"H2",
@@ -2289,6 +2293,20 @@
 "end":1793768340,
 "won":null,
 "event":"pa-01-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x1bb5b249f4c286c9955a4719b912794a8d82c48509fa0e775f8974570fd77025",
+"side":0,
+"side_name":"Yes",
+"entry":0.9655,
+"at":1791303118,
+"strength":0.6655,
+"question":"0 ships transit Hormuz on any date by October 31?",
+"link":"https://polymarket.com/event/0-ships-transit-hormuz-on-any-date-byptpt-20260626172559966",
+"end":1793505540,
+"won":null,
+"event":"0-ships-transit-hormuz-on-any-date-byptpt-20260626172559966"
 }
 ]
 }

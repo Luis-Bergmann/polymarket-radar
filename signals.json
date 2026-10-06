@@ -227,8 +227,10 @@
 "question":"0 ships transit Hormuz on any date by September 30?",
 "link":"https://polymarket.com/event/0-ships-transit-hormuz-on-any-date-byptpt-20260626172559966",
 "end":1790827140,
-"won":null,
-"event":"0-ships-transit-hormuz-on-any-date-byptpt-20260626172559966"
+"won":true,
+"event":"0-ships-transit-hormuz-on-any-date-byptpt-20260626172559966",
+"void":false,
+"closed":1791305366
 },
 {
 "h":"H2",
@@ -2307,6 +2309,48 @@
 "end":1793505540,
 "won":null,
 "event":"0-ships-transit-hormuz-on-any-date-byptpt-20260626172559966"
+},
+{
+"h":"H2",
+"cid":"0x162e356bfab7ad18fe4e3029d5811d9a95fce95d93858b42924a3b9ffbcf1a93",
+"side":1,
+"side_name":"No",
+"entry":0.19,
+"at":1791320654,
+"strength":0.075,
+"question":"Will PP win the most seats in the 2026 Spanish general election?",
+"link":"https://polymarket.com/event/spain-general-election-winner",
+"end":1796014740,
+"won":null,
+"event":"spain-general-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x989e60030a12b3b8c3014ca744df34fce5bc014a803f5a0c717557e11a0a04b8",
+"side":0,
+"side_name":"Yes",
+"entry":0.17,
+"at":1791320654,
+"strength":0.055,
+"question":"Will PSOE win the most seats in the 2026 Spanish general election?",
+"link":"https://polymarket.com/event/spain-general-election-winner",
+"end":1796014740,
+"won":null,
+"event":"spain-general-election-winner"
+},
+{
+"h":"H2",
+"cid":"0xe0fbb3e61e61b14f5fef15ffdd0e2a0c6cf4336bb5b15877fe3e3c9fdcc6bc7f",
+"side":1,
+"side_name":"No",
+"entry":0.685,
+"at":1791320654,
+"strength":0.05,
+"question":"Will the Democratic Party win the MT-01 House seat?",
+"link":"https://polymarket.com/event/mt-01-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"mt-01-house-election-winner"
 }
 ]
 }

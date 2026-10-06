@@ -1007,8 +1007,10 @@
 "question":"Lula or Bolsonaro favored on October 5?",
 "link":"https://polymarket.com/event/lula-or-bolsonaro-favored-on",
 "end":1791201600,
-"won":null,
-"event":"lula-or-bolsonaro-favored-on"
+"won":false,
+"event":"lula-or-bolsonaro-favored-on",
+"void":false,
+"closed":1791270295
 },
 {
 "h":"H2",
@@ -2129,8 +2131,10 @@
 "question":"Quebec General Election: PQ Wins a Majority?",
 "link":"https://polymarket.com/event/will-the-pq-win-a-majority-in-the-2026-quebec-general-election",
 "end":1791244740,
-"won":null,
-"event":"will-the-pq-win-a-majority-in-the-2026-quebec-general-election"
+"won":true,
+"event":"will-the-pq-win-a-majority-in-the-2026-quebec-general-election",
+"void":false,
+"closed":1791269277
 },
 {
 "h":"H2",
@@ -2243,6 +2247,48 @@
 "end":1793768340,
 "won":null,
 "event":"which-party-will-win-the-house-in-2026"
+},
+{
+"h":"H2",
+"cid":"0x0ea6e9ff415871b64273a991ad7560f19d38a25449b996fa83655a5e8f818821",
+"side":1,
+"side_name":"No",
+"entry":0.803,
+"at":1791278725,
+"strength":0.0825,
+"question":"Will Pedro S\u00e1nchez be the next leader out before 2027?",
+"link":"https://polymarket.com/event/next-leader-out-of-power-before-2027-no-starmer-or-petro-20260630194619406",
+"end":1798779540,
+"won":null,
+"event":"next-leader-out-of-power-before-2027-no-starmer-or-petro-20260630194619406"
+},
+{
+"h":"H2",
+"cid":"0x2dcbc71a3f8108936e768b503d565fbda7a644b2a0bd9ed45f74982a2bb11fba",
+"side":1,
+"side_name":"No",
+"entry":0.35,
+"at":1791278725,
+"strength":0.065,
+"question":"Israel x Iran ceasefire continues through November 30?",
+"link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"end":1796070540,
+"won":null,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+},
+{
+"h":"H2",
+"cid":"0x27a4dd39adf63849239f3b260b701e1ce1c3a08b8e3624b1dbc2c1268ea87537",
+"side":0,
+"side_name":"Yes",
+"entry":0.385,
+"at":1791278725,
+"strength":0.05,
+"question":"Will the Democratic Party win the PA-01 House seat?",
+"link":"https://polymarket.com/event/pa-01-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"pa-01-house-election-winner"
 }
 ]
 }

@@ -433,8 +433,10 @@
 "question":"0 ships transit Hormuz on any date by October 31?",
 "link":"https://polymarket.com/event/0-ships-transit-hormuz-on-any-date-byptpt-20260626172559966",
 "end":1793505540,
-"won":null,
-"event":"0-ships-transit-hormuz-on-any-date-byptpt-20260626172559966"
+"won":false,
+"event":"0-ships-transit-hormuz-on-any-date-byptpt-20260626172559966",
+"void":false,
+"closed":1791334611
 },
 {
 "h":"H2",
@@ -2307,8 +2309,10 @@
 "question":"0 ships transit Hormuz on any date by October 31?",
 "link":"https://polymarket.com/event/0-ships-transit-hormuz-on-any-date-byptpt-20260626172559966",
 "end":1793505540,
-"won":null,
-"event":"0-ships-transit-hormuz-on-any-date-byptpt-20260626172559966"
+"won":true,
+"event":"0-ships-transit-hormuz-on-any-date-byptpt-20260626172559966",
+"void":false,
+"closed":1791334611
 },
 {
 "h":"H2",
@@ -2379,6 +2383,20 @@
 "end":1798779540,
 "won":null,
 "event":"us-strike-on-colombia-by-january-31"
+},
+{
+"h":"H2",
+"cid":"0x1c39f29a392495da86a9d1882bdb7ad82bd617990a6da16674e1ee3da105e9e6",
+"side":0,
+"side_name":"Yes",
+"entry":0.13,
+"at":1791354776,
+"strength":0.055,
+"question":"Will Israel launch a major ground offensive in Gaza by December 31?",
+"link":"https://polymarket.com/event/will-israel-launch-a-major-ground-offensive-in-gaza-by-october-31",
+"end":1798779540,
+"won":null,
+"event":"will-israel-launch-a-major-ground-offensive-in-gaza-by-october-31"
 }
 ]
 }

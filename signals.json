@@ -2551,6 +2551,20 @@
 "end":1798779540,
 "won":null,
 "event":"us-strike-on-colombia-by-january-31"
+},
+{
+"h":"H2",
+"cid":"0xae76ef049f09b109cfb0a9bfa2335d7c9fde5bd262c64548b43308c810c314ec",
+"side":0,
+"side_name":"Yes",
+"entry":0.3645,
+"at":1791503398,
+"strength":0.3125,
+"question":"Will Yulia Navalnaya win the Nobel Peace Prize in 2026?",
+"link":"https://polymarket.com/event/nobel-peace-prize-winner-2026-139",
+"end":1806551940,
+"won":null,
+"event":"nobel-peace-prize-winner-2026-139"
 }
 ]
 }

@@ -2523,6 +2523,34 @@
 "end":1793768340,
 "won":null,
 "event":"nc-01-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0xc6e54956b79ddf6f8640df06eea9ffb1f5e558907b2a9031aa00cefeb5f3ab22",
+"side":1,
+"side_name":"No",
+"entry":0.73,
+"at":1791439195,
+"strength":0.24,
+"question":"US strike on Colombia by December 31?",
+"link":"https://polymarket.com/event/us-strike-on-colombia-by-january-31",
+"end":1798779540,
+"won":null,
+"event":"us-strike-on-colombia-by-january-31"
+},
+{
+"h":"H1",
+"cid":"0xc6e54956b79ddf6f8640df06eea9ffb1f5e558907b2a9031aa00cefeb5f3ab22",
+"side":1,
+"side_name":"No",
+"entry":0.73,
+"at":1791439195,
+"strength":3493,
+"question":"US strike on Colombia by December 31?",
+"link":"https://polymarket.com/event/us-strike-on-colombia-by-january-31",
+"end":1798779540,
+"won":null,
+"event":"us-strike-on-colombia-by-january-31"
 }
 ]
 }

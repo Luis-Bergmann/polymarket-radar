@@ -783,8 +783,10 @@
 "question":"Will Sudan's Emergency Response Rooms win the Nobel Peace Prize in 2026?",
 "link":"https://polymarket.com/event/nobel-peace-prize-winner-2026-139",
 "end":1791590400,
-"won":null,
-"event":"nobel-peace-prize-winner-2026-139"
+"won":true,
+"event":"nobel-peace-prize-winner-2026-139",
+"void":false,
+"closed":1791547740
 },
 {
 "h":"H2",
@@ -2563,8 +2565,10 @@
 "question":"Will Yulia Navalnaya win the Nobel Peace Prize in 2026?",
 "link":"https://polymarket.com/event/nobel-peace-prize-winner-2026-139",
 "end":1806551940,
-"won":null,
-"event":"nobel-peace-prize-winner-2026-139"
+"won":false,
+"event":"nobel-peace-prize-winner-2026-139",
+"void":false,
+"closed":1791547690
 },
 {
 "h":"H2",
@@ -2591,8 +2595,10 @@
 "question":"Will Mykola Kuleba win the Nobel Peace Prize in 2026?",
 "link":"https://polymarket.com/event/nobel-peace-prize-winner-2026-139",
 "end":1791590400,
-"won":null,
-"event":"nobel-peace-prize-winner-2026-139"
+"won":false,
+"event":"nobel-peace-prize-winner-2026-139",
+"void":false,
+"closed":1791547740
 },
 {
 "h":"H2",
@@ -2605,8 +2611,10 @@
 "question":"Will Tamim bin Hamad Al Thani win the Nobel Peace Prize in 2026?",
 "link":"https://polymarket.com/event/nobel-peace-prize-winner-2026-139",
 "end":1806551940,
-"won":null,
-"event":"nobel-peace-prize-winner-2026-139"
+"won":false,
+"event":"nobel-peace-prize-winner-2026-139",
+"void":false,
+"closed":1791547660
 },
 {
 "h":"H3",
@@ -2619,8 +2627,10 @@
 "question":"Will Yulia Navalnaya win the Nobel Peace Prize in 2026?",
 "link":"https://polymarket.com/event/nobel-peace-prize-winner-2026-139",
 "end":1806551940,
-"won":null,
-"event":"nobel-peace-prize-winner-2026-139"
+"won":false,
+"event":"nobel-peace-prize-winner-2026-139",
+"void":false,
+"closed":1791547690
 },
 {
 "h":"H2",
@@ -2663,6 +2673,34 @@
 "end":1808107140,
 "won":null,
 "event":"next-french-presidential-election"
+},
+{
+"h":"H2",
+"cid":"0xa2739ba4bc05fe9791b3a3e437104254625ed5a8e9b43f96aef4255e1757e618",
+"side":1,
+"side_name":"No",
+"entry":0.27,
+"at":1791566650,
+"strength":0.06,
+"question":"Will Trump and Putin meet next in China?",
+"link":"https://polymarket.com/event/where-will-trump-and-putin-meet-next-678",
+"end":1798779540,
+"won":null,
+"event":"where-will-trump-and-putin-meet-next-678"
+},
+{
+"h":"H2",
+"cid":"0x34918035a590555ba1fb1d6a019d766ab6e557d63e7f3140b63b4550eee7f417",
+"side":1,
+"side_name":"No",
+"entry":0.385,
+"at":1791566650,
+"strength":0.05,
+"question":"Will the Democrats win the Texas Senate race in 2026?",
+"link":"https://polymarket.com/event/texas-senate-election-winner",
+"end":1793768340,
+"won":null,
+"event":"texas-senate-election-winner"
 }
 ]
 }

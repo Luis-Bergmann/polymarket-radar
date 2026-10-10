@@ -2743,6 +2743,20 @@
 "end":1793768340,
 "won":null,
 "event":"new-mexico-governor-winner-2026"
+},
+{
+"h":"H2",
+"cid":"0x9345d5142a67f5541264c96515496affee02580f1c572680759eac9fd2a1588a",
+"side":1,
+"side_name":"No",
+"entry":0.755,
+"at":1791640810,
+"strength":0.05,
+"question":"Billionaire one-time wealth tax passes in California election 2026?",
+"link":"https://polymarket.com/event/billionaire-one-time-wealth-tax-passes-in-california-election-2026",
+"end":1793768340,
+"won":null,
+"event":"billionaire-one-time-wealth-tax-passes-in-california-election-2026"
 }
 ]
 }

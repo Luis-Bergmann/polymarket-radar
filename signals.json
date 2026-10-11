@@ -2757,6 +2757,34 @@
 "end":1793768340,
 "won":null,
 "event":"billionaire-one-time-wealth-tax-passes-in-california-election-2026"
+},
+{
+"h":"H2",
+"cid":"0x5ee131660e3594328d49bb9dbe4b8cabb4a60bfcefea08d867137f4f651ac6cf",
+"side":1,
+"side_name":"No",
+"entry":0.835,
+"at":1791701872,
+"strength":0.165,
+"question":"Modi out by June 30, 2027?",
+"link":"https://polymarket.com/event/modi-out-by-june-30-2027",
+"end":1814414340,
+"won":null,
+"event":"modi-out-by-june-30-2027"
+},
+{
+"h":"H2",
+"cid":"0x12b727031b38130d945b3e164386874360d9a32fdd7e3d00ed2adb13857e089b",
+"side":1,
+"side_name":"No",
+"entry":0.795,
+"at":1791701872,
+"strength":0.05,
+"question":"Will the Democrats win the Texas governor race in 2026?",
+"link":"https://polymarket.com/event/texas-governor-winner-2026",
+"end":1793768340,
+"won":null,
+"event":"texas-governor-winner-2026"
 }
 ]
 }

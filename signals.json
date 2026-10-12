@@ -2799,6 +2799,34 @@
 "end":1796083140,
 "won":null,
 "event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716"
+},
+{
+"h":"H2",
+"cid":"0xd0b24abd98e6e21723a9b48a5dd416fb31f9fa842a8cf5236d0599df0c8deca0",
+"side":1,
+"side_name":"No",
+"entry":0.695,
+"at":1791792461,
+"strength":0.125,
+"question":"Will no next Israeli Minister of Justice be appointed by February 28, 2027?",
+"link":"https://polymarket.com/event/next-israeli-minister-of-justice",
+"end":1803877140,
+"won":null,
+"event":"next-israeli-minister-of-justice"
+},
+{
+"h":"H3",
+"cid":"0x747dc809fb79e1b05be09c42d6179459a58de2ef3e40f02484a4e1260f741f75",
+"side":0,
+"side_name":"Yes",
+"entry":0.0323,
+"at":1791792461,
+"strength":2903.5181,
+"question":"Will the US confirm that aliens exist before 2027?",
+"link":"https://polymarket.com/event/will-the-us-confirm-that-aliens-exist-before-2027",
+"end":1798779540,
+"won":null,
+"event":"will-the-us-confirm-that-aliens-exist-before-2027"
 }
 ]
 }

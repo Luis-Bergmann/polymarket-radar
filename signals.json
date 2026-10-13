@@ -2981,6 +2981,34 @@
 "end":1798779540,
 "won":null,
 "event":"putin-out-before-2027"
+},
+{
+"h":"H2",
+"cid":"0x07c7dc52d4acfee3570262251b638234684781e6438da839920e9d2a4af5f8c4",
+"side":0,
+"side_name":"Yes",
+"entry":0.86,
+"at":1791903642,
+"strength":0.065,
+"question":"Will Russia capture Bilytske by December 31, 2026?",
+"link":"https://polymarket.com/event/will-russia-capture-bilytske-by",
+"end":1798779540,
+"won":null,
+"event":"will-russia-capture-bilytske-by"
+},
+{
+"h":"H2",
+"cid":"0x5e01c77502f9ad47b81730498f0f42740743f2ae4d537cdedb5e990ce2bdfe69",
+"side":1,
+"side_name":"No",
+"entry":0.8915,
+"at":1791903642,
+"strength":0.0505,
+"question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by 8\u201312%?",
+"link":"https://polymarket.com/event/brazil-presidential-election-second-round-margin-of-victory",
+"end":1792987140,
+"won":null,
+"event":"brazil-presidential-election-second-round-margin-of-victory"
 }
 ]
 }

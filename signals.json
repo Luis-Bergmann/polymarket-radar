@@ -3023,6 +3023,34 @@
 "end":1798779540,
 "won":null,
 "event":"romanian-pm-bolojan-out-by"
+},
+{
+"h":"H2",
+"cid":"0x5eb660082d749c35ec496dae4c1f52e3950487b4d3c63215d2e27910dab38819",
+"side":0,
+"side_name":"Yes",
+"entry":0.955,
+"at":1791951875,
+"strength":0.05,
+"question":"Will the Democrats win the New Mexico governor race in 2026?",
+"link":"https://polymarket.com/event/new-mexico-governor-winner-2026",
+"end":1793768340,
+"won":null,
+"event":"new-mexico-governor-winner-2026"
+},
+{
+"h":"H2",
+"cid":"0x9aba5bf074182d803c1b6a10814497875562ebb1c62483b36d2a305fc49e0792",
+"side":0,
+"side_name":"Yes",
+"entry":0.245,
+"at":1791951875,
+"strength":0.05,
+"question":"Will Bernadette Wilson win the 2026 Alaska governor election?",
+"link":"https://polymarket.com/event/alaska-governor-election-winner",
+"end":1793768340,
+"won":null,
+"event":"alaska-governor-election-winner"
 }
 ]
 }

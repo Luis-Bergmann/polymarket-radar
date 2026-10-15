@@ -3261,6 +3261,20 @@
 "end":1798779540,
 "won":null,
 "event":"iran-leadership-change-by"
+},
+{
+"h":"H2",
+"cid":"0x506a2f7a1aae43e74f04d412afdc5982f669c7274c26463da72c23b28b2a6004",
+"side":0,
+"side_name":"Yes",
+"entry":0.355,
+"at":1792102454,
+"strength":0.075,
+"question":"Iran full airspace closure by December 31?",
+"link":"https://polymarket.com/event/iran-full-airspace-closure-byptptpt-20260625195253028",
+"end":1798779540,
+"won":null,
+"event":"iran-full-airspace-closure-byptptpt-20260625195253028"
 }
 ]
 }

@@ -3191,6 +3191,34 @@
 "end":1798675200,
 "won":null,
 "event":"how-low-will-10-year-treasury-yield-get-before-2027"
+},
+{
+"h":"H2",
+"cid":"0x2e752b255c47874ce91a6c7aa4ecde625d19b6314cb7b65fd8560b4434dbf0e9",
+"side":0,
+"side_name":"Yes",
+"entry":0.355,
+"at":1792076356,
+"strength":0.2,
+"question":"Will the 10-year Treasury yield dip below 4.7% before 2027?",
+"link":"https://polymarket.com/event/how-low-will-10-year-treasury-yield-get-before-2027",
+"end":1798675200,
+"won":null,
+"event":"how-low-will-10-year-treasury-yield-get-before-2027"
+},
+{
+"h":"H2",
+"cid":"0xce5320bc858fcb8439fd6ca00b30487c0dab38304a52f1e72a8c7566ba0de7cb",
+"side":1,
+"side_name":"No",
+"entry":0.8,
+"at":1792076356,
+"strength":0.055,
+"question":"Will CATL be removed from Chinese Military Companies list by June 30, 2027?",
+"link":"https://polymarket.com/event/who-will-be-removed-from-chinese-military-companies-list-by-june-30-2027-20260706223230550",
+"end":1814414340,
+"won":null,
+"event":"who-will-be-removed-from-chinese-military-companies-list-by-june-30-2027-20260706223230550"
 }
 ]
 }

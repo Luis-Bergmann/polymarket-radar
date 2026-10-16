@@ -3367,6 +3367,20 @@
 "end":1808107140,
 "won":null,
 "event":"next-french-presidential-election"
+},
+{
+"h":"H2",
+"cid":"0xfed2dd1e83691ca08b8bc08d2bed09cb19003730f2be47da6a467ee37df96fbb",
+"side":0,
+"side_name":"Yes",
+"entry":0.225,
+"at":1792174266,
+"strength":0.05,
+"question":"Mojtaba Khamenei seen in public by December 31?",
+"link":"https://polymarket.com/event/mojtaba-khamenei-public-appearance-by",
+"end":1798779540,
+"won":null,
+"event":"mojtaba-khamenei-public-appearance-by"
 }
 ]
 }

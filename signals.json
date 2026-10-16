@@ -3303,6 +3303,34 @@
 "end":1793159940,
 "won":null,
 "event":"who-will-be-the-next-prime-minister-of-israel-after-the-next-election"
+},
+{
+"h":"H2",
+"cid":"0xca394e0db041f91ac2d69f3ea06efdfc8643acb0d2751283bd594e7b8bd581f9",
+"side":1,
+"side_name":"No",
+"entry":0.365,
+"at":1792126543,
+"strength":0.08,
+"question":"Israel x Iran ceasefire continues through November 15?",
+"link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"end":1794805140,
+"won":null,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+},
+{
+"h":"H2",
+"cid":"0x144e24d919c77093a495211c3439c98726ec9500283b0fed336c417933021181",
+"side":1,
+"side_name":"No",
+"entry":0.945,
+"at":1792126543,
+"strength":0.05,
+"question":"Will the Democratic Party win the FL-12 House seat?",
+"link":"https://polymarket.com/event/fl-12-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"fl-12-house-election-winner"
 }
 ]
 }

@@ -3381,6 +3381,20 @@
 "end":1798779540,
 "won":null,
 "event":"mojtaba-khamenei-public-appearance-by"
+},
+{
+"h":"H3",
+"cid":"0xd8659b58a90d0d69fb1170f25b2b896871a1328115fd11c6f4cfe2b01a2a8ba0",
+"side":0,
+"side_name":"Yes",
+"entry":0.18,
+"at":1792185796,
+"strength":5448.7818,
+"question":"Bab el-Mandeb Strait effectively closed by December 31?",
+"link":"https://polymarket.com/event/bab-el-mandeb-strait-effectively-closed-by",
+"end":1798779540,
+"won":null,
+"event":"bab-el-mandeb-strait-effectively-closed-by"
 }
 ]
 }

@@ -3275,6 +3275,34 @@
 "end":1798779540,
 "won":null,
 "event":"iran-full-airspace-closure-byptptpt-20260625195253028"
+},
+{
+"h":"H2",
+"cid":"0x6bc658b5fdfded234356308d971d7b93e2e92c48eff32144bc163b4a3da7277b",
+"side":0,
+"side_name":"Yes",
+"entry":0.0835,
+"at":1792110574,
+"strength":0.0595,
+"question":"Will Trump pardon Himself before 2027?",
+"link":"https://polymarket.com/event/who-will-trump-pardon-before-2027",
+"end":1798779540,
+"won":null,
+"event":"who-will-trump-pardon-before-2027"
+},
+{
+"h":"H2",
+"cid":"0x7586a96520578acaaaa4ea84a2582f197f84255da1f3392a7aa300386c187b37",
+"side":0,
+"side_name":"Yes",
+"entry":0.305,
+"at":1792110574,
+"strength":0.05,
+"question":"Will Benjamin Netanyahu be the next Prime Minister of Israel?",
+"link":"https://polymarket.com/event/who-will-be-the-next-prime-minister-of-israel-after-the-next-election",
+"end":1793159940,
+"won":null,
+"event":"who-will-be-the-next-prime-minister-of-israel-after-the-next-election"
 }
 ]
 }

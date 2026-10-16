@@ -3353,6 +3353,20 @@
 "end":1798779540,
 "won":null,
 "event":"where-will-trump-and-putin-meet-next-678"
+},
+{
+"h":"H3",
+"cid":"0xcfc6e088b78e695e831e094f7aa1197c16b2436e5984b12fb9286361804b8e1b",
+"side":0,
+"side_name":"Yes",
+"entry":0.0431,
+"at":1792160168,
+"strength":1278.8,
+"question":"Will Rapha\u00ebl Glucksmann win the 2027 French presidential election?",
+"link":"https://polymarket.com/event/next-french-presidential-election",
+"end":1808107140,
+"won":null,
+"event":"next-french-presidential-election"
 }
 ]
 }

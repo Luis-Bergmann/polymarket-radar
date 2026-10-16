@@ -49,9 +49,11 @@
 "at":1790622972,
 "question":"Russia-Ukraine peace talks by October 15, 2026?",
 "link":"https://polymarket.com/event/russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
-"won":null,
+"won":true,
 "event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
-"end":1792108740
+"end":1792108740,
+"void":false,
+"closed":1792130635
 },
 {
 "h":"H2",
@@ -855,8 +857,10 @@
 "question":"US announces end of Iranian blockade by October 15, 2026?",
 "link":"https://polymarket.com/event/us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
 "end":1792123140,
-"won":null,
-"event":"us-announces-end-of-iranian-blockade-byptptpt-20260713152715080"
+"won":true,
+"event":"us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+"void":false,
+"closed":1792130518
 },
 {
 "h":"H2",
@@ -911,8 +915,10 @@
 "question":"Russia-Ukraine peace talks by October 15, 2026?",
 "link":"https://polymarket.com/event/russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
 "end":1792108740,
-"won":null,
-"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716"
+"won":false,
+"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
+"void":false,
+"closed":1792130635
 },
 {
 "h":"H2",
@@ -2127,8 +2133,10 @@
 "question":"Lula flips Bolsonaro for Brazil president by October 15?",
 "link":"https://polymarket.com/event/lula-flips-bolsonaro-for-brazil-president-by",
 "end":1792123140,
-"won":null,
-"event":"lula-flips-bolsonaro-for-brazil-president-by"
+"won":true,
+"event":"lula-flips-bolsonaro-for-brazil-president-by",
+"void":false,
+"closed":1792130635
 },
 {
 "h":"H2",
@@ -3331,6 +3339,20 @@
 "end":1793768340,
 "won":null,
 "event":"fl-12-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0xa745eff902c48aa61fd7478b3286623b38e979d0a5d89fef46964edf45e46219",
+"side":0,
+"side_name":"Yes",
+"entry":0.235,
+"at":1792143401,
+"strength":0.05,
+"question":"Will Trump and Putin not meet?",
+"link":"https://polymarket.com/event/where-will-trump-and-putin-meet-next-678",
+"end":1798779540,
+"won":null,
+"event":"where-will-trump-and-putin-meet-next-678"
 }
 ]
 }

@@ -3493,6 +3493,34 @@
 "end":1806551940,
 "won":null,
 "event":"will-russia-capture-oleksiievo-druzhkivka-byptptpt-20260706174556069"
+},
+{
+"h":"H2",
+"cid":"0x1175651306e9ae39991642dcff3fd96778ae0301fc44c7f5565251fc2bb68d31",
+"side":0,
+"side_name":"Yes",
+"entry":0.955,
+"at":1792265474,
+"strength":0.065,
+"question":"Israel x Iran ceasefire continues through October 21?",
+"link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"end":1792641540,
+"won":null,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+},
+{
+"h":"H2",
+"cid":"0xb63fbd776203cada01a13bb21b3c52c500bcf904bdfc71627022db1f891f95c5",
+"side":1,
+"side_name":"No",
+"entry":0.575,
+"at":1792265474,
+"strength":0.05,
+"question":"Will the Republicans win the Nevada governor race in 2026?",
+"link":"https://polymarket.com/event/nevada-governor-winner-2026",
+"end":1793768340,
+"won":null,
+"event":"nevada-governor-winner-2026"
 }
 ]
 }

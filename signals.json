@@ -3409,6 +3409,34 @@
 "end":1798675200,
 "won":null,
 "event":"how-low-will-10-year-treasury-yield-get-before-2027"
+},
+{
+"h":"H2",
+"cid":"0x9f92c824e88085fdcc9de0d37e2b5c76075c0b292b4d8640054038a4808c2c83",
+"side":1,
+"side_name":"No",
+"entry":0.2595,
+"at":1792246200,
+"strength":0.2215,
+"question":"Will the Democratic Party win the CA-04 House seat?",
+"link":"https://polymarket.com/event/ca-04-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"ca-04-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0xca272965873a68c5f6e2cd81240a990d3080268f3a8cfd907e8b1126dd2c482c",
+"side":1,
+"side_name":"No",
+"entry":0.931,
+"at":1792246200,
+"strength":0.1295,
+"question":"Will Yisrael Beiteinu win less than 5% of the vote in the 2026 Knesset elections?",
+"link":"https://polymarket.com/event/israel-election-yisrael-beiteinu-vote-share",
+"end":1793145540,
+"won":null,
+"event":"israel-election-yisrael-beiteinu-vote-share"
 }
 ]
 }

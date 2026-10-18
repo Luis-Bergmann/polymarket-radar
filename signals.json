@@ -3605,6 +3605,20 @@
 "end":1793768340,
 "won":null,
 "event":"ca-04-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x11557afeaff1e24a0745e9ae7d3b718937d9a0c9c210d79fbfc3522e5994ff77",
+"side":1,
+"side_name":"No",
+"entry":0.815,
+"at":1792335233,
+"strength":0.05,
+"question":"Will \"Remain\" win the Alberta independence referendum by 20\u201340%?",
+"link":"https://polymarket.com/event/alberta-independence-referendum-margin-of-victory",
+"end":1792468740,
+"won":null,
+"event":"alberta-independence-referendum-margin-of-victory"
 }
 ]
 }

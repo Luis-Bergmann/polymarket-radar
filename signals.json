@@ -3591,6 +3591,20 @@
 "end":1798779540,
 "won":null,
 "event":"iran-agrees-to-end-enrichment-of-uranium-by-december-31"
+},
+{
+"h":"H2",
+"cid":"0x9f92c824e88085fdcc9de0d37e2b5c76075c0b292b4d8640054038a4808c2c83",
+"side":0,
+"side_name":"Yes",
+"entry":0.966,
+"at":1792323777,
+"strength":0.5405,
+"question":"Will the Democratic Party win the CA-04 House seat?",
+"link":"https://polymarket.com/event/ca-04-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"ca-04-house-election-winner"
 }
 ]
 }

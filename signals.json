@@ -3703,6 +3703,34 @@
 "end":1793478540,
 "won":null,
 "event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+},
+{
+"h":"H1",
+"cid":"0xa01d48a973e40770719dab42faf1aeae5da4376d9eca46e77265c7551d1be0f7",
+"side":1,
+"side_name":"No",
+"entry":0.825,
+"at":1792369794,
+"strength":7146,
+"question":"Will Delcy Rodr\u00edguez be the leader of Venezuela end of 2026?",
+"link":"https://polymarket.com/event/venezuela-leader-end-of-2026",
+"end":1798779540,
+"won":null,
+"event":"venezuela-leader-end-of-2026"
+},
+{
+"h":"H4",
+"cid":"0xdf8e2dc5860027decbe6164555c3c1c9645c3bd33e16b9dc57ca87125047d4a8",
+"side":1,
+"side_name":"No",
+"entry":0.79,
+"at":1792369794,
+"strength":4503.237,
+"question":"Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
+"link":"https://polymarket.com/event/brazil-presidential-election",
+"end":1791172740,
+"won":null,
+"event":"brazil-presidential-election"
 }
 ]
 }

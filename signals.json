@@ -3029,8 +3029,10 @@
 "question":"Romanian PM Bolojan out by December 31?",
 "link":"https://polymarket.com/event/romanian-pm-bolojan-out-by",
 "end":1798779540,
-"won":null,
-"event":"romanian-pm-bolojan-out-by"
+"won":true,
+"event":"romanian-pm-bolojan-out-by",
+"void":false,
+"closed":1792539489
 },
 {
 "h":"H2",

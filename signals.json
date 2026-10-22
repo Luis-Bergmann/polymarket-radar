@@ -4861,6 +4861,34 @@
 "end":1792987140,
 "won":null,
 "event":"brazil-presidential-election-second-round-turnout"
+},
+{
+"h":"H2",
+"cid":"0x71c05b735300b6087ff5588bcc7e83fecf009293d794f613c63c92ea8a16fb2b",
+"side":1,
+"side_name":"No",
+"entry":0.57,
+"at":1792633226,
+"strength":0.055,
+"question":"Will the Republicans win the Georgia governor race in 2026?",
+"link":"https://polymarket.com/event/georgia-governor-winner-2026",
+"end":1793768340,
+"won":null,
+"event":"georgia-governor-winner-2026"
+},
+{
+"h":"H2",
+"cid":"0x9ae9e84c0d3b66ee416c0caa915777397b9c656939a0621ecd8c2572073c8893",
+"side":1,
+"side_name":"No",
+"entry":0.74,
+"at":1792633226,
+"strength":0.05,
+"question":"Will the Democratic Party win the AL-02 House seat?",
+"link":"https://polymarket.com/event/al-02-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"al-02-house-election-winner"
 }
 ]
 }

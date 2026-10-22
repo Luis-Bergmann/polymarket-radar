@@ -10,9 +10,11 @@
 "at":1790622972,
 "question":"Will Fatima Ezzahra El Mansouri be the next Prime Minister of Morocco?",
 "link":"https://polymarket.com/event/next-prime-minister-of-morocco-invested",
-"won":null,
+"won":false,
 "event":"next-prime-minister-of-morocco-invested",
-"end":1817078340
+"end":1817078340,
+"void":false,
+"closed":1792709361
 },
 {
 "h":"H2",
@@ -421,8 +423,10 @@
 "question":"Will Fatima Ezzahra El Mansouri be the next Prime Minister of Morocco?",
 "link":"https://polymarket.com/event/next-prime-minister-of-morocco-invested",
 "end":1817078340,
-"won":null,
-"event":"next-prime-minister-of-morocco-invested"
+"won":true,
+"event":"next-prime-minister-of-morocco-invested",
+"void":false,
+"closed":1792709361
 },
 {
 "h":"H2",
@@ -5159,6 +5163,34 @@
 "end":1803877140,
 "won":null,
 "event":"next-israeli-minister-of-defense"
+},
+{
+"h":"H2",
+"cid":"0xb470bc5d43c2f41ce9e741f7c9f0041b2dbcc58ddccd65e006b816b545efa9c4",
+"side":1,
+"side_name":"No",
+"entry":0.3,
+"at":1792712534,
+"strength":0.07,
+"question":"Will the Republican Party win the FL-13 House seat?",
+"link":"https://polymarket.com/event/fl-13-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"fl-13-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x89e54c86f437d7696d9789c5ff901dd5f3b35a5594f5aadf27af50bc6d2ca50e",
+"side":0,
+"side_name":"Yes",
+"entry":0.285,
+"at":1792712534,
+"strength":0.065,
+"question":"Will the Democratic Party win the FL-13 House seat?",
+"link":"https://polymarket.com/event/fl-13-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"fl-13-house-election-winner"
 }
 ]
 }

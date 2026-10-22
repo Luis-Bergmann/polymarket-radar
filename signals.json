@@ -3507,8 +3507,10 @@
 "question":"Israel x Iran ceasefire continues through October 21?",
 "link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
 "end":1792641540,
-"won":null,
-"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+"won":true,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"void":false,
+"closed":1792698240
 },
 {
 "h":"H2",
@@ -5143,6 +5145,20 @@
 "end":1793768340,
 "won":null,
 "event":"ia-02-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x885eda75b1174a0d10c01d5f7b3b0275dd9bbd7afa0994433985b26e6cd74ebd",
+"side":1,
+"side_name":"No",
+"entry":0.656,
+"at":1792702119,
+"strength":0.0745,
+"question":"Will no next Israeli Minister of Defense be appointed by February 28, 2027?",
+"link":"https://polymarket.com/event/next-israeli-minister-of-defense",
+"end":1803877140,
+"won":null,
+"event":"next-israeli-minister-of-defense"
 }
 ]
 }

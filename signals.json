@@ -5541,6 +5541,34 @@
 "end":1793505540,
 "won":null,
 "event":"nato-x-russia-military-clash-in-2025"
+},
+{
+"h":"H2",
+"cid":"0x656235664464bcadcc586acb871051dadb7c7343b7e805a5eccc02815e20d7df",
+"side":0,
+"side_name":"Yes",
+"entry":0.14,
+"at":1792798362,
+"strength":0.05,
+"question":"Cuban regime falls in 2026?",
+"link":"https://polymarket.com/event/cuban-regime-falls-in-2026",
+"end":1798779540,
+"won":null,
+"event":"cuban-regime-falls-in-2026"
+},
+{
+"h":"H3",
+"cid":"0x7a611b2ae4e3b871580dececcf7cf126eead47fe58ebea15b1865a7c8a881376",
+"side":0,
+"side_name":"Yes",
+"entry":0.0865,
+"at":1792798362,
+"strength":1109.0,
+"question":"Iran leadership change by November 30?",
+"link":"https://polymarket.com/event/iran-leadership-change-by",
+"end":1796101140,
+"won":null,
+"event":"iran-leadership-change-by"
 }
 ]
 }

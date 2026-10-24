@@ -5597,6 +5597,20 @@
 "end":1793768340,
 "won":null,
 "event":"tx-34-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x20d60ad6559e9df5f8d2903f8f14bdf6447709eb01c17a9d1159d10a9f9a1b2f",
+"side":1,
+"side_name":"No",
+"entry":0.855,
+"at":1792825893,
+"strength":0.055,
+"question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by less than 2%?",
+"link":"https://polymarket.com/event/brazil-presidential-election-second-round-specific-margin-of-victory",
+"end":1792987140,
+"won":null,
+"event":"brazil-presidential-election-second-round-specific-margin-of-victory"
 }
 ]
 }

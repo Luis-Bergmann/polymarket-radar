@@ -5569,6 +5569,34 @@
 "end":1796101140,
 "won":null,
 "event":"iran-leadership-change-by"
+},
+{
+"h":"H2",
+"cid":"0xead958c3c7b6843fe15731812a148ee5bd69665b5ae58365d4ccfcc8f20d14e8",
+"side":1,
+"side_name":"No",
+"entry":0.935,
+"at":1792807121,
+"strength":0.085,
+"question":"Foreign intervention in Gaza by December 31?",
+"link":"https://polymarket.com/event/foreign-intervention-in-gaza-by",
+"end":1798779540,
+"won":null,
+"event":"foreign-intervention-in-gaza-by"
+},
+{
+"h":"H2",
+"cid":"0x161a723df3fd981100c05256612c226c6f679dac4ee9b1d9fecb7364cb95bbcc",
+"side":1,
+"side_name":"No",
+"entry":0.89,
+"at":1792807121,
+"strength":0.055,
+"question":"Will the Republican Party win the TX-34 House seat?",
+"link":"https://polymarket.com/event/tx-34-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"tx-34-house-election-winner"
 }
 ]
 }

@@ -5793,6 +5793,34 @@
 "end":1793159940,
 "won":null,
 "event":"israel-election-which-bloc-wins-more-seats"
+},
+{
+"h":"H2",
+"cid":"0xc1976de3298a37629c122a51a562dfd99809a11bf6cb64c86693853277de5f9b",
+"side":0,
+"side_name":"Yes",
+"entry":0.126,
+"at":1792944957,
+"strength":0.1535,
+"question":"Will Andrey Gyurov win the 2026 Bulgarian presidential first round by less than 10%?",
+"link":"https://polymarket.com/event/bulgaria-presidential-election-first-round-margin-of-victory",
+"end":1792972740,
+"won":null,
+"event":"bulgaria-presidential-election-first-round-margin-of-victory"
+},
+{
+"h":"H2",
+"cid":"0xc781e58a292d54eea740c30117a52fc6382d0aa282f286997032e7f4b6862ccd",
+"side":0,
+"side_name":"Yes",
+"entry":0.18,
+"at":1792944957,
+"strength":0.095,
+"question":"Venezuela election scheduled by December 31, 2026?",
+"link":"https://polymarket.com/event/venezuela-presidential-election-scheduled-by",
+"end":1798779540,
+"won":null,
+"event":"venezuela-presidential-election-scheduled-by"
 }
 ]
 }

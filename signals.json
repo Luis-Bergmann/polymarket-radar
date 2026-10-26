@@ -3967,8 +3967,10 @@
 "question":"Will voter turnout in the second round of the 2026 Brazil presidential election be 76-78%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-turnout",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-turnout"
+"won":false,
+"event":"brazil-presidential-election-second-round-turnout",
+"void":false,
+"closed":1793043528
 },
 {
 "h":"H2",
@@ -4907,8 +4909,10 @@
 "question":"Will voter turnout in the second round of the 2026 Brazil presidential election be 80-82%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-turnout",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-turnout"
+"won":false,
+"event":"brazil-presidential-election-second-round-turnout",
+"void":false,
+"closed":1793043528
 },
 {
 "h":"H2",
@@ -6009,8 +6013,10 @@
 "question":"Will voter turnout in the second round of the 2026 Brazil presidential election be 78-80%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-turnout",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-turnout"
+"won":true,
+"event":"brazil-presidential-election-second-round-turnout",
+"void":false,
+"closed":1793043528
 },
 {
 "h":"H2",
@@ -6259,6 +6265,20 @@
 "end":1793768340,
 "won":null,
 "event":"texas-senate-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x461da5bf6bc117cefdc6f00141ea1164da85e1e4459b97479fe48116b9a66cc6",
+"side":0,
+"side_name":"Yes",
+"entry":0.235,
+"at":1793044864,
+"strength":0.06,
+"question":"Will Benjamin Netanyahu receive the first mandate to form a government after the 2026 Israeli election?",
+"link":"https://polymarket.com/event/who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877",
+"end":1793159940,
+"won":null,
+"event":"who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877"
 }
 ]
 }

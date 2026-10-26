@@ -483,8 +483,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election"
+"won":true,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984342
 },
 {
 "h":"H2",
@@ -1169,8 +1171,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election"
+"won":true,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984342
 },
 {
 "h":"H1",
@@ -1183,8 +1187,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election"
+"won":true,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984342
 },
 {
 "h":"H2",
@@ -1241,8 +1247,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election"
+"won":true,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984636
 },
 {
 "h":"H1",
@@ -1255,8 +1263,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election"
+"won":true,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984636
 },
 {
 "h":"H2",
@@ -1423,8 +1433,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election"
+"won":true,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984636
 },
 {
 "h":"H2",
@@ -1783,8 +1795,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election"
+"won":false,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984342
 },
 {
 "h":"H2",
@@ -1797,8 +1811,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election"
+"won":false,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984636
 },
 {
 "h":"H2",
@@ -1841,8 +1857,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election"
+"won":true,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984636
 },
 {
 "h":"H4",
@@ -1855,8 +1873,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election"
+"won":false,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984636
 },
 {
 "h":"H2",
@@ -2079,8 +2099,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election"
+"won":true,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984342
 },
 {
 "h":"H3",
@@ -2465,8 +2487,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by less than 4%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-margin-of-victory"
+"won":true,
+"event":"brazil-presidential-election-second-round-margin-of-victory",
+"void":false,
+"closed":1792992586
 },
 {
 "h":"H2",
@@ -2479,8 +2503,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by 4\u20138%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-second-round-margin-of-victory",
+"void":false,
+"closed":1792984963
 },
 {
 "h":"H2",
@@ -2493,8 +2519,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by 8\u201312%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-second-round-margin-of-victory",
+"void":false,
+"closed":1792992586
 },
 {
 "h":"H2",
@@ -2593,8 +2621,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by 4\u20138%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-margin-of-victory"
+"won":true,
+"event":"brazil-presidential-election-second-round-margin-of-victory",
+"void":false,
+"closed":1792984963
 },
 {
 "h":"H2",
@@ -2963,8 +2993,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by less than 4%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-second-round-margin-of-victory",
+"void":false,
+"closed":1792992586
 },
 {
 "h":"H2",
@@ -3019,8 +3051,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by 8\u201312%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-margin-of-victory"
+"won":true,
+"event":"brazil-presidential-election-second-round-margin-of-victory",
+"void":false,
+"closed":1792992586
 },
 {
 "h":"H2",
@@ -3737,8 +3771,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1791172740,
-"won":null,
-"event":"brazil-presidential-election"
+"won":false,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984342
 },
 {
 "h":"H2",
@@ -3999,8 +4035,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by 8\u201312%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-second-round-margin-of-victory",
+"void":false,
+"closed":1792992586
 },
 {
 "h":"H3",
@@ -5259,8 +5297,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by at least 12%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-second-round-margin-of-victory",
+"void":false,
+"closed":1792992586
 },
 {
 "h":"H2",
@@ -5441,8 +5481,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by 2\u20134%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-specific-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-specific-margin-of-victory"
+"won":true,
+"event":"brazil-presidential-election-second-round-specific-margin-of-victory",
+"void":false,
+"closed":1792995825
 },
 {
 "h":"H3",
@@ -5609,8 +5651,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by less than 2%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-specific-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-specific-margin-of-victory"
+"won":true,
+"event":"brazil-presidential-election-second-round-specific-margin-of-victory",
+"void":false,
+"closed":1792995825
 },
 {
 "h":"H2",
@@ -5651,8 +5695,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by 2\u20134%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-specific-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-specific-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-second-round-specific-margin-of-victory",
+"void":false,
+"closed":1792995825
 },
 {
 "h":"H2",
@@ -5707,8 +5753,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by 4\u20136%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-specific-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-specific-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-second-round-specific-margin-of-victory",
+"void":false,
+"closed":1792995825
 },
 {
 "h":"H2",
@@ -5833,8 +5881,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by 4\u20136%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-specific-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-specific-margin-of-victory"
+"won":true,
+"event":"brazil-presidential-election-second-round-specific-margin-of-victory",
+"void":false,
+"closed":1792995825
 },
 {
 "h":"H2",
@@ -5875,8 +5925,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by less than 4%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-second-round-margin-of-victory",
+"void":false,
+"closed":1792992586
 },
 {
 "h":"H2",
@@ -5987,8 +6039,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election"
+"won":false,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984636
 },
 {
 "h":"H3",
@@ -6001,8 +6055,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the 2026 Brazilian presidential election?",
 "link":"https://polymarket.com/event/brazil-presidential-election",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election"
+"won":false,
+"event":"brazil-presidential-election",
+"void":false,
+"closed":1792984342
 },
 {
 "h":"H3",
@@ -6015,8 +6071,10 @@
 "question":"Will Fl\u00e1vio Bolsonaro win the second round of the 2026 Brazilian presidential election by 2\u20134%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-specific-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-specific-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-second-round-specific-margin-of-victory",
+"void":false,
+"closed":1792995825
 },
 {
 "h":"H2",
@@ -6031,6 +6089,20 @@
 "end":1857272340,
 "won":null,
 "event":"republican-presidential-nominee-2028"
+},
+{
+"h":"H2",
+"cid":"0xead958c3c7b6843fe15731812a148ee5bd69665b5ae58365d4ccfcc8f20d14e8",
+"side":0,
+"side_name":"Yes",
+"entry":0.115,
+"at":1792998362,
+"strength":0.055,
+"question":"Foreign intervention in Gaza by December 31?",
+"link":"https://polymarket.com/event/foreign-intervention-in-gaza-by",
+"end":1798779540,
+"won":null,
+"event":"foreign-intervention-in-gaza-by"
 }
 ]
 }

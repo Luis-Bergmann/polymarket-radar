@@ -3223,8 +3223,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the second round of the 2026 Brazilian presidential election by less than 4%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-margin-of-victory"
+"won":true,
+"event":"brazil-presidential-election-second-round-margin-of-victory",
+"void":false,
+"closed":1793005604
 },
 {
 "h":"H2",
@@ -5439,8 +5441,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the second round of the 2026 Brazilian presidential election by less than 2%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-specific-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-specific-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-second-round-specific-margin-of-victory",
+"void":false,
+"closed":1793001951
 },
 {
 "h":"H2",
@@ -5667,8 +5671,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the second round of the 2026 Brazilian presidential election by less than 2%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-specific-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-specific-margin-of-victory"
+"won":true,
+"event":"brazil-presidential-election-second-round-specific-margin-of-victory",
+"void":false,
+"closed":1793001951
 },
 {
 "h":"H2",
@@ -5739,8 +5745,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the second round of the 2026 Brazilian presidential election by less than 4%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-second-round-margin-of-victory",
+"void":false,
+"closed":1793005604
 },
 {
 "h":"H2",
@@ -5941,8 +5949,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the second round of the 2026 Brazilian presidential election by 2\u20134%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-specific-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-specific-margin-of-victory"
+"won":true,
+"event":"brazil-presidential-election-second-round-specific-margin-of-victory",
+"void":false,
+"closed":1793005604
 },
 {
 "h":"H2",
@@ -5983,8 +5993,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the second round of the 2026 Brazilian presidential election by 2\u20134%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-specific-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-specific-margin-of-victory"
+"won":true,
+"event":"brazil-presidential-election-second-round-specific-margin-of-victory",
+"void":false,
+"closed":1793005604
 },
 {
 "h":"H2",
@@ -6011,8 +6023,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the second round of the 2026 Brazilian presidential election by 4\u20136%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-specific-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-specific-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-second-round-specific-margin-of-victory",
+"void":false,
+"closed":1793002424
 },
 {
 "h":"H2",
@@ -6025,8 +6039,10 @@
 "question":"Will Luiz In\u00e1cio Lula da Silva win the second round of the 2026 Brazilian presidential election by 4\u20138%?",
 "link":"https://polymarket.com/event/brazil-presidential-election-second-round-margin-of-victory",
 "end":1792987140,
-"won":null,
-"event":"brazil-presidential-election-second-round-margin-of-victory"
+"won":false,
+"event":"brazil-presidential-election-second-round-margin-of-victory",
+"void":false,
+"closed":1793002484
 },
 {
 "h":"H3",
@@ -6103,6 +6119,146 @@
 "end":1798779540,
 "won":null,
 "event":"foreign-intervention-in-gaza-by"
+},
+{
+"h":"H2",
+"cid":"0xc962faab4990cea93cda74fc471f7a37f14160cbe4ef5da01591ea29140ed2cf",
+"side":1,
+"side_name":"No",
+"entry":0.845,
+"at":1793024040,
+"strength":0.565,
+"question":"Jair Bolsonaro released from custody by March 31, 2027?",
+"link":"https://polymarket.com/event/jair-bolsonaro-released-from-custody-by-march-31-2027-1791185062998",
+"end":1806551940,
+"won":null,
+"event":"jair-bolsonaro-released-from-custody-by-march-31-2027-1791185062998"
+},
+{
+"h":"H2",
+"cid":"0x74778c328104cd816f606f44ca9717fe83036d86417de3910ccc0c1fed5d0054",
+"side":0,
+"side_name":"Yes",
+"entry":0.19,
+"at":1793024040,
+"strength":0.085,
+"question":"Will Zelenskyy talk to Putin by December 31?",
+"link":"https://polymarket.com/event/will-zelenskyy-talk-to-putin-by-november-30-821",
+"end":1798779540,
+"won":null,
+"event":"will-zelenskyy-talk-to-putin-by-november-30-821"
+},
+{
+"h":"H1",
+"cid":"0x74778c328104cd816f606f44ca9717fe83036d86417de3910ccc0c1fed5d0054",
+"side":0,
+"side_name":"Yes",
+"entry":0.19,
+"at":1793024040,
+"strength":3149,
+"question":"Will Zelenskyy talk to Putin by December 31?",
+"link":"https://polymarket.com/event/will-zelenskyy-talk-to-putin-by-november-30-821",
+"end":1798779540,
+"won":null,
+"event":"will-zelenskyy-talk-to-putin-by-november-30-821"
+},
+{
+"h":"H1",
+"cid":"0x230637a2f974ebdaa5b56974c3daec95938f8a7bfcee9f351441bf8483a115f1",
+"side":0,
+"side_name":"Yes",
+"entry":0.175,
+"at":1793024040,
+"strength":46936,
+"question":"France declares state of emergency by December 31, 2026?",
+"link":"https://polymarket.com/event/france-declares-state-of-emergency-byptptpt",
+"end":1798779540,
+"won":null,
+"event":"france-declares-state-of-emergency-byptptpt"
+},
+{
+"h":"H2",
+"cid":"0x8567295f09b89140143070db5a6ae362aba1d1ce81de2c3ef0da086cc5185877",
+"side":0,
+"side_name":"Yes",
+"entry":0.225,
+"at":1793024040,
+"strength":0.055,
+"question":"Will Russia capture Mala Tokmachka by December 31, 2026?",
+"link":"https://polymarket.com/event/will-russia-capture-mala-tokmachka-by",
+"end":1798779540,
+"won":null,
+"event":"will-russia-capture-mala-tokmachka-by"
+},
+{
+"h":"H2",
+"cid":"0x2c00cb09722a0f0501c5e49131b898ed57bb5c075db4dc2bcbc14908f45b8c48",
+"side":0,
+"side_name":"Yes",
+"entry":0.405,
+"at":1793024040,
+"strength":0.05,
+"question":"Will the Republicans win the Maine Senate race in 2026?",
+"link":"https://polymarket.com/event/maine-senate-election-winner",
+"end":1793768340,
+"won":null,
+"event":"maine-senate-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x45d599b1d25f7c090ef0f40de0b728ec4cc91c9d6d6d17092d4c19e226100c24",
+"side":0,
+"side_name":"Yes",
+"entry":0.205,
+"at":1793024040,
+"strength":0.05,
+"question":"Will the Republican Party win the FL-25 House seat?",
+"link":"https://polymarket.com/event/fl-25-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"fl-25-house-election-winner"
+},
+{
+"h":"H1",
+"cid":"0x45d599b1d25f7c090ef0f40de0b728ec4cc91c9d6d6d17092d4c19e226100c24",
+"side":0,
+"side_name":"Yes",
+"entry":0.205,
+"at":1793024040,
+"strength":4173,
+"question":"Will the Republican Party win the FL-25 House seat?",
+"link":"https://polymarket.com/event/fl-25-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"fl-25-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x9da6028526359f1b342620308e871f8479844fb06d7c699dc478a165e39c594d",
+"side":1,
+"side_name":"No",
+"entry":0.205,
+"at":1793024040,
+"strength":0.05,
+"question":"Will the Democratic Party win the FL-25 House seat?",
+"link":"https://polymarket.com/event/fl-25-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"fl-25-house-election-winner"
+},
+{
+"h":"H4",
+"cid":"0x94521176f57d2ce81dde01e0b7699ca4279423042d37ed53908f0c8bfefe7e14",
+"side":0,
+"side_name":"Yes",
+"entry":0.36,
+"at":1793024040,
+"strength":9840.0,
+"question":"Will the Republicans win the Texas Senate race in 2026?",
+"link":"https://polymarket.com/event/texas-senate-election-winner",
+"end":1793768340,
+"won":null,
+"event":"texas-senate-election-winner"
 }
 ]
 }

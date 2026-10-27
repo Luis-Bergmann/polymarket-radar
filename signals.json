@@ -4443,8 +4443,10 @@
 "question":"Will Iliana Iotova win the 2026 Bulgarian presidential first round by 10%-20%?",
 "link":"https://polymarket.com/event/bulgaria-presidential-election-first-round-margin-of-victory",
 "end":1792972740,
-"won":null,
-"event":"bulgaria-presidential-election-first-round-margin-of-victory"
+"won":false,
+"event":"bulgaria-presidential-election-first-round-margin-of-victory",
+"void":false,
+"closed":1793130729
 },
 {
 "h":"H2",
@@ -4513,8 +4515,10 @@
 "question":"Will Iliana Iotova win the 2026 Bulgarian presidential first round by less than 10%?",
 "link":"https://polymarket.com/event/bulgaria-presidential-election-first-round-margin-of-victory",
 "end":1792972740,
-"won":null,
-"event":"bulgaria-presidential-election-first-round-margin-of-victory"
+"won":true,
+"event":"bulgaria-presidential-election-first-round-margin-of-victory",
+"void":false,
+"closed":1793142014
 },
 {
 "h":"H2",
@@ -4793,8 +4797,10 @@
 "question":"Will Iliana Iotova win the 2026 Bulgarian presidential first round by less than 10%?",
 "link":"https://polymarket.com/event/bulgaria-presidential-election-first-round-margin-of-victory",
 "end":1792972740,
-"won":null,
-"event":"bulgaria-presidential-election-first-round-margin-of-victory"
+"won":false,
+"event":"bulgaria-presidential-election-first-round-margin-of-victory",
+"void":false,
+"closed":1793142014
 },
 {
 "h":"H1",
@@ -5471,8 +5477,10 @@
 "question":"Will Iliana Iotova win the 2026 Bulgarian presidential first round by 10%-20%?",
 "link":"https://polymarket.com/event/bulgaria-presidential-election-first-round-margin-of-victory",
 "end":1792972740,
-"won":null,
-"event":"bulgaria-presidential-election-first-round-margin-of-victory"
+"won":true,
+"event":"bulgaria-presidential-election-first-round-margin-of-victory",
+"void":false,
+"closed":1793130729
 },
 {
 "h":"H2",
@@ -6585,6 +6593,132 @@
 "end":1793159940,
 "won":null,
 "event":"who-will-be-the-next-prime-minister-of-israel-after-the-next-election"
+},
+{
+"h":"H2",
+"cid":"0x7c93573cccff2bbd858c9bf970019a70cae613ce31f4766615f3339be5e5db17",
+"side":0,
+"side_name":"Yes",
+"entry":0.68,
+"at":1793142992,
+"strength":0.245,
+"question":"Will Otzma win 6-7 seats in the 2026 Knesset elections?",
+"link":"https://polymarket.com/event/israel-election-otzma-of-seats",
+"end":1796083140,
+"won":null,
+"event":"israel-election-otzma-of-seats"
+},
+{
+"h":"H2",
+"cid":"0x5e343352d01df13e750ce8eeb804fbb2f8f9e9ff34c318ddf93559825d940281",
+"side":1,
+"side_name":"No",
+"entry":0.919,
+"at":1793142992,
+"strength":0.239,
+"question":"Will Ra'am win exactly 5 seats in the 2026 Knesset elections?",
+"link":"https://polymarket.com/event/israel-election-raam-of-seats",
+"end":1796083140,
+"won":null,
+"event":"israel-election-raam-of-seats"
+},
+{
+"h":"H2",
+"cid":"0x76c09653302d36dc87d5b79bfffe07dcb3792465fc9671a9d47a170a57a04515",
+"side":1,
+"side_name":"No",
+"entry":0.961,
+"at":1793142992,
+"strength":0.1785,
+"question":"Will Together win 17-19 seats in the 2026 Knesset elections?",
+"link":"https://polymarket.com/event/israel-election-together-of-seats",
+"end":1796083140,
+"won":null,
+"event":"israel-election-together-of-seats"
+},
+{
+"h":"H2",
+"cid":"0x9446650e11b9d651300095e1d945ac1f90aa56892d6918e813e6b4427db1d317",
+"side":1,
+"side_name":"No",
+"entry":0.935,
+"at":1793142992,
+"strength":0.175,
+"question":"Will Otzma win 10 or more seats in the 2026 Knesset elections?",
+"link":"https://polymarket.com/event/israel-election-otzma-of-seats",
+"end":1796083140,
+"won":null,
+"event":"israel-election-otzma-of-seats"
+},
+{
+"h":"H2",
+"cid":"0xb3ffd5b3e237eb93660c2fba751d63ea9765a71421d35df234fa307ef3b2cb5e",
+"side":1,
+"side_name":"No",
+"entry":0.455,
+"at":1793142992,
+"strength":0.09,
+"question":"Will Gadi Eizenkot receive the first mandate to form a government after the 2026 Israeli election?",
+"link":"https://polymarket.com/event/who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877",
+"end":1793159940,
+"won":null,
+"event":"who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877"
+},
+{
+"h":"H2",
+"cid":"0xd7788f99870e1139c4afdb8c761259adb7c7790f1ce620089f7ac68b86e2f09b",
+"side":0,
+"side_name":"Yes",
+"entry":0.131,
+"at":1793142992,
+"strength":0.0855,
+"question":"Will Ra'am win 8 or more seats in the 2026 Knesset elections?",
+"link":"https://polymarket.com/event/israel-election-raam-of-seats",
+"end":1796083140,
+"won":null,
+"event":"israel-election-raam-of-seats"
+},
+{
+"h":"H2",
+"cid":"0x9ed0ecc8b8589e67967d44c4420944a41b6a6806419019a1581d514174eee9b1",
+"side":1,
+"side_name":"No",
+"entry":0.945,
+"at":1793142992,
+"strength":0.06,
+"question":"Will Naftali Bennett be the next Prime Minister of Israel?",
+"link":"https://polymarket.com/event/who-will-be-the-next-prime-minister-of-israel-after-the-next-election",
+"end":1793159940,
+"won":null,
+"event":"who-will-be-the-next-prime-minister-of-israel-after-the-next-election"
+},
+{
+"h":"H2",
+"cid":"0x74778c328104cd816f606f44ca9717fe83036d86417de3910ccc0c1fed5d0054",
+"side":1,
+"side_name":"No",
+"entry":0.86,
+"at":1793142992,
+"strength":0.05,
+"question":"Will Zelenskyy talk to Putin by December 31?",
+"link":"https://polymarket.com/event/will-zelenskyy-talk-to-putin-by-november-30-821",
+"end":1798779540,
+"won":null,
+"event":"will-zelenskyy-talk-to-putin-by-november-30-821"
+},
+{
+"h":"H3",
+"cid":"0x707eb5c6df23e32e0b770dd0ccd1245abb7fac0dcfd24d8b68dd99e5ca737180",
+"side":1,
+"side_name":"No",
+"entry":0.22,
+"at":1793142992,
+"strength":1046.4806,
+"question":"Will the Democrats win the Nevada governor race in 2026?",
+"link":"https://polymarket.com/event/nevada-governor-winner-2026",
+"end":1793768340,
+"won":null,
+"event":"nevada-governor-winner-2026"
 }
 ]
 }

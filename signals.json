@@ -3665,8 +3665,10 @@
 "question":"Will \"Remain\" win the Alberta independence referendum by 20\u201340%?",
 "link":"https://polymarket.com/event/alberta-independence-referendum-margin-of-victory",
 "end":1792468740,
-"won":null,
-"event":"alberta-independence-referendum-margin-of-victory"
+"won":true,
+"event":"alberta-independence-referendum-margin-of-victory",
+"void":false,
+"closed":1793298217
 },
 {
 "h":"H2",
@@ -3679,8 +3681,10 @@
 "question":"Will \"Remain\" win the Alberta independence referendum by 40\u201360%?",
 "link":"https://polymarket.com/event/alberta-independence-referendum-margin-of-victory",
 "end":1792468740,
-"won":null,
-"event":"alberta-independence-referendum-margin-of-victory"
+"won":true,
+"event":"alberta-independence-referendum-margin-of-victory",
+"void":false,
+"closed":1793298008
 },
 {
 "h":"H2",
@@ -3931,8 +3935,10 @@
 "question":"Will \"Remain\" win the Alberta independence referendum by 40\u201360%?",
 "link":"https://polymarket.com/event/alberta-independence-referendum-margin-of-victory",
 "end":1792468740,
-"won":null,
-"event":"alberta-independence-referendum-margin-of-victory"
+"won":false,
+"event":"alberta-independence-referendum-margin-of-victory",
+"void":false,
+"closed":1793298008
 },
 {
 "h":"H2",
@@ -3945,8 +3951,10 @@
 "question":"Will \"Remain\" win the Alberta independence referendum by 20\u201340%?",
 "link":"https://polymarket.com/event/alberta-independence-referendum-margin-of-victory",
 "end":1792468740,
-"won":null,
-"event":"alberta-independence-referendum-margin-of-victory"
+"won":false,
+"event":"alberta-independence-referendum-margin-of-victory",
+"void":false,
+"closed":1793298217
 },
 {
 "h":"H2",
@@ -7727,6 +7735,90 @@
 "end":1793768340,
 "won":null,
 "event":"florida-governor-winner-2026"
+},
+{
+"h":"H2",
+"cid":"0x3d4a1a3e0581eb60fdd03cc85b8190a9a1cfbda42f1aa9771e39197f8a21f441",
+"side":0,
+"side_name":"Yes",
+"entry":0.355,
+"at":1793301523,
+"strength":0.265,
+"question":"Will another country leave OPEC in 2026?",
+"link":"https://polymarket.com/event/will-another-country-leave-opec-in-2026",
+"end":1798747140,
+"won":null,
+"event":"will-another-country-leave-opec-in-2026"
+},
+{
+"h":"H2",
+"cid":"0x178335a50d41d275515ce4a41a9b185d32147c19d65da743b1ffd937aee5fe77",
+"side":1,
+"side_name":"No",
+"entry":0.955,
+"at":1793301523,
+"strength":0.205,
+"question":"US announces end of Iranian blockade by November 2, 2026?",
+"link":"https://polymarket.com/event/us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+"end":1793681940,
+"won":null,
+"event":"us-announces-end-of-iranian-blockade-byptptpt-20260713152715080"
+},
+{
+"h":"H2",
+"cid":"0xb2263503942f0d018cc2ba2dacf5b9dd2a2cd875a164d1c4c81d75dc7720cf84",
+"side":1,
+"side_name":"No",
+"entry":0.33,
+"at":1793301523,
+"strength":0.095,
+"question":"Trump meets with Putin by November 30?",
+"link":"https://polymarket.com/event/trump-meets-with-putin-by",
+"end":1796101140,
+"won":null,
+"event":"trump-meets-with-putin-by"
+},
+{
+"h":"H2",
+"cid":"0x6087a0c22a3cfe3dda0314c8cdc246708f463e677194d23beca9f23293bd7c07",
+"side":0,
+"side_name":"Yes",
+"entry":0.2,
+"at":1793301523,
+"strength":0.065,
+"question":"Will a \u22645% Uranium Enrichment Cap (1+ Year) be in a US-Iran deal in 2026?",
+"link":"https://polymarket.com/event/what-will-be-in-a-us-iran-deal-in-2026-20260624150226501",
+"end":1798779540,
+"won":null,
+"event":"what-will-be-in-a-us-iran-deal-in-2026-20260624150226501"
+},
+{
+"h":"H2",
+"cid":"0x58998da8fa20593cf07618032acd580344a79279a8bcc3ed128b668d793c3d6f",
+"side":0,
+"side_name":"Yes",
+"entry":0.0955,
+"at":1793301523,
+"strength":0.0625,
+"question":"US obtains Iranian enriched uranium by December 31?",
+"link":"https://polymarket.com/event/us-obtains-iranian-enriched-uranium-by",
+"end":1798779540,
+"won":null,
+"event":"us-obtains-iranian-enriched-uranium-by"
+},
+{
+"h":"H2",
+"cid":"0xa090ae1a88ca96bcae7523a65a96425ed53616709be75cb69a0df144f718931e",
+"side":1,
+"side_name":"No",
+"entry":0.25,
+"at":1793301523,
+"strength":0.06,
+"question":"Nothing Ever Happens: 2026",
+"link":"https://polymarket.com/event/nothing-ever-happens-2026",
+"end":1798736340,
+"won":null,
+"event":"nothing-ever-happens-2026"
 }
 ]
 }

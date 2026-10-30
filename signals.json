@@ -4595,8 +4595,10 @@
 "question":"Will Iliana Iotova win the 2026 Bulgarian presidential first round by 20%-30%?",
 "link":"https://polymarket.com/event/bulgaria-presidential-election-first-round-margin-of-victory",
 "end":1792972740,
-"won":null,
-"event":"bulgaria-presidential-election-first-round-margin-of-victory"
+"won":true,
+"event":"bulgaria-presidential-election-first-round-margin-of-victory",
+"void":false,
+"closed":1793327798
 },
 {
 "h":"H2",
@@ -4679,8 +4681,10 @@
 "question":"Will Iliana Iotova win the 2026 Bulgarian presidential first round by 30%-40%?",
 "link":"https://polymarket.com/event/bulgaria-presidential-election-first-round-margin-of-victory",
 "end":1792972740,
-"won":null,
-"event":"bulgaria-presidential-election-first-round-margin-of-victory"
+"won":true,
+"event":"bulgaria-presidential-election-first-round-margin-of-victory",
+"void":false,
+"closed":1793327798
 },
 {
 "h":"H2",
@@ -5807,8 +5811,10 @@
 "question":"Will Iliana Iotova win the 2026 Bulgarian presidential first round by 20%-30%?",
 "link":"https://polymarket.com/event/bulgaria-presidential-election-first-round-margin-of-victory",
 "end":1792972740,
-"won":null,
-"event":"bulgaria-presidential-election-first-round-margin-of-victory"
+"won":false,
+"event":"bulgaria-presidential-election-first-round-margin-of-victory",
+"void":false,
+"closed":1793327798
 },
 {
 "h":"H2",
@@ -8015,6 +8021,62 @@
 "end":1793768340,
 "won":null,
 "event":"balance-of-power-2026-midterms"
+},
+{
+"h":"H2",
+"cid":"0xaba33ea1253e3dbf70a1d3395c92514737ef3bc405255331a4d98465039581ee",
+"side":0,
+"side_name":"Yes",
+"entry":0.47,
+"at":1793328675,
+"strength":0.095,
+"question":"Will Ukraine re-enter Uspenivka by December 31?",
+"link":"https://polymarket.com/event/will-ukraine-re-enter-uspenivka-by-march-31",
+"end":1798779540,
+"won":null,
+"event":"will-ukraine-re-enter-uspenivka-by-march-31"
+},
+{
+"h":"H2",
+"cid":"0xea3b1d0099085f43a3098b3e1fbcbe62284ce1bda99384b3d46b82ff202ac016",
+"side":1,
+"side_name":"No",
+"entry":0.7495,
+"at":1793328675,
+"strength":0.055,
+"question":"Will the Democratic Progressive Party (DPP) win the most head of local government elections in the 2026 Taiwan local elections?",
+"link":"https://polymarket.com/event/2026-taiwanese-local-elections-party-winner",
+"end":1795928340,
+"won":null,
+"event":"2026-taiwanese-local-elections-party-winner"
+},
+{
+"h":"H2",
+"cid":"0x5f5cf92636c3644a6221fba15d00e8aab9d539c17a0d25d8ae8d15220cbd2cb9",
+"side":0,
+"side_name":"Yes",
+"entry":0.645,
+"at":1793328675,
+"strength":0.05,
+"question":"Blue tsunami in 2026?",
+"link":"https://polymarket.com/event/blue-tsunami-in-2026",
+"end":1799125140,
+"won":null,
+"event":"blue-tsunami-in-2026"
+},
+{
+"h":"H4",
+"cid":"0x34918035a590555ba1fb1d6a019d766ab6e557d63e7f3140b63b4550eee7f417",
+"side":0,
+"side_name":"Yes",
+"entry":0.7,
+"at":1793328675,
+"strength":4332.0,
+"question":"Will the Democrats win the Texas Senate race in 2026?",
+"link":"https://polymarket.com/event/texas-senate-election-winner",
+"end":1793768340,
+"won":null,
+"event":"texas-senate-election-winner"
 }
 ]
 }

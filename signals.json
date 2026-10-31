@@ -5431,8 +5431,10 @@
 "question":"Israel x Iran ceasefire continues through October 27?",
 "link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
 "end":1793159940,
-"won":null,
-"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+"won":true,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"void":false,
+"closed":1793399480
 },
 {
 "h":"H2",
@@ -8357,6 +8359,34 @@
 "end":1793768340,
 "won":null,
 "event":"balance-of-power-2026-midterms"
+},
+{
+"h":"H2",
+"cid":"0x15d2e66dcf1d63c5695d6d0e9e2f8e06dd246d00fd5dfc254f2b22baa33bfa1b",
+"side":1,
+"side_name":"No",
+"entry":0.955,
+"at":1793407009,
+"strength":0.05,
+"question":"Mitch McConnell steps down from Senate before his term ends?",
+"link":"https://polymarket.com/event/will-mitch-mcconnell-resign-from-the-senate-before-his-term-ends",
+"end":1799038740,
+"won":null,
+"event":"will-mitch-mcconnell-resign-from-the-senate-before-his-term-ends"
+},
+{
+"h":"H3",
+"cid":"0xbb4d51e6364066d92eb6f9b8413dd7193de70966736044463b205834805a1f3b",
+"side":0,
+"side_name":"Yes",
+"entry":0.06,
+"at":1793407009,
+"strength":1100.0,
+"question":"Will the Iranian regime fall before 2027?",
+"link":"https://polymarket.com/event/will-the-iranian-regime-fall-by-the-end-of-2026",
+"end":1798779540,
+"won":null,
+"event":"will-the-iranian-regime-fall-by-the-end-of-2026"
 }
 ]
 }

@@ -4071,8 +4071,10 @@
 "question":"Israel Election: Any Coalition Wins a Majority?",
 "link":"https://polymarket.com/event/israel-election-any-coalition-wins-a-majority",
 "end":1793159940,
-"won":null,
-"event":"israel-election-any-coalition-wins-a-majority"
+"won":false,
+"event":"israel-election-any-coalition-wins-a-majority",
+"void":false,
+"closed":1793474789
 },
 {
 "h":"H2",
@@ -4197,8 +4199,10 @@
 "question":"Israel Election: Any Coalition Wins a Majority?",
 "link":"https://polymarket.com/event/israel-election-any-coalition-wins-a-majority",
 "end":1793159940,
-"won":null,
-"event":"israel-election-any-coalition-wins-a-majority"
+"won":true,
+"event":"israel-election-any-coalition-wins-a-majority",
+"void":false,
+"closed":1793474789
 },
 {
 "h":"H2",
@@ -5829,8 +5833,10 @@
 "question":"Israel Election: Any Coalition Wins a Majority?",
 "link":"https://polymarket.com/event/israel-election-any-coalition-wins-a-majority",
 "end":1793159940,
-"won":null,
-"event":"israel-election-any-coalition-wins-a-majority"
+"won":false,
+"event":"israel-election-any-coalition-wins-a-majority",
+"void":false,
+"closed":1793474789
 },
 {
 "h":"H2",

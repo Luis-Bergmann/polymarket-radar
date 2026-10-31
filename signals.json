@@ -3741,8 +3741,10 @@
 "question":"Israel Election: Which Bloc Wins More Seats?",
 "link":"https://polymarket.com/event/israel-election-which-bloc-wins-more-seats",
 "end":1793159940,
-"won":null,
-"event":"israel-election-which-bloc-wins-more-seats"
+"won":false,
+"event":"israel-election-which-bloc-wins-more-seats",
+"void":false,
+"closed":1793489236
 },
 {
 "h":"H3",
@@ -5351,8 +5353,10 @@
 "question":"Will Russia capture Vodianske by December 31?",
 "link":"https://polymarket.com/event/will-russia-capture-vodianske-byptptpt-20260724162613570",
 "end":1798779540,
-"won":null,
-"event":"will-russia-capture-vodianske-byptptpt-20260724162613570"
+"won":true,
+"event":"will-russia-capture-vodianske-byptptpt-20260724162613570",
+"void":false,
+"closed":1793488177
 },
 {
 "h":"H2",
@@ -5891,8 +5895,10 @@
 "question":"Israel Election: Which Bloc Wins More Seats?",
 "link":"https://polymarket.com/event/israel-election-which-bloc-wins-more-seats",
 "end":1793159940,
-"won":null,
-"event":"israel-election-which-bloc-wins-more-seats"
+"won":true,
+"event":"israel-election-which-bloc-wins-more-seats",
+"void":false,
+"closed":1793489236
 },
 {
 "h":"H2",

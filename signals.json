@@ -6465,8 +6465,10 @@
 "question":"Will Otzma win 10 or more seats in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-otzma-of-seats",
 "end":1796083140,
-"won":null,
-"event":"israel-election-otzma-of-seats"
+"won":false,
+"event":"israel-election-otzma-of-seats",
+"void":false,
+"closed":1793493730
 },
 {
 "h":"H2",
@@ -6647,8 +6649,10 @@
 "question":"Will Ra'am win exactly 5 seats in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-raam-of-seats",
 "end":1796083140,
-"won":null,
-"event":"israel-election-raam-of-seats"
+"won":true,
+"event":"israel-election-raam-of-seats",
+"void":false,
+"closed":1793493264
 },
 {
 "h":"H2",
@@ -6661,8 +6665,10 @@
 "question":"Will Together win 17-19 seats in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-together-of-seats",
 "end":1796083140,
-"won":null,
-"event":"israel-election-together-of-seats"
+"won":true,
+"event":"israel-election-together-of-seats",
+"void":false,
+"closed":1793492859
 },
 {
 "h":"H2",
@@ -6675,8 +6681,10 @@
 "question":"Will Otzma win 10 or more seats in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-otzma-of-seats",
 "end":1796083140,
-"won":null,
-"event":"israel-election-otzma-of-seats"
+"won":true,
+"event":"israel-election-otzma-of-seats",
+"void":false,
+"closed":1793493730
 },
 {
 "h":"H2",
@@ -6787,8 +6795,10 @@
 "question":"Will Together win 14-16 seats in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-together-of-seats",
 "end":1796083140,
-"won":null,
-"event":"israel-election-together-of-seats"
+"won":true,
+"event":"israel-election-together-of-seats",
+"void":false,
+"closed":1793493140
 },
 {
 "h":"H2",
@@ -6829,8 +6839,10 @@
 "question":"Will Reservists \u2013 New Economic Party win 4.25% or more of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-reservistsnew-economic-party-vote-share",
 "end":1796083140,
-"won":null,
-"event":"israel-election-reservistsnew-economic-party-vote-share"
+"won":true,
+"event":"israel-election-reservistsnew-economic-party-vote-share",
+"void":false,
+"closed":1793494040
 },
 {
 "h":"H2",
@@ -6969,8 +6981,10 @@
 "question":"Will Ra'am win exactly 4 seats in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-raam-of-seats",
 "end":1796083140,
-"won":null,
-"event":"israel-election-raam-of-seats"
+"won":true,
+"event":"israel-election-raam-of-seats",
+"void":false,
+"closed":1793493264
 },
 {
 "h":"H2",

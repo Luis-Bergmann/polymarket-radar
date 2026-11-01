@@ -146,9 +146,11 @@
 "at":1790622972,
 "question":"US announces end of Iranian blockade by October 31, 2026?",
 "link":"https://polymarket.com/event/us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
-"won":null,
+"won":false,
 "event":"us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
-"end":1793505540
+"end":1793505540,
+"void":false,
+"closed":1793513212
 },
 {
 "h":"H2",
@@ -203,8 +205,10 @@
 "question":"US announces end of Iranian blockade by October 31, 2026?",
 "link":"https://polymarket.com/event/us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
 "end":1793505540,
-"won":null,
-"event":"us-announces-end-of-iranian-blockade-byptptpt-20260713152715080"
+"won":true,
+"event":"us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+"void":false,
+"closed":1793513212
 },
 {
 "h":"H2",
@@ -1705,8 +1709,10 @@
 "question":"US reissues Iran oil sanction relief by October 31?",
 "link":"https://polymarket.com/event/us-reissues-iran-oil-sales-sanction-relief-byptptpt-20260708142359046",
 "end":1793505540,
-"won":null,
-"event":"us-reissues-iran-oil-sales-sanction-relief-byptptpt-20260708142359046"
+"won":true,
+"event":"us-reissues-iran-oil-sales-sanction-relief-byptptpt-20260708142359046",
+"void":false,
+"closed":1793514452
 },
 {
 "h":"H2",
@@ -4029,8 +4035,10 @@
 "question":"France declares state of emergency by October 31, 2026?",
 "link":"https://polymarket.com/event/france-declares-state-of-emergency-byptptpt",
 "end":1793505540,
-"won":null,
-"event":"france-declares-state-of-emergency-byptptpt"
+"won":true,
+"event":"france-declares-state-of-emergency-byptptpt",
+"void":false,
+"closed":1793512896
 },
 {
 "h":"H2",
@@ -4131,8 +4139,10 @@
 "question":"France declares state of emergency by October 31, 2026?",
 "link":"https://polymarket.com/event/france-declares-state-of-emergency-byptptpt",
 "end":1793505540,
-"won":null,
-"event":"france-declares-state-of-emergency-byptptpt"
+"won":false,
+"event":"france-declares-state-of-emergency-byptptpt",
+"void":false,
+"closed":1793512896
 },
 {
 "h":"H2",
@@ -4915,8 +4925,10 @@
 "question":"Iran full airspace closure by October 31, 2026?",
 "link":"https://polymarket.com/event/iran-full-airspace-closure-byptptpt-20260625195253028",
 "end":1793505540,
-"won":null,
-"event":"iran-full-airspace-closure-byptptpt-20260625195253028"
+"won":false,
+"event":"iran-full-airspace-closure-byptptpt-20260625195253028",
+"void":false,
+"closed":1793525735
 },
 {
 "h":"H2",
@@ -5957,8 +5969,10 @@
 "question":"Iran full airspace closure by October 31, 2026?",
 "link":"https://polymarket.com/event/iran-full-airspace-closure-byptptpt-20260625195253028",
 "end":1793505540,
-"won":null,
-"event":"iran-full-airspace-closure-byptptpt-20260625195253028"
+"won":true,
+"event":"iran-full-airspace-closure-byptptpt-20260625195253028",
+"void":false,
+"closed":1793525735
 },
 {
 "h":"H3",
@@ -6495,8 +6509,10 @@
 "question":"Will Amcha Yisrael win 4-6 seats in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-amcha-yisrael-of-seats",
 "end":1793145540,
-"won":null,
-"event":"israel-election-amcha-yisrael-of-seats"
+"won":true,
+"event":"israel-election-amcha-yisrael-of-seats",
+"void":false,
+"closed":1793501421
 },
 {
 "h":"H2",
@@ -6509,8 +6525,10 @@
 "question":"Will Reservists and New Economic Party win a seat in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/which-parties-will-win-a-seat-in-the-2026-knesset-elections",
 "end":1796083140,
-"won":null,
-"event":"which-parties-will-win-a-seat-in-the-2026-knesset-elections"
+"won":true,
+"event":"which-parties-will-win-a-seat-in-the-2026-knesset-elections",
+"void":false,
+"closed":1793502694
 },
 {
 "h":"H2",
@@ -6523,8 +6541,10 @@
 "question":"Will Amcha Yisrael win fewer than 4 seats in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-amcha-yisrael-of-seats",
 "end":1793145540,
-"won":null,
-"event":"israel-election-amcha-yisrael-of-seats"
+"won":true,
+"event":"israel-election-amcha-yisrael-of-seats",
+"void":false,
+"closed":1793501421
 },
 {
 "h":"H2",
@@ -6855,8 +6875,10 @@
 "question":"Will Ra'am win exactly 6 seats in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-raam-of-seats",
 "end":1796083140,
-"won":null,
-"event":"israel-election-raam-of-seats"
+"won":false,
+"event":"israel-election-raam-of-seats",
+"void":false,
+"closed":1793504253
 },
 {
 "h":"H4",
@@ -7081,8 +7103,10 @@
 "question":"Will Ra'am win exactly 6 seats in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-raam-of-seats",
 "end":1796083140,
-"won":null,
-"event":"israel-election-raam-of-seats"
+"won":true,
+"event":"israel-election-raam-of-seats",
+"void":false,
+"closed":1793504253
 },
 {
 "h":"H2",
@@ -8539,6 +8563,104 @@
 "end":1793768340,
 "won":null,
 "event":"billionaire-one-time-wealth-tax-passes-in-california-election-2026"
+},
+{
+"h":"H2",
+"cid":"0xf036481613a53faafdc7638824e5dfab03b4dda5b9bf13fbdfa2075e2d4a8bea",
+"side":1,
+"side_name":"No",
+"entry":0.865,
+"at":1793526517,
+"strength":0.1,
+"question":"US announces end of Iranian blockade by November 15, 2026?",
+"link":"https://polymarket.com/event/us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+"end":1794805140,
+"won":null,
+"event":"us-announces-end-of-iranian-blockade-byptptpt-20260713152715080"
+},
+{
+"h":"H2",
+"cid":"0x0c7245047183848e41555dc9a5ccc14c970a0711a3591bebc8310119cbae64c0",
+"side":1,
+"side_name":"No",
+"entry":0.9,
+"at":1793526517,
+"strength":0.08,
+"question":"UNSC Resolution Endorsing Final U.S.-Iran Deal by December 31?",
+"link":"https://polymarket.com/event/will-the-unsc-adopt-a-resolution-endorsing-the-final-us-iran-deal-by-date",
+"end":1798779540,
+"won":null,
+"event":"will-the-unsc-adopt-a-resolution-endorsing-the-final-us-iran-deal-by-date"
+},
+{
+"h":"H1",
+"cid":"0x0c7245047183848e41555dc9a5ccc14c970a0711a3591bebc8310119cbae64c0",
+"side":1,
+"side_name":"No",
+"entry":0.9,
+"at":1793526517,
+"strength":2229,
+"question":"UNSC Resolution Endorsing Final U.S.-Iran Deal by December 31?",
+"link":"https://polymarket.com/event/will-the-unsc-adopt-a-resolution-endorsing-the-final-us-iran-deal-by-date",
+"end":1798779540,
+"won":null,
+"event":"will-the-unsc-adopt-a-resolution-endorsing-the-final-us-iran-deal-by-date"
+},
+{
+"h":"H2",
+"cid":"0xe66f6bc1b92d873779c2ffd142511c29492602a732a49e4b1c2bef1653149f24",
+"side":0,
+"side_name":"Yes",
+"entry":0.635,
+"at":1793526517,
+"strength":0.065,
+"question":"Israel x Iran ceasefire continues through November 22?",
+"link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"end":1795409940,
+"won":null,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+},
+{
+"h":"H2",
+"cid":"0xd0f009dd6d9c8b46db418c5b44af2566cdb7de8274685ca4f8dea3231b75900f",
+"side":1,
+"side_name":"No",
+"entry":0.66,
+"at":1793526517,
+"strength":0.06,
+"question":"Will the Democratic Party win the FL-09 House seat?",
+"link":"https://polymarket.com/event/fl-09-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"fl-09-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x2c93da161ae234a971d93533333455c8fa79804ba7592503a22cde151b1b8e6f",
+"side":0,
+"side_name":"Yes",
+"entry":0.655,
+"at":1793526517,
+"strength":0.055,
+"question":"Will the Republican Party win the FL-09 House seat?",
+"link":"https://polymarket.com/event/fl-09-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"fl-09-house-election-winner"
+},
+{
+"h":"H3",
+"cid":"0xadffc96f54f350b3655f72fe2853c81bfd705e9703f62469e6a14782ad5d4ec0",
+"side":0,
+"side_name":"Yes",
+"entry":0.0586,
+"at":1793526517,
+"strength":1497.0,
+"question":"Will Avigdor Lieberman be the next Prime Minister of Israel?",
+"link":"https://polymarket.com/event/who-will-be-the-next-prime-minister-of-israel-after-the-next-election",
+"end":1793159940,
+"won":null,
+"event":"who-will-be-the-next-prime-minister-of-israel-after-the-next-election"
 }
 ]
 }

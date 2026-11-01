@@ -341,8 +341,10 @@
 "question":"Iran charges Hormuz fees by October 31?",
 "link":"https://polymarket.com/event/iran-charges-hormuz-fees-byptptpt-20260625175035466",
 "end":1793505540,
-"won":null,
-"event":"iran-charges-hormuz-fees-byptptpt-20260625175035466"
+"won":false,
+"event":"iran-charges-hormuz-fees-byptptpt-20260625175035466",
+"void":false,
+"closed":1793529396
 },
 {
 "h":"H2",
@@ -617,8 +619,10 @@
 "question":"Israel x Iran ceasefire continues through October 31?",
 "link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
 "end":1793478540,
-"won":null,
-"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+"won":false,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"void":false,
+"closed":1793541680
 },
 {
 "h":"H2",
@@ -825,8 +829,10 @@
 "question":"Iran charges Hormuz fees by October 31?",
 "link":"https://polymarket.com/event/iran-charges-hormuz-fees-byptptpt-20260625175035466",
 "end":1793505540,
-"won":null,
-"event":"iran-charges-hormuz-fees-byptptpt-20260625175035466"
+"won":true,
+"event":"iran-charges-hormuz-fees-byptptpt-20260625175035466",
+"void":false,
+"closed":1793529396
 },
 {
 "h":"H2",
@@ -2775,8 +2781,10 @@
 "question":"Israel x Iran ceasefire continues through October 31?",
 "link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
 "end":1793478540,
-"won":null,
-"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+"won":true,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"void":false,
+"closed":1793541680
 },
 {
 "h":"H2",
@@ -3763,8 +3771,10 @@
 "question":"Israel x Iran ceasefire continues through October 31?",
 "link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
 "end":1793478540,
-"won":null,
-"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+"won":false,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"void":false,
+"closed":1793541680
 },
 {
 "h":"H1",
@@ -4367,8 +4377,10 @@
 "question":"NATO x Russia military clash by October 31, 2026?",
 "link":"https://polymarket.com/event/nato-x-russia-military-clash-in-2025",
 "end":1793505540,
-"won":null,
-"event":"nato-x-russia-military-clash-in-2025"
+"won":false,
+"event":"nato-x-russia-military-clash-in-2025",
+"void":false,
+"closed":1793530737
 },
 {
 "h":"H4",
@@ -4783,8 +4795,10 @@
 "question":"NATO x Russia military clash by October 31, 2026?",
 "link":"https://polymarket.com/event/nato-x-russia-military-clash-in-2025",
 "end":1793505540,
-"won":null,
-"event":"nato-x-russia-military-clash-in-2025"
+"won":false,
+"event":"nato-x-russia-military-clash-in-2025",
+"void":false,
+"closed":1793530737
 },
 {
 "h":"H2",
@@ -5585,8 +5599,10 @@
 "question":"NATO x Russia military clash by October 31, 2026?",
 "link":"https://polymarket.com/event/nato-x-russia-military-clash-in-2025",
 "end":1793505540,
-"won":null,
-"event":"nato-x-russia-military-clash-in-2025"
+"won":true,
+"event":"nato-x-russia-military-clash-in-2025",
+"void":false,
+"closed":1793530737
 },
 {
 "h":"H2",
@@ -5641,8 +5657,10 @@
 "question":"NATO x Russia military clash by October 31, 2026?",
 "link":"https://polymarket.com/event/nato-x-russia-military-clash-in-2025",
 "end":1793505540,
-"won":null,
-"event":"nato-x-russia-military-clash-in-2025"
+"won":true,
+"event":"nato-x-russia-military-clash-in-2025",
+"void":false,
+"closed":1793530737
 },
 {
 "h":"H2",
@@ -8661,6 +8679,48 @@
 "end":1793159940,
 "won":null,
 "event":"who-will-be-the-next-prime-minister-of-israel-after-the-next-election"
+},
+{
+"h":"H2",
+"cid":"0x1d64e87444a527dc7363c4c4f9b1ba3d4096944d4e15f98ebb0c6ec065efc63b",
+"side":0,
+"side_name":"Yes",
+"entry":0.87,
+"at":1793550589,
+"strength":0.135,
+"question":"Will Trump meet with Mohammed bin Salman in 2026?",
+"link":"https://polymarket.com/event/who-will-trump-meet-with-in-2026",
+"end":1798865940,
+"won":null,
+"event":"who-will-trump-meet-with-in-2026"
+},
+{
+"h":"H2",
+"cid":"0x442b48ba510d7d8dbeecca1410c8d1b8679c60dfd451c525321ca137bb35648b",
+"side":1,
+"side_name":"No",
+"entry":0.685,
+"at":1793550589,
+"strength":0.05,
+"question":"Will Russia capture all of Kostyantynivka by March 31, 2027?",
+"link":"https://polymarket.com/event/will-russia-capture-all-of-kostyantynivka-by",
+"end":1806551940,
+"won":null,
+"event":"will-russia-capture-all-of-kostyantynivka-by"
+},
+{
+"h":"H3",
+"cid":"0x650e3ebc043ddbcfa1d1ffda0c5830f19da7389827889fb5db3474bde5b007fb",
+"side":0,
+"side_name":"Yes",
+"entry":0.2,
+"at":1793550589,
+"strength":1777.6,
+"question":"Will the Republicans win the Ohio governor race in 2026?",
+"link":"https://polymarket.com/event/ohio-governor-winner-2026",
+"end":1793768340,
+"won":null,
+"event":"ohio-governor-winner-2026"
 }
 ]
 }

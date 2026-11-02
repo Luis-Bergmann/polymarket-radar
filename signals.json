@@ -415,8 +415,10 @@
 "question":"Will \u0410ndrey Gyurov win the next Bulgarian presidential election?",
 "link":"https://polymarket.com/event/bulgaria-presidential-election",
 "end":1792987140,
-"won":null,
-"event":"bulgaria-presidential-election"
+"won":false,
+"event":"bulgaria-presidential-election",
+"void":false,
+"closed":1793597100
 },
 {
 "h":"H2",
@@ -903,8 +905,10 @@
 "question":"Will \u0410ndrey Gyurov win the next Bulgarian presidential election?",
 "link":"https://polymarket.com/event/bulgaria-presidential-election",
 "end":1792987140,
-"won":null,
-"event":"bulgaria-presidential-election"
+"won":true,
+"event":"bulgaria-presidential-election",
+"void":false,
+"closed":1793597100
 },
 {
 "h":"H1",
@@ -917,8 +921,10 @@
 "question":"Will \u0410ndrey Gyurov win the next Bulgarian presidential election?",
 "link":"https://polymarket.com/event/bulgaria-presidential-election",
 "end":1792987140,
-"won":null,
-"event":"bulgaria-presidential-election"
+"won":true,
+"event":"bulgaria-presidential-election",
+"void":false,
+"closed":1793597100
 },
 {
 "h":"H2",
@@ -2035,8 +2041,10 @@
 "question":"Will Iliana Iotova win the next Bulgarian presidential election?",
 "link":"https://polymarket.com/event/bulgaria-presidential-election",
 "end":1792987140,
-"won":null,
-"event":"bulgaria-presidential-election"
+"won":true,
+"event":"bulgaria-presidential-election",
+"void":false,
+"closed":1793597100
 },
 {
 "h":"H4",
@@ -2471,8 +2479,10 @@
 "question":"Will Iliana Iotova win the next Bulgarian presidential election?",
 "link":"https://polymarket.com/event/bulgaria-presidential-election",
 "end":1792987140,
-"won":null,
-"event":"bulgaria-presidential-election"
+"won":false,
+"event":"bulgaria-presidential-election",
+"void":false,
+"closed":1793597100
 },
 {
 "h":"H2",
@@ -2485,8 +2495,10 @@
 "question":"Will \u0410ndrey Gyurov win the next Bulgarian presidential election?",
 "link":"https://polymarket.com/event/bulgaria-presidential-election",
 "end":1792987140,
-"won":null,
-"event":"bulgaria-presidential-election"
+"won":false,
+"event":"bulgaria-presidential-election",
+"void":false,
+"closed":1793597100
 },
 {
 "h":"H2",
@@ -8811,6 +8823,76 @@
 "end":1808107140,
 "won":null,
 "event":"next-french-presidential-election"
+},
+{
+"h":"H2",
+"cid":"0x4900fd99a53dc19621b3de761cdd75401fcd5733d785b9840275fe14ccd7d74c",
+"side":0,
+"side_name":"Yes",
+"entry":0.1635,
+"at":1793598607,
+"strength":0.0865,
+"question":"Will the Democrats win the New Hampshire governor race in 2026?",
+"link":"https://polymarket.com/event/new-hampshire-governor-winner-2026",
+"end":1793768340,
+"won":null,
+"event":"new-hampshire-governor-winner-2026"
+},
+{
+"h":"H2",
+"cid":"0xd50c016598c499fceea10a1a714e48d9b4953487fe215daeaf916068fae722f1",
+"side":0,
+"side_name":"Yes",
+"entry":0.485,
+"at":1793598607,
+"strength":0.07,
+"question":"Will the Democrats win the Iowa Senate race in 2026?",
+"link":"https://polymarket.com/event/iowa-senate-election-winner",
+"end":1793768340,
+"won":null,
+"event":"iowa-senate-election-winner"
+},
+{
+"h":"H2",
+"cid":"0xb470bc5d43c2f41ce9e741f7c9f0041b2dbcc58ddccd65e006b816b545efa9c4",
+"side":0,
+"side_name":"Yes",
+"entry":0.655,
+"at":1793598607,
+"strength":0.06,
+"question":"Will the Republican Party win the FL-13 House seat?",
+"link":"https://polymarket.com/event/fl-13-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"fl-13-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x3bb59c17b8ec156f8ef55d6de522c53c8bcc8fc708bfba00e1c7820c208ee28b",
+"side":1,
+"side_name":"No",
+"entry":0.135,
+"at":1793598607,
+"strength":0.055,
+"question":"Will the Republicans win the Louisiana Senate race in 2026?",
+"link":"https://polymarket.com/event/louisiana-senate-election-winner",
+"end":1793768340,
+"won":null,
+"event":"louisiana-senate-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x89e54c86f437d7696d9789c5ff901dd5f3b35a5594f5aadf27af50bc6d2ca50e",
+"side":1,
+"side_name":"No",
+"entry":0.645,
+"at":1793598607,
+"strength":0.05,
+"question":"Will the Democratic Party win the FL-13 House seat?",
+"link":"https://polymarket.com/event/fl-13-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"fl-13-house-election-winner"
 }
 ]
 }

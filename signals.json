@@ -66,9 +66,11 @@
 "at":1790622972,
 "question":"Russia-Ukraine peace talks by October 31, 2026?",
 "link":"https://polymarket.com/event/russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
-"won":null,
+"won":true,
 "event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
-"end":1793491140
+"end":1793491140,
+"void":false,
+"closed":1793638999
 },
 {
 "h":"H2",
@@ -967,8 +969,10 @@
 "question":"Russia-Ukraine peace talks by October 31, 2026?",
 "link":"https://polymarket.com/event/russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
 "end":1793491140,
-"won":null,
-"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716"
+"won":false,
+"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
+"void":false,
+"closed":1793638999
 },
 {
 "h":"H2",
@@ -3503,8 +3507,10 @@
 "question":"Will Yisrael Beiteinu win less than 5% of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-yisrael-beiteinu-vote-share",
 "end":1793145540,
-"won":null,
-"event":"israel-election-yisrael-beiteinu-vote-share"
+"won":true,
+"event":"israel-election-yisrael-beiteinu-vote-share",
+"void":false,
+"closed":1793636702
 },
 {
 "h":"H2",
@@ -6983,8 +6989,10 @@
 "question":"Will Joint List win 12 or more seats in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-joint-list-of-seats",
 "end":1796083140,
-"won":null,
-"event":"israel-election-joint-list-of-seats"
+"won":false,
+"event":"israel-election-joint-list-of-seats",
+"void":false,
+"closed":1793650729
 },
 {
 "h":"H2",
@@ -6997,8 +7005,10 @@
 "question":"Will Reservists \u2013 New Economic Party win less than 2.75% of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-reservistsnew-economic-party-vote-share",
 "end":1796083140,
-"won":null,
-"event":"israel-election-reservistsnew-economic-party-vote-share"
+"won":true,
+"event":"israel-election-reservistsnew-economic-party-vote-share",
+"void":false,
+"closed":1793628689
 },
 {
 "h":"H2",
@@ -7025,8 +7035,10 @@
 "question":"Will Together win 9-11% of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-together-vote-share",
 "end":1796083140,
-"won":null,
-"event":"israel-election-together-vote-share"
+"won":true,
+"event":"israel-election-together-vote-share",
+"void":false,
+"closed":1793650909
 },
 {
 "h":"H2",
@@ -7097,8 +7109,10 @@
 "question":"Will Reservists \u2013 New Economic Party win 2.75-3.25% of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-reservistsnew-economic-party-vote-share",
 "end":1796083140,
-"won":null,
-"event":"israel-election-reservistsnew-economic-party-vote-share"
+"won":true,
+"event":"israel-election-reservistsnew-economic-party-vote-share",
+"void":false,
+"closed":1793636030
 },
 {
 "h":"H2",
@@ -7111,8 +7125,10 @@
 "question":"Will Reservists \u2013 New Economic Party win 2.75-3.25% of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-reservistsnew-economic-party-vote-share",
 "end":1796083140,
-"won":null,
-"event":"israel-election-reservistsnew-economic-party-vote-share"
+"won":false,
+"event":"israel-election-reservistsnew-economic-party-vote-share",
+"void":false,
+"closed":1793636030
 },
 {
 "h":"H2",
@@ -7155,8 +7171,10 @@
 "question":"Will Together win 7-9% of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-together-vote-share",
 "end":1796083140,
-"won":null,
-"event":"israel-election-together-vote-share"
+"won":false,
+"event":"israel-election-together-vote-share",
+"void":false,
+"closed":1793650850
 },
 {
 "h":"H2",
@@ -7281,8 +7299,10 @@
 "question":"Will Reservists \u2013 New Economic Party win less than 2.75% of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-reservistsnew-economic-party-vote-share",
 "end":1796083140,
-"won":null,
-"event":"israel-election-reservistsnew-economic-party-vote-share"
+"won":false,
+"event":"israel-election-reservistsnew-economic-party-vote-share",
+"void":false,
+"closed":1793628689
 },
 {
 "h":"H2",
@@ -7337,8 +7357,10 @@
 "question":"Will Together win 9-11% of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-together-vote-share",
 "end":1796083140,
-"won":null,
-"event":"israel-election-together-vote-share"
+"won":false,
+"event":"israel-election-together-vote-share",
+"void":false,
+"closed":1793650909
 },
 {
 "h":"H2",
@@ -7619,8 +7641,10 @@
 "question":"Will Joint List win 12 or more seats in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-joint-list-of-seats",
 "end":1796083140,
-"won":null,
-"event":"israel-election-joint-list-of-seats"
+"won":true,
+"event":"israel-election-joint-list-of-seats",
+"void":false,
+"closed":1793650729
 },
 {
 "h":"H2",
@@ -7759,8 +7783,10 @@
 "question":"Will Together win 7-9% of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-together-vote-share",
 "end":1796083140,
-"won":null,
-"event":"israel-election-together-vote-share"
+"won":true,
+"event":"israel-election-together-vote-share",
+"void":false,
+"closed":1793650850
 },
 {
 "h":"H2",
@@ -9007,6 +9033,230 @@
 "end":1793768340,
 "won":null,
 "event":"louisiana-senate-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x63c7e65d0324c084b74b62f5c9109bd0b02570c6833cde0b959c911b6eb6be8b",
+"side":0,
+"side_name":"Yes",
+"entry":0.1365,
+"at":1793659757,
+"strength":0.0905,
+"question":"Will Trump pardon Elon Musk before 2027?",
+"link":"https://polymarket.com/event/who-will-trump-pardon-before-2027",
+"end":1798779540,
+"won":null,
+"event":"who-will-trump-pardon-before-2027"
+},
+{
+"h":"H2",
+"cid":"0x9256274410a5fa5d9332cdc42b6898cdc27186c79792bb3dbf609153a433bd05",
+"side":0,
+"side_name":"Yes",
+"entry":0.425,
+"at":1793659757,
+"strength":0.08,
+"question":"Will the Republican Party win the NY-17 House seat?",
+"link":"https://polymarket.com/event/ny-17-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"ny-17-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x36fba860abdbb03c88c782df08d407434ee69be069b6cbac25cffddc2f1b437a",
+"side":0,
+"side_name":"Yes",
+"entry":0.14,
+"at":1793659757,
+"strength":0.075,
+"question":"Will Iran Reconstruction Funding be in a US-Iran deal in 2026?",
+"link":"https://polymarket.com/event/what-will-be-in-a-us-iran-deal-in-2026-20260624150226501",
+"end":1798779540,
+"won":null,
+"event":"what-will-be-in-a-us-iran-deal-in-2026-20260624150226501"
+},
+{
+"h":"H2",
+"cid":"0x01175ab5a40ea7f54b7b0a0aaf3574232e3374091e0bad5a0b9603741ae5d85b",
+"side":1,
+"side_name":"No",
+"entry":0.132,
+"at":1793659757,
+"strength":0.0575,
+"question":"Will the Republicans win the New Hampshire governor race in 2026?",
+"link":"https://polymarket.com/event/new-hampshire-governor-winner-2026",
+"end":1793768340,
+"won":null,
+"event":"new-hampshire-governor-winner-2026"
+},
+{
+"h":"H2",
+"cid":"0x8a5c0b5fc339f2dbaf584def66bcf8bff94d91f0250562e452782fed3d18f821",
+"side":1,
+"side_name":"No",
+"entry":0.865,
+"at":1793659757,
+"strength":0.055,
+"question":"Will Crude Oil reach a new all-time high by December 31?",
+"link":"https://polymarket.com/event/crude-oil-all-time-high-by",
+"end":1798779540,
+"won":null,
+"event":"crude-oil-all-time-high-by"
+},
+{
+"h":"H2",
+"cid":"0x307a1ed89d60b61002dd5bbf00e1408c5ed2ab3fcdb056191ca7ef9bc34d38f3",
+"side":0,
+"side_name":"Yes",
+"entry":0.765,
+"at":1793659757,
+"strength":0.05,
+"question":"Will the Democratic Party control the Senate after the 2026 Midterm elections?",
+"link":"https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
+"end":1793768340,
+"won":null,
+"event":"which-party-will-win-the-senate-in-2026"
+},
+{
+"h":"H2",
+"cid":"0x86bfb53af7250a40928975c551d12c185b762fa4ce0b40c6a64a50c946d72587",
+"side":1,
+"side_name":"No",
+"entry":0.765,
+"at":1793659757,
+"strength":0.05,
+"question":"Will the Republican Party control the Senate after the 2026 Midterm elections?",
+"link":"https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
+"end":1793768340,
+"won":null,
+"event":"which-party-will-win-the-senate-in-2026"
+},
+{
+"h":"H2",
+"cid":"0x998bc71817b2d76921d1999ce0f3431cfd5945583667a371280ca2b430b0c06e",
+"side":1,
+"side_name":"No",
+"entry":0.815,
+"at":1793659757,
+"strength":0.05,
+"question":"2026 Balance of Power: R Senate, D House",
+"link":"https://polymarket.com/event/balance-of-power-2026-midterms",
+"end":1793768340,
+"won":null,
+"event":"balance-of-power-2026-midterms"
+},
+{
+"h":"H4",
+"cid":"0xd5d9fc47718bd553592d126b1fa5e87183d27f3936975b0c04cc0f2dec1f1bb4",
+"side":1,
+"side_name":"No",
+"entry":0.05,
+"at":1793659757,
+"strength":28802.6032,
+"question":"Will the Democratic Party control the House after the 2026 Midterm elections?",
+"link":"https://polymarket.com/event/which-party-will-win-the-house-in-2026",
+"end":1793768340,
+"won":null,
+"event":"which-party-will-win-the-house-in-2026"
+},
+{
+"h":"H3",
+"cid":"0xfb866625fdfccc5a58ab7f1b53d6c7b5ac214ee38fa38668312b4adc2ee2c1d0",
+"side":1,
+"side_name":"No",
+"entry":0.31,
+"at":1793659757,
+"strength":6200.0,
+"question":"Will the Republicans win the Kansas governor race in 2026?",
+"link":"https://polymarket.com/event/kansas-governor-winner-2026",
+"end":1793768340,
+"won":null,
+"event":"kansas-governor-winner-2026"
+},
+{
+"h":"H3",
+"cid":"0x457e4d4fc56ca3836fccb7a8bf539c787504ac841a933d65f5de0736fcae2567",
+"side":0,
+"side_name":"Yes",
+"entry":0.31,
+"at":1793659757,
+"strength":9300.0,
+"question":"Will the Democrats win the Kansas governor race in 2026?",
+"link":"https://polymarket.com/event/kansas-governor-winner-2026",
+"end":1793768340,
+"won":null,
+"event":"kansas-governor-winner-2026"
+},
+{
+"h":"H4",
+"cid":"0xcceae66d81c60f90c9679ab531b865bd7e9f95cc54f7b0634a24095519b10d65",
+"side":0,
+"side_name":"Yes",
+"entry":0.66,
+"at":1793659757,
+"strength":17742.9,
+"question":"Will the Republicans win the Florida governor race in 2026?",
+"link":"https://polymarket.com/event/florida-governor-winner-2026",
+"end":1793768340,
+"won":null,
+"event":"florida-governor-winner-2026"
+},
+{
+"h":"H3",
+"cid":"0x1c017cbb38a9d0ab233ebb265b25c78290317e6a2470657ca18a73a112397b55",
+"side":1,
+"side_name":"No",
+"entry":0.32,
+"at":1793659757,
+"strength":1280.0,
+"question":"Will the Republicans win the South Carolina Senate race in 2026?",
+"link":"https://polymarket.com/event/south-carolina-senate-election-winner",
+"end":1793768340,
+"won":null,
+"event":"south-carolina-senate-election-winner"
+},
+{
+"h":"H3",
+"cid":"0x19d2ff72e389d190c183e6b114817301d29eba651d67d75a38ee201a05188fd9",
+"side":1,
+"side_name":"No",
+"entry":0.28,
+"at":1793659757,
+"strength":2239.9972,
+"question":"Will Mary Peltola win the Alaska Senate race in 2026?",
+"link":"https://polymarket.com/event/alaska-senate-election-winner",
+"end":1793768340,
+"won":null,
+"event":"alaska-senate-election-winner"
+},
+{
+"h":"H3",
+"cid":"0x968a1a79e001d49fa3ee1429e3b95eb01797587740f86d4e6becf3ab1b275bfb",
+"side":1,
+"side_name":"No",
+"entry":0.28,
+"at":1793659757,
+"strength":2800.0,
+"question":"Will the Democrats win the Ohio Senate race in 2026?",
+"link":"https://polymarket.com/event/ohio-senate-election-winner",
+"end":1793768340,
+"won":null,
+"event":"ohio-senate-election-winner"
+},
+{
+"h":"H3",
+"cid":"0x771873c365f87bffd990644e4b688aebc1be7f18396d2eab64b996ff66e88669",
+"side":0,
+"side_name":"Yes",
+"entry":0.29,
+"at":1793659757,
+"strength":2900.0,
+"question":"Will the Republicans win the Ohio Senate race in 2026?",
+"link":"https://polymarket.com/event/ohio-senate-election-winner",
+"end":1793768340,
+"won":null,
+"event":"ohio-senate-election-winner"
 }
 ]
 }

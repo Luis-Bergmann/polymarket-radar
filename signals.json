@@ -1237,8 +1237,10 @@
 "question":"No change in Reserve Bank of Australia's interest rates at the November 2026 meeting?",
 "link":"https://polymarket.com/event/reserve-bank-of-australia-decision-in-november",
 "end":1793768340,
-"won":null,
-"event":"reserve-bank-of-australia-decision-in-november"
+"won":false,
+"event":"reserve-bank-of-australia-decision-in-november",
+"void":false,
+"closed":1793683909
 },
 {
 "h":"H2",
@@ -2939,8 +2941,10 @@
 "question":"Reserve Bank of Australia increases interest rates by 25 bps at the November 2026 meeting?",
 "link":"https://polymarket.com/event/reserve-bank-of-australia-decision-in-november",
 "end":1793768340,
-"won":null,
-"event":"reserve-bank-of-australia-decision-in-november"
+"won":true,
+"event":"reserve-bank-of-australia-decision-in-november",
+"void":false,
+"closed":1793683909
 },
 {
 "h":"H2",
@@ -2953,8 +2957,10 @@
 "question":"No change in Reserve Bank of Australia's interest rates at the November 2026 meeting?",
 "link":"https://polymarket.com/event/reserve-bank-of-australia-decision-in-november",
 "end":1793768340,
-"won":null,
-"event":"reserve-bank-of-australia-decision-in-november"
+"won":true,
+"event":"reserve-bank-of-australia-decision-in-november",
+"void":false,
+"closed":1793683909
 },
 {
 "h":"H2",
@@ -6459,8 +6465,10 @@
 "question":"Will Religious Zionist Party\u2013Zehut win 6% or more of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-religious-zionist-party-zehut-vote-share",
 "end":1793145540,
-"won":null,
-"event":"israel-election-religious-zionist-party-zehut-vote-share"
+"won":true,
+"event":"israel-election-religious-zionist-party-zehut-vote-share",
+"void":false,
+"closed":1793694890
 },
 {
 "h":"H1",
@@ -6473,8 +6481,10 @@
 "question":"Will Religious Zionist Party\u2013Zehut win 6% or more of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-religious-zionist-party-zehut-vote-share",
 "end":1793145540,
-"won":null,
-"event":"israel-election-religious-zionist-party-zehut-vote-share"
+"won":true,
+"event":"israel-election-religious-zionist-party-zehut-vote-share",
+"void":false,
+"closed":1793694890
 },
 {
 "h":"H2",
@@ -6825,8 +6835,10 @@
 "question":"Will The Joint List win 7.5% or more of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-the-joint-list-vote-share",
 "end":1796083140,
-"won":null,
-"event":"israel-election-the-joint-list-vote-share"
+"won":true,
+"event":"israel-election-the-joint-list-vote-share",
+"void":false,
+"closed":1793698070
 },
 {
 "h":"H2",
@@ -6959,8 +6971,10 @@
 "question":"Will The Joint List win 6.5-7.5% of the vote in the 2026 Knesset elections?",
 "link":"https://polymarket.com/event/israel-election-the-joint-list-vote-share",
 "end":1796083140,
-"won":null,
-"event":"israel-election-the-joint-list-vote-share"
+"won":true,
+"event":"israel-election-the-joint-list-vote-share",
+"void":false,
+"closed":1793677952
 },
 {
 "h":"H2",
@@ -7671,8 +7685,10 @@
 "question":"Reserve Bank of Australia increases interest rates by 25 bps at the November 2026 meeting?",
 "link":"https://polymarket.com/event/reserve-bank-of-australia-decision-in-november",
 "end":1793768340,
-"won":null,
-"event":"reserve-bank-of-australia-decision-in-november"
+"won":false,
+"event":"reserve-bank-of-australia-decision-in-november",
+"void":false,
+"closed":1793683909
 },
 {
 "h":"H2",
@@ -7883,8 +7899,10 @@
 "question":"US announces end of Iranian blockade by November 2, 2026?",
 "link":"https://polymarket.com/event/us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
 "end":1793681940,
-"won":null,
-"event":"us-announces-end-of-iranian-blockade-byptptpt-20260713152715080"
+"won":true,
+"event":"us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+"void":false,
+"closed":1793689296
 },
 {
 "h":"H2",
@@ -8457,8 +8475,10 @@
 "question":"US announces end of Iranian blockade by November 2, 2026?",
 "link":"https://polymarket.com/event/us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
 "end":1793681940,
-"won":null,
-"event":"us-announces-end-of-iranian-blockade-byptptpt-20260713152715080"
+"won":false,
+"event":"us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+"void":false,
+"closed":1793689296
 },
 {
 "h":"H3",
@@ -9397,6 +9417,132 @@
 "end":1793768340,
 "won":null,
 "event":"balance-of-power-2026-midterms"
+},
+{
+"h":"H2",
+"cid":"0x418fcd9c72501eea029eee747b522e4da91478dbf52829893aa7a55b36d84984",
+"side":0,
+"side_name":"Yes",
+"entry":0.58,
+"at":1793705134,
+"strength":0.19,
+"question":"Will the Democratic Party win the CO-03 House seat?",
+"link":"https://polymarket.com/event/co-03-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"co-03-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0xb7b4326e339012a34a5a5f052dd96b0d96ccfd0d80acb9f2f8ec94e21a522112",
+"side":1,
+"side_name":"No",
+"entry":0.58,
+"at":1793705134,
+"strength":0.185,
+"question":"Will the Republican Party win the CO-03 House seat?",
+"link":"https://polymarket.com/event/co-03-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"co-03-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x20c8bb9a9f834efd90e0d3b5c8ff6c581cad3034ee10145cd7a8f9c94081cd57",
+"side":1,
+"side_name":"No",
+"entry":0.72,
+"at":1793705134,
+"strength":0.075,
+"question":"US reissues Iran oil sanction relief by December 31?",
+"link":"https://polymarket.com/event/us-reissues-iran-oil-sales-sanction-relief-byptptpt-20260708142359046",
+"end":1798779540,
+"won":null,
+"event":"us-reissues-iran-oil-sales-sanction-relief-byptptpt-20260708142359046"
+},
+{
+"h":"H2",
+"cid":"0x3452bb28983bc33b37ddfd98da2138dfd89782faec65a2607ed5aa86a17c9199",
+"side":0,
+"side_name":"Yes",
+"entry":0.635,
+"at":1793705134,
+"strength":0.07,
+"question":"Will the Republican Party win the FL-27 House seat?",
+"link":"https://polymarket.com/event/fl-27-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"fl-27-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x39c80b744a529e3f32bd185307b07cc722bf7dfae566c5bbc99f327fa8ae9825",
+"side":1,
+"side_name":"No",
+"entry":0.635,
+"at":1793705134,
+"strength":0.07,
+"question":"Will the Democratic Party win the FL-27 House seat?",
+"link":"https://polymarket.com/event/fl-27-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"fl-27-house-election-winner"
+},
+{
+"h":"H1",
+"cid":"0x789e15c2a1581b37deaabb5fa555d0d8dbfba11b46424c65cd42e73cfe722eaa",
+"side":1,
+"side_name":"No",
+"entry":0.525,
+"at":1793705134,
+"strength":2432,
+"question":"Will the Republican Party win the AL-02 House seat?",
+"link":"https://polymarket.com/event/al-02-house-election-winner",
+"end":1793768340,
+"won":null,
+"event":"al-02-house-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x714e151eb0978a38ea32673a3cbfaedcf2c34057b9ac819e25bc65a317a69b83",
+"side":0,
+"side_name":"Yes",
+"entry":0.255,
+"at":1793705134,
+"strength":0.06,
+"question":"Will Trump meet with Fl\u00e1vio Bolsonaro in 2026?",
+"link":"https://polymarket.com/event/will-trump-meet-with-flavio-bolsonaro-in-2026",
+"end":1798779540,
+"won":null,
+"event":"will-trump-meet-with-flavio-bolsonaro-in-2026"
+},
+{
+"h":"H2",
+"cid":"0xc577fc8f1910dd6db9ae759059e302c7a98f5ee62bd8ff2325c38ffc274596f4",
+"side":1,
+"side_name":"No",
+"entry":0.9645,
+"at":1793705134,
+"strength":0.0595,
+"question":"Will no qualifying Russia x Ukraine peace talks take place by December 31, 2027?",
+"link":"https://polymarket.com/event/where-will-the-next-russia-x-ukraine-peace-talks-take-place",
+"end":1830315540,
+"won":null,
+"event":"where-will-the-next-russia-x-ukraine-peace-talks-take-place"
+},
+{
+"h":"H3",
+"cid":"0x2fb2b4f6d030ed03404e844400cf763a5dfc70275a3d6bd03770287cd7bced56",
+"side":0,
+"side_name":"Yes",
+"entry":0.1,
+"at":1793705134,
+"strength":1373.265,
+"question":"Will the Republican Party hold exactly 49 Senate seats after the 2026 midterm elections?",
+"link":"https://polymarket.com/event/republican-senate-seats-after-the-2026-midterm-elections-927",
+"end":1793725200,
+"won":null,
+"event":"republican-senate-seats-after-the-2026-midterm-elections-927"
 }
 ]
 }

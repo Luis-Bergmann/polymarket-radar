@@ -389,8 +389,10 @@
 "question":"Will the Republicans win the Ohio Senate race in 2026?",
 "link":"https://polymarket.com/event/ohio-senate-election-winner",
 "end":1793664000,
-"won":null,
-"event":"ohio-senate-election-winner"
+"won":true,
+"event":"ohio-senate-election-winner",
+"void":false,
+"closed":1793776590
 },
 {
 "h":"H2",
@@ -759,8 +761,10 @@
 "question":"Will the Democrats win the Wisconsin governor race in 2026?",
 "link":"https://polymarket.com/event/wisconsin-governor-winner-2026",
 "end":1793664000,
-"won":null,
-"event":"wisconsin-governor-winner-2026"
+"won":false,
+"event":"wisconsin-governor-winner-2026",
+"void":false,
+"closed":1793778479
 },
 {
 "h":"H2",
@@ -773,8 +777,10 @@
 "question":"Will the Republicans win the Wisconsin governor race in 2026?",
 "link":"https://polymarket.com/event/wisconsin-governor-winner-2026",
 "end":1793664000,
-"won":null,
-"event":"wisconsin-governor-winner-2026"
+"won":false,
+"event":"wisconsin-governor-winner-2026",
+"void":false,
+"closed":1793778479
 },
 {
 "h":"H2",
@@ -1061,8 +1067,10 @@
 "question":"Will the Republican Party win the TX-15 House seat?",
 "link":"https://polymarket.com/event/tx-15-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"tx-15-house-election-winner"
+"won":true,
+"event":"tx-15-house-election-winner",
+"void":false,
+"closed":1793781599
 },
 {
 "h":"H2",
@@ -1135,8 +1143,10 @@
 "question":"Will Steve Hilton win the California Governor Election in 2026?",
 "link":"https://polymarket.com/event/california-governor-election-2026",
 "end":1793768340,
-"won":null,
-"event":"california-governor-election-2026"
+"won":false,
+"event":"california-governor-election-2026",
+"void":false,
+"closed":1793775959
 },
 {
 "h":"H2",
@@ -1409,8 +1419,10 @@
 "question":"Will the Republicans win the Vermont governor race in 2026?",
 "link":"https://polymarket.com/event/vermont-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"vermont-governor-winner-2026"
+"won":false,
+"event":"vermont-governor-winner-2026",
+"void":false,
+"closed":1793781868
 },
 {
 "h":"H2",
@@ -1485,8 +1497,10 @@
 "question":"Will the Democrats win the Vermont governor race in 2026?",
 "link":"https://polymarket.com/event/vermont-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"vermont-governor-winner-2026"
+"won":false,
+"event":"vermont-governor-winner-2026",
+"void":false,
+"closed":1793781868
 },
 {
 "h":"H2",
@@ -1513,8 +1527,10 @@
 "question":"Will the Democrats win the Kansas Senate race in 2026?",
 "link":"https://polymarket.com/event/kansas-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"kansas-senate-election-winner"
+"won":true,
+"event":"kansas-senate-election-winner",
+"void":false,
+"closed":1793777219
 },
 {
 "h":"H2",
@@ -1527,8 +1543,10 @@
 "question":"Will the Republicans win the Kansas Senate race in 2026?",
 "link":"https://polymarket.com/event/kansas-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"kansas-senate-election-winner"
+"won":true,
+"event":"kansas-senate-election-winner",
+"void":false,
+"closed":1793777219
 },
 {
 "h":"H3",
@@ -1601,8 +1619,10 @@
 "question":"Will the Democrats win the Texas governor race in 2026?",
 "link":"https://polymarket.com/event/texas-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"texas-governor-winner-2026"
+"won":true,
+"event":"texas-governor-winner-2026",
+"void":false,
+"closed":1793776889
 },
 {
 "h":"H2",
@@ -1615,8 +1635,10 @@
 "question":"Will the Republicans win the Texas governor race in 2026?",
 "link":"https://polymarket.com/event/texas-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"texas-governor-winner-2026"
+"won":true,
+"event":"texas-governor-winner-2026",
+"void":false,
+"closed":1793776889
 },
 {
 "h":"H2",
@@ -1643,8 +1665,10 @@
 "question":"Will the Democrats win the Texas Senate race in 2026?",
 "link":"https://polymarket.com/event/texas-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"texas-senate-election-winner"
+"won":true,
+"event":"texas-senate-election-winner",
+"void":false,
+"closed":1793776260
 },
 {
 "h":"H2",
@@ -1657,8 +1681,10 @@
 "question":"Will the Republicans win the Texas Senate race in 2026?",
 "link":"https://polymarket.com/event/texas-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"texas-senate-election-winner"
+"won":true,
+"event":"texas-senate-election-winner",
+"void":false,
+"closed":1793776260
 },
 {
 "h":"H4",
@@ -1671,8 +1697,10 @@
 "question":"Will the Democratic Party control the Senate after the 2026 Midterm elections?",
 "link":"https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
 "end":1793768340,
-"won":null,
-"event":"which-party-will-win-the-senate-in-2026"
+"won":true,
+"event":"which-party-will-win-the-senate-in-2026",
+"void":false,
+"closed":1793789639
 },
 {
 "h":"H2",
@@ -1699,8 +1727,10 @@
 "question":"Will the Democrats win the Vermont governor race in 2026?",
 "link":"https://polymarket.com/event/vermont-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"vermont-governor-winner-2026"
+"won":true,
+"event":"vermont-governor-winner-2026",
+"void":false,
+"closed":1793781868
 },
 {
 "h":"H2",
@@ -1927,8 +1957,10 @@
 "question":"Will the Democrats win the Ohio governor race in 2026?",
 "link":"https://polymarket.com/event/ohio-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"ohio-governor-winner-2026"
+"won":true,
+"event":"ohio-governor-winner-2026",
+"void":false,
+"closed":1793775299
 },
 {
 "h":"H3",
@@ -2017,8 +2049,10 @@
 "question":"Will the Republicans win the Kansas Senate race in 2026?",
 "link":"https://polymarket.com/event/kansas-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"kansas-senate-election-winner"
+"won":false,
+"event":"kansas-senate-election-winner",
+"void":false,
+"closed":1793777219
 },
 {
 "h":"H2",
@@ -2315,8 +2349,10 @@
 "question":"Will the Republican Party control the House after the 2026 Midterm elections?",
 "link":"https://polymarket.com/event/which-party-will-win-the-house-in-2026",
 "end":1793768340,
-"won":null,
-"event":"which-party-will-win-the-house-in-2026"
+"won":false,
+"event":"which-party-will-win-the-house-in-2026",
+"void":false,
+"closed":1793786250
 },
 {
 "h":"H2",
@@ -2357,8 +2393,10 @@
 "question":"Will the Democratic Party win the PA-01 House seat?",
 "link":"https://polymarket.com/event/pa-01-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"pa-01-house-election-winner"
+"won":true,
+"event":"pa-01-house-election-winner",
+"void":false,
+"closed":1793781599
 },
 {
 "h":"H2",
@@ -2771,8 +2809,10 @@
 "question":"Will the Democrats win the Texas Senate race in 2026?",
 "link":"https://polymarket.com/event/texas-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"texas-senate-election-winner"
+"won":false,
+"event":"texas-senate-election-winner",
+"void":false,
+"closed":1793776260
 },
 {
 "h":"H2",
@@ -2815,8 +2855,10 @@
 "question":"Will the Democrats win the New Mexico governor race in 2026?",
 "link":"https://polymarket.com/event/new-mexico-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"new-mexico-governor-winner-2026"
+"won":false,
+"event":"new-mexico-governor-winner-2026",
+"void":false,
+"closed":1793774966
 },
 {
 "h":"H2",
@@ -2857,8 +2899,10 @@
 "question":"Will the Democrats win the Texas governor race in 2026?",
 "link":"https://polymarket.com/event/texas-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"texas-governor-winner-2026"
+"won":false,
+"event":"texas-governor-winner-2026",
+"void":false,
+"closed":1793776889
 },
 {
 "h":"H2",
@@ -3045,8 +3089,10 @@
 "question":"Will the Republican Party win the TX-35 House seat?",
 "link":"https://polymarket.com/event/tx-35-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"tx-35-house-election-winner"
+"won":false,
+"event":"tx-35-house-election-winner",
+"void":false,
+"closed":1793784622
 },
 {
 "h":"H3",
@@ -3119,8 +3165,10 @@
 "question":"Will the Democrats win the New Mexico governor race in 2026?",
 "link":"https://polymarket.com/event/new-mexico-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"new-mexico-governor-winner-2026"
+"won":true,
+"event":"new-mexico-governor-winner-2026",
+"void":false,
+"closed":1793774966
 },
 {
 "h":"H2",
@@ -3203,8 +3251,10 @@
 "question":"Will the Republicans win the Michigan Senate race in 2026?",
 "link":"https://polymarket.com/event/michigan-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"michigan-senate-election-winner"
+"won":false,
+"event":"michigan-senate-election-winner",
+"void":false,
+"closed":1793788410
 },
 {
 "h":"H2",
@@ -3415,8 +3465,10 @@
 "question":"Will the Democratic Party win the FL-12 House seat?",
 "link":"https://polymarket.com/event/fl-12-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-12-house-election-winner"
+"won":true,
+"event":"fl-12-house-election-winner",
+"void":false,
+"closed":1793765159
 },
 {
 "h":"H2",
@@ -3529,8 +3581,10 @@
 "question":"Will the Republican Party win the NC-11 House seat?",
 "link":"https://polymarket.com/event/nc-11-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"nc-11-house-election-winner"
+"won":true,
+"event":"nc-11-house-election-winner",
+"void":false,
+"closed":1793768342
 },
 {
 "h":"H2",
@@ -3557,8 +3611,10 @@
 "question":"Will the Democratic Party win the NC-11 House seat?",
 "link":"https://polymarket.com/event/nc-11-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"nc-11-house-election-winner"
+"won":true,
+"event":"nc-11-house-election-winner",
+"void":false,
+"closed":1793768428
 },
 {
 "h":"H2",
@@ -4475,8 +4531,10 @@
 "question":"Will the Republicans win the Ohio governor race in 2026?",
 "link":"https://polymarket.com/event/ohio-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"ohio-governor-winner-2026"
+"won":true,
+"event":"ohio-governor-winner-2026",
+"void":false,
+"closed":1793775299
 },
 {
 "h":"H1",
@@ -4489,8 +4547,10 @@
 "question":"Will the Republicans win the Ohio governor race in 2026?",
 "link":"https://polymarket.com/event/ohio-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"ohio-governor-winner-2026"
+"won":true,
+"event":"ohio-governor-winner-2026",
+"void":false,
+"closed":1793775299
 },
 {
 "h":"H2",
@@ -4547,8 +4607,10 @@
 "question":"Will the Republican Party control the Senate after the 2026 Midterm elections?",
 "link":"https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
 "end":1793768340,
-"won":null,
-"event":"which-party-will-win-the-senate-in-2026"
+"won":true,
+"event":"which-party-will-win-the-senate-in-2026",
+"void":false,
+"closed":1793778479
 },
 {
 "h":"H4",
@@ -4561,8 +4623,10 @@
 "question":"Will the Republicans win the Ohio governor race in 2026?",
 "link":"https://polymarket.com/event/ohio-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"ohio-governor-winner-2026"
+"won":true,
+"event":"ohio-governor-winner-2026",
+"void":false,
+"closed":1793775299
 },
 {
 "h":"H2",
@@ -4619,8 +4683,10 @@
 "question":"Will the Republican Party win the PA-01 House seat?",
 "link":"https://polymarket.com/event/pa-01-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"pa-01-house-election-winner"
+"won":true,
+"event":"pa-01-house-election-winner",
+"void":false,
+"closed":1793781599
 },
 {
 "h":"H2",
@@ -4633,8 +4699,10 @@
 "question":"Will the Democratic Party win the FL-21 House seat?",
 "link":"https://polymarket.com/event/fl-21-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-21-house-election-winner"
+"won":false,
+"event":"fl-21-house-election-winner",
+"void":false,
+"closed":1793766086
 },
 {
 "h":"H2",
@@ -4805,8 +4873,10 @@
 "question":"Will the Republican Party win the IA-02 House seat?",
 "link":"https://polymarket.com/event/ia-02-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"ia-02-house-election-winner"
+"won":false,
+"event":"ia-02-house-election-winner",
+"void":false,
+"closed":1793780782
 },
 {
 "h":"H3",
@@ -4893,8 +4963,10 @@
 "question":"Will the Republican Party win the FL-21 House seat?",
 "link":"https://polymarket.com/event/fl-21-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-21-house-election-winner"
+"won":false,
+"event":"fl-21-house-election-winner",
+"void":false,
+"closed":1793765789
 },
 {
 "h":"H2",
@@ -4907,8 +4979,10 @@
 "question":"Will the Democratic Party win the FL-12 House seat?",
 "link":"https://polymarket.com/event/fl-12-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-12-house-election-winner"
+"won":false,
+"event":"fl-12-house-election-winner",
+"void":false,
+"closed":1793765159
 },
 {
 "h":"H2",
@@ -4949,8 +5023,10 @@
 "question":"Will the Democrats win the Ohio Senate race in 2026?",
 "link":"https://polymarket.com/event/ohio-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"ohio-senate-election-winner"
+"won":true,
+"event":"ohio-senate-election-winner",
+"void":false,
+"closed":1793776914
 },
 {
 "h":"H2",
@@ -5009,8 +5085,10 @@
 "question":"Will the Republicans win the Georgia governor race in 2026?",
 "link":"https://polymarket.com/event/georgia-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"georgia-governor-winner-2026"
+"won":true,
+"event":"georgia-governor-winner-2026",
+"void":false,
+"closed":1793770232
 },
 {
 "h":"H2",
@@ -5023,8 +5101,10 @@
 "question":"Will the Democratic Party win the AL-02 House seat?",
 "link":"https://polymarket.com/event/al-02-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"al-02-house-election-winner"
+"won":false,
+"event":"al-02-house-election-winner",
+"void":false,
+"closed":1793775959
 },
 {
 "h":"H2",
@@ -5065,8 +5145,10 @@
 "question":"Will the Democratic Party win the NJ-09 House seat?",
 "link":"https://polymarket.com/event/nj-09-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"nj-09-house-election-winner"
+"won":true,
+"event":"nj-09-house-election-winner",
+"void":false,
+"closed":1793773733
 },
 {
 "h":"H2",
@@ -5135,8 +5217,10 @@
 "question":"Will the Democratic Party win the FL-14 House seat?",
 "link":"https://polymarket.com/event/fl-14-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-14-house-election-winner"
+"won":false,
+"event":"fl-14-house-election-winner",
+"void":false,
+"closed":1793765789
 },
 {
 "h":"H2",
@@ -5149,8 +5233,10 @@
 "question":"Will Todd Achilles win the Idaho Senate race in 2026?",
 "link":"https://polymarket.com/event/idaho-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"idaho-senate-election-winner"
+"won":false,
+"event":"idaho-senate-election-winner",
+"void":false,
+"closed":1793785134
 },
 {
 "h":"H2",
@@ -5163,8 +5249,10 @@
 "question":"Will the Republicans win the Idaho Senate race in 2026?",
 "link":"https://polymarket.com/event/idaho-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"idaho-senate-election-winner"
+"won":false,
+"event":"idaho-senate-election-winner",
+"void":false,
+"closed":1793785134
 },
 {
 "h":"H2",
@@ -5191,8 +5279,10 @@
 "question":"Will the Republican Party win the FL-14 House seat?",
 "link":"https://polymarket.com/event/fl-14-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-14-house-election-winner"
+"won":false,
+"event":"fl-14-house-election-winner",
+"void":false,
+"closed":1793765789
 },
 {
 "h":"H3",
@@ -5205,8 +5295,10 @@
 "question":"Will the Republican Party control the Senate after the 2026 Midterm elections?",
 "link":"https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
 "end":1793768340,
-"won":null,
-"event":"which-party-will-win-the-senate-in-2026"
+"won":false,
+"event":"which-party-will-win-the-senate-in-2026",
+"void":false,
+"closed":1793778479
 },
 {
 "h":"H3",
@@ -5275,8 +5367,10 @@
 "question":"Will the Republican Party win the IA-02 House seat?",
 "link":"https://polymarket.com/event/ia-02-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"ia-02-house-election-winner"
+"won":true,
+"event":"ia-02-house-election-winner",
+"void":false,
+"closed":1793780782
 },
 {
 "h":"H2",
@@ -5505,8 +5599,10 @@
 "question":"Will the Republicans win the Texas governor race in 2026?",
 "link":"https://polymarket.com/event/texas-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"texas-governor-winner-2026"
+"won":false,
+"event":"texas-governor-winner-2026",
+"void":false,
+"closed":1793776889
 },
 {
 "h":"H2",
@@ -5565,8 +5661,10 @@
 "question":"Will the Democratic Party win the TX-34 House seat?",
 "link":"https://polymarket.com/event/tx-34-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"tx-34-house-election-winner"
+"won":true,
+"event":"tx-34-house-election-winner",
+"void":false,
+"closed":1793775299
 },
 {
 "h":"H2",
@@ -5739,8 +5837,10 @@
 "question":"Will the Republican Party win the TX-34 House seat?",
 "link":"https://polymarket.com/event/tx-34-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"tx-34-house-election-winner"
+"won":true,
+"event":"tx-34-house-election-winner",
+"void":false,
+"closed":1793775506
 },
 {
 "h":"H2",
@@ -6311,8 +6411,10 @@
 "question":"Will the Republicans win the Maine Senate race in 2026?",
 "link":"https://polymarket.com/event/maine-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"maine-senate-election-winner"
+"won":false,
+"event":"maine-senate-election-winner",
+"void":false,
+"closed":1793783159
 },
 {
 "h":"H2",
@@ -6325,8 +6427,10 @@
 "question":"Will the Republican Party win the FL-25 House seat?",
 "link":"https://polymarket.com/event/fl-25-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-25-house-election-winner"
+"won":false,
+"event":"fl-25-house-election-winner",
+"void":false,
+"closed":1793765722
 },
 {
 "h":"H1",
@@ -6339,8 +6443,10 @@
 "question":"Will the Republican Party win the FL-25 House seat?",
 "link":"https://polymarket.com/event/fl-25-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-25-house-election-winner"
+"won":false,
+"event":"fl-25-house-election-winner",
+"void":false,
+"closed":1793765722
 },
 {
 "h":"H2",
@@ -6353,8 +6459,10 @@
 "question":"Will the Democratic Party win the FL-25 House seat?",
 "link":"https://polymarket.com/event/fl-25-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-25-house-election-winner"
+"won":false,
+"event":"fl-25-house-election-winner",
+"void":false,
+"closed":1793765722
 },
 {
 "h":"H4",
@@ -6367,8 +6475,10 @@
 "question":"Will the Republicans win the Texas Senate race in 2026?",
 "link":"https://polymarket.com/event/texas-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"texas-senate-election-winner"
+"won":false,
+"event":"texas-senate-election-winner",
+"void":false,
+"closed":1793776260
 },
 {
 "h":"H2",
@@ -6395,8 +6505,10 @@
 "question":"Will the Democrats win the Nebraska governor race in 2026?",
 "link":"https://polymarket.com/event/nebraska-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"nebraska-governor-winner-2026"
+"won":false,
+"event":"nebraska-governor-winner-2026",
+"void":false,
+"closed":1793790386
 },
 {
 "h":"H2",
@@ -6645,8 +6757,10 @@
 "question":"Will the Republicans win the Maine Senate race in 2026?",
 "link":"https://polymarket.com/event/maine-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"maine-senate-election-winner"
+"won":true,
+"event":"maine-senate-election-winner",
+"void":false,
+"closed":1793783159
 },
 {
 "h":"H2",
@@ -7099,8 +7213,10 @@
 "question":"Will the Democrats win the Ohio governor race in 2026?",
 "link":"https://polymarket.com/event/ohio-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"ohio-governor-winner-2026"
+"won":false,
+"event":"ohio-governor-winner-2026",
+"void":false,
+"closed":1793775299
 },
 {
 "h":"H2",
@@ -7113,8 +7229,10 @@
 "question":"Will the Republicans win the Ohio governor race in 2026?",
 "link":"https://polymarket.com/event/ohio-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"ohio-governor-winner-2026"
+"won":false,
+"event":"ohio-governor-winner-2026",
+"void":false,
+"closed":1793775299
 },
 {
 "h":"H2",
@@ -7205,8 +7323,10 @@
 "question":"Will the Democrats win the Minnesota Senate race in 2026?",
 "link":"https://polymarket.com/event/minnesota-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"minnesota-senate-election-winner"
+"won":true,
+"event":"minnesota-senate-election-winner",
+"void":false,
+"closed":1793780043
 },
 {
 "h":"H2",
@@ -7219,8 +7339,10 @@
 "question":"Will the Democrats win the South Carolina Senate race in 2026?",
 "link":"https://polymarket.com/event/south-carolina-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"south-carolina-senate-election-winner"
+"won":true,
+"event":"south-carolina-senate-election-winner",
+"void":false,
+"closed":1793774670
 },
 {
 "h":"H2",
@@ -7233,8 +7355,10 @@
 "question":"Will the Republicans win the Minnesota Senate race in 2026?",
 "link":"https://polymarket.com/event/minnesota-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"minnesota-senate-election-winner"
+"won":true,
+"event":"minnesota-senate-election-winner",
+"void":false,
+"closed":1793780043
 },
 {
 "h":"H2",
@@ -7247,8 +7371,10 @@
 "question":"Will the Republicans win the South Carolina Senate race in 2026?",
 "link":"https://polymarket.com/event/south-carolina-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"south-carolina-senate-election-winner"
+"won":true,
+"event":"south-carolina-senate-election-winner",
+"void":false,
+"closed":1793774670
 },
 {
 "h":"H2",
@@ -7275,8 +7401,10 @@
 "question":"Will the Republicans win the Texas Senate race in 2026?",
 "link":"https://polymarket.com/event/texas-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"texas-senate-election-winner"
+"won":false,
+"event":"texas-senate-election-winner",
+"void":false,
+"closed":1793776260
 },
 {
 "h":"H3",
@@ -7405,8 +7533,10 @@
 "question":"Will the Republican Party win the AL-02 House seat?",
 "link":"https://polymarket.com/event/al-02-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"al-02-house-election-winner"
+"won":true,
+"event":"al-02-house-election-winner",
+"void":false,
+"closed":1793775959
 },
 {
 "h":"H2",
@@ -7449,8 +7579,10 @@
 "question":"Will the Democratic Party win the AL-02 House seat?",
 "link":"https://polymarket.com/event/al-02-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"al-02-house-election-winner"
+"won":true,
+"event":"al-02-house-election-winner",
+"void":false,
+"closed":1793775959
 },
 {
 "h":"H2",
@@ -7479,8 +7611,10 @@
 "question":"Will the Republicans win the Florida governor race in 2026?",
 "link":"https://polymarket.com/event/florida-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"florida-governor-winner-2026"
+"won":false,
+"event":"florida-governor-winner-2026",
+"void":false,
+"closed":1793769299
 },
 {
 "h":"H2",
@@ -7521,8 +7655,10 @@
 "question":"Will the Democrats win the Florida governor race in 2026?",
 "link":"https://polymarket.com/event/florida-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"florida-governor-winner-2026"
+"won":false,
+"event":"florida-governor-winner-2026",
+"void":false,
+"closed":1793769535
 },
 {
 "h":"H2",
@@ -7535,8 +7671,10 @@
 "question":"Will the Republican Party win the FL-22 House seat?",
 "link":"https://polymarket.com/event/fl-22-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-22-house-election-winner"
+"won":true,
+"event":"fl-22-house-election-winner",
+"void":false,
+"closed":1793769299
 },
 {
 "h":"H2",
@@ -7549,8 +7687,10 @@
 "question":"Will the Republicans win the Wisconsin governor race in 2026?",
 "link":"https://polymarket.com/event/wisconsin-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"wisconsin-governor-winner-2026"
+"won":true,
+"event":"wisconsin-governor-winner-2026",
+"void":false,
+"closed":1793778479
 },
 {
 "h":"H2",
@@ -7721,8 +7861,10 @@
 "question":"Will the Democrats win the Wisconsin governor race in 2026?",
 "link":"https://polymarket.com/event/wisconsin-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"wisconsin-governor-winner-2026"
+"won":true,
+"event":"wisconsin-governor-winner-2026",
+"void":false,
+"closed":1793778479
 },
 {
 "h":"H2",
@@ -7735,8 +7877,10 @@
 "question":"Will the Republicans win the South Carolina governor race in 2026?",
 "link":"https://polymarket.com/event/south-carolina-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"south-carolina-governor-winner-2026"
+"won":false,
+"event":"south-carolina-governor-winner-2026",
+"void":false,
+"closed":1793781779
 },
 {
 "h":"H2",
@@ -7749,8 +7893,10 @@
 "question":"Will the Democrats win the South Carolina governor race in 2026?",
 "link":"https://polymarket.com/event/south-carolina-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"south-carolina-governor-winner-2026"
+"won":false,
+"event":"south-carolina-governor-winner-2026",
+"void":false,
+"closed":1793781599
 },
 {
 "h":"H2",
@@ -7763,8 +7909,10 @@
 "question":"Will the Democratic Party win the FL-14 House seat?",
 "link":"https://polymarket.com/event/fl-14-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-14-house-election-winner"
+"won":true,
+"event":"fl-14-house-election-winner",
+"void":false,
+"closed":1793765789
 },
 {
 "h":"H2",
@@ -7851,8 +7999,10 @@
 "question":"Will the Republicans win the Florida governor race in 2026?",
 "link":"https://polymarket.com/event/florida-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"florida-governor-winner-2026"
+"won":false,
+"event":"florida-governor-winner-2026",
+"void":false,
+"closed":1793769299
 },
 {
 "h":"H2",
@@ -7879,8 +8029,10 @@
 "question":"Will the Republicans win the Florida governor race in 2026?",
 "link":"https://polymarket.com/event/florida-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"florida-governor-winner-2026"
+"won":false,
+"event":"florida-governor-winner-2026",
+"void":false,
+"closed":1793769299
 },
 {
 "h":"H2",
@@ -8091,8 +8243,10 @@
 "question":"Will the Republicans win the Michigan Senate race in 2026?",
 "link":"https://polymarket.com/event/michigan-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"michigan-senate-election-winner"
+"won":true,
+"event":"michigan-senate-election-winner",
+"void":false,
+"closed":1793788410
 },
 {
 "h":"H2",
@@ -8105,8 +8259,10 @@
 "question":"Will the Democrats win the Michigan Senate race in 2026?",
 "link":"https://polymarket.com/event/michigan-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"michigan-senate-election-winner"
+"won":true,
+"event":"michigan-senate-election-winner",
+"void":false,
+"closed":1793788410
 },
 {
 "h":"H2",
@@ -8217,8 +8373,10 @@
 "question":"Will the Democrats win the Texas Senate race in 2026?",
 "link":"https://polymarket.com/event/texas-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"texas-senate-election-winner"
+"won":true,
+"event":"texas-senate-election-winner",
+"void":false,
+"closed":1793776260
 },
 {
 "h":"H2",
@@ -8569,8 +8727,10 @@
 "question":"Will the Republican Party win the FL-14 House seat?",
 "link":"https://polymarket.com/event/fl-14-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-14-house-election-winner"
+"won":true,
+"event":"fl-14-house-election-winner",
+"void":false,
+"closed":1793765789
 },
 {
 "h":"H2",
@@ -8611,8 +8771,10 @@
 "question":"Will the Democrats win the Nebraska governor race in 2026?",
 "link":"https://polymarket.com/event/nebraska-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"nebraska-governor-winner-2026"
+"won":true,
+"event":"nebraska-governor-winner-2026",
+"void":false,
+"closed":1793790386
 },
 {
 "h":"H2",
@@ -8793,8 +8955,10 @@
 "question":"Will the Republicans win the Ohio governor race in 2026?",
 "link":"https://polymarket.com/event/ohio-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"ohio-governor-winner-2026"
+"won":false,
+"event":"ohio-governor-winner-2026",
+"void":false,
+"closed":1793775299
 },
 {
 "h":"H2",
@@ -8821,8 +8985,10 @@
 "question":"Will the Republicans win the Michigan Senate race in 2026?",
 "link":"https://polymarket.com/event/michigan-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"michigan-senate-election-winner"
+"won":false,
+"event":"michigan-senate-election-winner",
+"void":false,
+"closed":1793788410
 },
 {
 "h":"H2",
@@ -8835,8 +9001,10 @@
 "question":"Will the Democrats win the Michigan Senate race in 2026?",
 "link":"https://polymarket.com/event/michigan-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"michigan-senate-election-winner"
+"won":false,
+"event":"michigan-senate-election-winner",
+"void":false,
+"closed":1793788410
 },
 {
 "h":"H2",
@@ -8891,8 +9059,10 @@
 "question":"Will the Democrats win the New Hampshire governor race in 2026?",
 "link":"https://polymarket.com/event/new-hampshire-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"new-hampshire-governor-winner-2026"
+"won":false,
+"event":"new-hampshire-governor-winner-2026",
+"void":false,
+"closed":1793785649
 },
 {
 "h":"H2",
@@ -8905,8 +9075,10 @@
 "question":"Will the Democrats win the Iowa Senate race in 2026?",
 "link":"https://polymarket.com/event/iowa-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"iowa-senate-election-winner"
+"won":true,
+"event":"iowa-senate-election-winner",
+"void":false,
+"closed":1793778149
 },
 {
 "h":"H2",
@@ -8933,8 +9105,10 @@
 "question":"Will the Republicans win the Louisiana Senate race in 2026?",
 "link":"https://polymarket.com/event/louisiana-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"louisiana-senate-election-winner"
+"won":false,
+"event":"louisiana-senate-election-winner",
+"void":false,
+"closed":1793785706
 },
 {
 "h":"H2",
@@ -8989,8 +9163,10 @@
 "question":"Will the Democrats win the Maine Senate race in 2026?",
 "link":"https://polymarket.com/event/maine-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"maine-senate-election-winner"
+"won":true,
+"event":"maine-senate-election-winner",
+"void":false,
+"closed":1793783159
 },
 {
 "h":"H2",
@@ -9017,8 +9193,10 @@
 "question":"Will the Republicans win the Iowa Senate race in 2026?",
 "link":"https://polymarket.com/event/iowa-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"iowa-senate-election-winner"
+"won":true,
+"event":"iowa-senate-election-winner",
+"void":false,
+"closed":1793778149
 },
 {
 "h":"H2",
@@ -9059,8 +9237,10 @@
 "question":"Will the Democrats win the Louisiana Senate race in 2026?",
 "link":"https://polymarket.com/event/louisiana-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"louisiana-senate-election-winner"
+"won":false,
+"event":"louisiana-senate-election-winner",
+"void":false,
+"closed":1793785649
 },
 {
 "h":"H2",
@@ -9115,8 +9295,10 @@
 "question":"Will the Republicans win the New Hampshire governor race in 2026?",
 "link":"https://polymarket.com/event/new-hampshire-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"new-hampshire-governor-winner-2026"
+"won":false,
+"event":"new-hampshire-governor-winner-2026",
+"void":false,
+"closed":1793785649
 },
 {
 "h":"H2",
@@ -9143,8 +9325,10 @@
 "question":"Will the Democratic Party control the Senate after the 2026 Midterm elections?",
 "link":"https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
 "end":1793768340,
-"won":null,
-"event":"which-party-will-win-the-senate-in-2026"
+"won":true,
+"event":"which-party-will-win-the-senate-in-2026",
+"void":false,
+"closed":1793789639
 },
 {
 "h":"H2",
@@ -9157,8 +9341,10 @@
 "question":"Will the Republican Party control the Senate after the 2026 Midterm elections?",
 "link":"https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
 "end":1793768340,
-"won":null,
-"event":"which-party-will-win-the-senate-in-2026"
+"won":true,
+"event":"which-party-will-win-the-senate-in-2026",
+"void":false,
+"closed":1793778479
 },
 {
 "h":"H2",
@@ -9227,8 +9413,10 @@
 "question":"Will the Republicans win the Florida governor race in 2026?",
 "link":"https://polymarket.com/event/florida-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"florida-governor-winner-2026"
+"won":true,
+"event":"florida-governor-winner-2026",
+"void":false,
+"closed":1793769299
 },
 {
 "h":"H3",
@@ -9241,8 +9429,10 @@
 "question":"Will the Republicans win the South Carolina Senate race in 2026?",
 "link":"https://polymarket.com/event/south-carolina-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"south-carolina-senate-election-winner"
+"won":true,
+"event":"south-carolina-senate-election-winner",
+"void":false,
+"closed":1793774670
 },
 {
 "h":"H3",
@@ -9269,8 +9459,10 @@
 "question":"Will the Democrats win the Ohio Senate race in 2026?",
 "link":"https://polymarket.com/event/ohio-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"ohio-senate-election-winner"
+"won":false,
+"event":"ohio-senate-election-winner",
+"void":false,
+"closed":1793776914
 },
 {
 "h":"H3",
@@ -9283,8 +9475,10 @@
 "question":"Will the Republicans win the Ohio Senate race in 2026?",
 "link":"https://polymarket.com/event/ohio-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"ohio-senate-election-winner"
+"won":false,
+"event":"ohio-senate-election-winner",
+"void":false,
+"closed":1793776590
 },
 {
 "h":"H2",
@@ -9409,8 +9603,10 @@
 "question":"Will the Democratic Party control the Senate after the 2026 Midterm elections?",
 "link":"https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
 "end":1793768340,
-"won":null,
-"event":"which-party-will-win-the-senate-in-2026"
+"won":false,
+"event":"which-party-will-win-the-senate-in-2026",
+"void":false,
+"closed":1793789639
 },
 {
 "h":"H4",
@@ -9507,8 +9703,10 @@
 "question":"Will the Republican Party win the AL-02 House seat?",
 "link":"https://polymarket.com/event/al-02-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"al-02-house-election-winner"
+"won":true,
+"event":"al-02-house-election-winner",
+"void":false,
+"closed":1793775959
 },
 {
 "h":"H2",
@@ -9563,8 +9761,10 @@
 "question":"Will the Democratic Party win the FL-22 House seat?",
 "link":"https://polymarket.com/event/fl-22-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-22-house-election-winner"
+"won":false,
+"event":"fl-22-house-election-winner",
+"void":false,
+"closed":1793769299
 },
 {
 "h":"H2",
@@ -9577,8 +9777,10 @@
 "question":"Will the Republican Party win the FL-22 House seat?",
 "link":"https://polymarket.com/event/fl-22-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"fl-22-house-election-winner"
+"won":false,
+"event":"fl-22-house-election-winner",
+"void":false,
+"closed":1793769299
 },
 {
 "h":"H2",
@@ -9605,8 +9807,10 @@
 "question":"Will the Democratic Party win the CO-08 House seat?",
 "link":"https://polymarket.com/event/co-08-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"co-08-house-election-winner"
+"won":true,
+"event":"co-08-house-election-winner",
+"void":false,
+"closed":1793778780
 },
 {
 "h":"H1",
@@ -9633,8 +9837,10 @@
 "question":"Will the Republican Party control the House after the 2026 Midterm elections?",
 "link":"https://polymarket.com/event/which-party-will-win-the-house-in-2026",
 "end":1793768340,
-"won":null,
-"event":"which-party-will-win-the-house-in-2026"
+"won":true,
+"event":"which-party-will-win-the-house-in-2026",
+"void":false,
+"closed":1793786250
 },
 {
 "h":"H3",
@@ -9661,8 +9867,10 @@
 "question":"Will the Democrats win the Vermont governor race in 2026?",
 "link":"https://polymarket.com/event/vermont-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"vermont-governor-winner-2026"
+"won":false,
+"event":"vermont-governor-winner-2026",
+"void":false,
+"closed":1793781868
 },
 {
 "h":"H4",
@@ -9675,8 +9883,10 @@
 "question":"Will the Republicans win the Texas governor race in 2026?",
 "link":"https://polymarket.com/event/texas-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"texas-governor-winner-2026"
+"won":false,
+"event":"texas-governor-winner-2026",
+"void":false,
+"closed":1793776889
 },
 {
 "h":"H4",
@@ -9689,8 +9899,10 @@
 "question":"Will the Democrats win the Michigan Senate race in 2026?",
 "link":"https://polymarket.com/event/michigan-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"michigan-senate-election-winner"
+"won":true,
+"event":"michigan-senate-election-winner",
+"void":false,
+"closed":1793788410
 },
 {
 "h":"H3",
@@ -9703,8 +9915,10 @@
 "question":"Will the Democrats win the Texas Senate race in 2026?",
 "link":"https://polymarket.com/event/texas-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"texas-senate-election-winner"
+"won":false,
+"event":"texas-senate-election-winner",
+"void":false,
+"closed":1793776260
 },
 {
 "h":"H3",
@@ -9717,8 +9931,10 @@
 "question":"Will the Democrats win the Michigan Senate race in 2026?",
 "link":"https://polymarket.com/event/michigan-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"michigan-senate-election-winner"
+"won":false,
+"event":"michigan-senate-election-winner",
+"void":false,
+"closed":1793788410
 },
 {
 "h":"H3",
@@ -9787,8 +10003,10 @@
 "question":"Will the Democratic Party control the Senate after the 2026 Midterm elections?",
 "link":"https://polymarket.com/event/which-party-will-win-the-senate-in-2026",
 "end":1793768340,
-"won":null,
-"event":"which-party-will-win-the-senate-in-2026"
+"won":false,
+"event":"which-party-will-win-the-senate-in-2026",
+"void":false,
+"closed":1793789639
 },
 {
 "h":"H3",
@@ -9801,8 +10019,10 @@
 "question":"Will the Democrats win the Florida governor race in 2026?",
 "link":"https://polymarket.com/event/florida-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"florida-governor-winner-2026"
+"won":false,
+"event":"florida-governor-winner-2026",
+"void":false,
+"closed":1793769535
 },
 {
 "h":"H3",
@@ -9815,8 +10035,10 @@
 "question":"Will the Republicans win the Maine Senate race in 2026?",
 "link":"https://polymarket.com/event/maine-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"maine-senate-election-winner"
+"won":false,
+"event":"maine-senate-election-winner",
+"void":false,
+"closed":1793783159
 },
 {
 "h":"H3",
@@ -9885,8 +10107,10 @@
 "question":"Will the Democrats win the Iowa Senate race in 2026?",
 "link":"https://polymarket.com/event/iowa-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"iowa-senate-election-winner"
+"won":true,
+"event":"iowa-senate-election-winner",
+"void":false,
+"closed":1793778149
 },
 {
 "h":"H3",
@@ -9899,8 +10123,10 @@
 "question":"Will the Republicans win the Texas governor race in 2026?",
 "link":"https://polymarket.com/event/texas-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"texas-governor-winner-2026"
+"won":false,
+"event":"texas-governor-winner-2026",
+"void":false,
+"closed":1793776889
 },
 {
 "h":"H4",
@@ -9913,8 +10139,10 @@
 "question":"Will the Democrats win the Texas governor race in 2026?",
 "link":"https://polymarket.com/event/texas-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"texas-governor-winner-2026"
+"won":true,
+"event":"texas-governor-winner-2026",
+"void":false,
+"closed":1793776889
 },
 {
 "h":"H3",
@@ -9929,6 +10157,146 @@
 "end":1793768340,
 "won":null,
 "event":"nebraska-senate-election-winner"
+},
+{
+"h":"H2",
+"cid":"0xb4299322010815429e91d888b48410a093a51fdbeeea2c3c6f2c4a2ac8415d06",
+"side":0,
+"side_name":"Yes",
+"entry":0.65,
+"at":1793791674,
+"strength":0.19,
+"question":"Will Trump be impeached by June 30, 2027?",
+"link":"https://polymarket.com/event/will-trump-be-impeached-by-december-31-2026",
+"end":1814414340,
+"won":null,
+"event":"will-trump-be-impeached-by-december-31-2026"
+},
+{
+"h":"H2",
+"cid":"0xecffb867dc6b5421ec726ff8a44de5a538ccbad7dc1ea5c8b175b00293227cb5",
+"side":0,
+"side_name":"Yes",
+"entry":0.605,
+"at":1793791674,
+"strength":0.145,
+"question":"Will Chris Hipkins be the next Prime Minister of New Zealand after the 2026 elections?",
+"link":"https://polymarket.com/event/next-prime-minister-of-new-zealand-174",
+"end":1794113940,
+"won":null,
+"event":"next-prime-minister-of-new-zealand-174"
+},
+{
+"h":"H1",
+"cid":"0xecffb867dc6b5421ec726ff8a44de5a538ccbad7dc1ea5c8b175b00293227cb5",
+"side":0,
+"side_name":"Yes",
+"entry":0.605,
+"at":1793791674,
+"strength":3000,
+"question":"Will Chris Hipkins be the next Prime Minister of New Zealand after the 2026 elections?",
+"link":"https://polymarket.com/event/next-prime-minister-of-new-zealand-174",
+"end":1794113940,
+"won":null,
+"event":"next-prime-minister-of-new-zealand-174"
+},
+{
+"h":"H2",
+"cid":"0x74dba1ce1ae9dd535414e85f2d9ab5ea32c0fb1acc9b7130b67e6d91217e24e1",
+"side":0,
+"side_name":"Yes",
+"entry":0.2695,
+"at":1793791674,
+"strength":0.121,
+"question":"Will Jon Ossoff win the 2028 Democratic presidential nomination?",
+"link":"https://polymarket.com/event/democratic-presidential-nominee-2028",
+"end":1857272340,
+"won":null,
+"event":"democratic-presidential-nominee-2028"
+},
+{
+"h":"H2",
+"cid":"0x20c8bb9a9f834efd90e0d3b5c8ff6c581cad3034ee10145cd7a8f9c94081cd57",
+"side":0,
+"side_name":"Yes",
+"entry":0.385,
+"at":1793791674,
+"strength":0.105,
+"question":"US reissues Iran oil sanction relief by December 31?",
+"link":"https://polymarket.com/event/us-reissues-iran-oil-sales-sanction-relief-byptptpt-20260708142359046",
+"end":1798779540,
+"won":null,
+"event":"us-reissues-iran-oil-sales-sanction-relief-byptptpt-20260708142359046"
+},
+{
+"h":"H2",
+"cid":"0x64d31a2af85518c6718a5757a35b840f08eca20c1e22c0eb1e96ec01cc55b8b6",
+"side":0,
+"side_name":"Yes",
+"entry":0.1085,
+"at":1793791674,
+"strength":0.068,
+"question":"Will Ron DeSantis win the 2028 Republican presidential nomination?",
+"link":"https://polymarket.com/event/republican-presidential-nominee-2028",
+"end":1857272340,
+"won":null,
+"event":"republican-presidential-nominee-2028"
+},
+{
+"h":"H2",
+"cid":"0xba155b6be6cabf93bf31dfcc56fe2f4e3e88d16b0d490319c635930f2d9fbd04",
+"side":1,
+"side_name":"No",
+"entry":0.365,
+"at":1793791674,
+"strength":0.065,
+"question":"Will National Party win the most seats in the New Zealand House of Representatives in the 2026 New Zealand legislative election?",
+"link":"https://polymarket.com/event/new-zealand-legislative-election-winner",
+"end":1794113940,
+"won":null,
+"event":"new-zealand-legislative-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x61600d487069f99e775307a0655c1a79f26e4fc6d8d1ba66790c64d78d0beba2",
+"side":0,
+"side_name":"Yes",
+"entry":0.178,
+"at":1793791674,
+"strength":0.0635,
+"question":"Will Jon Ossoff win the 2028 US Presidential Election?",
+"link":"https://polymarket.com/event/presidential-election-winner-2028",
+"end":1857272340,
+"won":null,
+"event":"presidential-election-winner-2028"
+},
+{
+"h":"H2",
+"cid":"0x741d99d33224258ad4536be7adbfdea7cacdaec616ce88e13755bfafde9c6d19",
+"side":0,
+"side_name":"Yes",
+"entry":0.33,
+"at":1793791674,
+"strength":0.05,
+"question":"Will Labour Party win the most seats in the New Zealand House of Representatives in the 2026 New Zealand legislative election?",
+"link":"https://polymarket.com/event/new-zealand-legislative-election-winner",
+"end":1794113940,
+"won":null,
+"event":"new-zealand-legislative-election-winner"
+},
+{
+"h":"H1",
+"cid":"0x741d99d33224258ad4536be7adbfdea7cacdaec616ce88e13755bfafde9c6d19",
+"side":0,
+"side_name":"Yes",
+"entry":0.33,
+"at":1793791674,
+"strength":2936,
+"question":"Will Labour Party win the most seats in the New Zealand House of Representatives in the 2026 New Zealand legislative election?",
+"link":"https://polymarket.com/event/new-zealand-legislative-election-winner",
+"end":1794113940,
+"won":null,
+"event":"new-zealand-legislative-election-winner"
 }
 ]
 }

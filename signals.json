@@ -1129,8 +1129,10 @@
 "question":"2026 Balance of Power: R Senate, D House",
 "link":"https://polymarket.com/event/balance-of-power-2026-midterms",
 "end":1793768340,
-"won":null,
-"event":"balance-of-power-2026-midterms"
+"won":false,
+"event":"balance-of-power-2026-midterms",
+"void":false,
+"closed":1793814410
 },
 {
 "h":"H3",
@@ -1159,8 +1161,10 @@
 "question":"Will an independent win the Nebraska Senate race in 2026?",
 "link":"https://polymarket.com/event/nebraska-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"nebraska-senate-election-winner"
+"won":true,
+"event":"nebraska-senate-election-winner",
+"void":false,
+"closed":1793792153
 },
 {
 "h":"H2",
@@ -1835,8 +1839,10 @@
 "question":"Will the Democrats win the Nevada governor race in 2026?",
 "link":"https://polymarket.com/event/nevada-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"nevada-governor-winner-2026"
+"won":true,
+"event":"nevada-governor-winner-2026",
+"void":false,
+"closed":1793799450
 },
 {
 "h":"H2",
@@ -1973,8 +1979,10 @@
 "question":"2026 Balance of Power: R Senate, R House",
 "link":"https://polymarket.com/event/balance-of-power-2026-midterms",
 "end":1793768340,
-"won":null,
-"event":"balance-of-power-2026-midterms"
+"won":false,
+"event":"balance-of-power-2026-midterms",
+"void":false,
+"closed":1793812489
 },
 {
 "h":"H2",
@@ -3657,8 +3665,10 @@
 "question":"Will the Republicans win the Nevada governor race in 2026?",
 "link":"https://polymarket.com/event/nevada-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"nevada-governor-winner-2026"
+"won":true,
+"event":"nevada-governor-winner-2026",
+"void":false,
+"closed":1793799450
 },
 {
 "h":"H2",
@@ -3927,8 +3937,10 @@
 "question":"Will the Democratic Party control the House after the 2026 Midterm elections?",
 "link":"https://polymarket.com/event/which-party-will-win-the-house-in-2026",
 "end":1793768340,
-"won":null,
-"event":"which-party-will-win-the-house-in-2026"
+"won":true,
+"event":"which-party-will-win-the-house-in-2026",
+"void":false,
+"closed":1793797590
 },
 {
 "h":"H2",
@@ -5189,8 +5201,10 @@
 "question":"2026 Balance of Power: R Senate, R House",
 "link":"https://polymarket.com/event/balance-of-power-2026-midterms",
 "end":1793768340,
-"won":null,
-"event":"balance-of-power-2026-midterms"
+"won":true,
+"event":"balance-of-power-2026-midterms",
+"void":false,
+"closed":1793812489
 },
 {
 "h":"H2",
@@ -5693,8 +5707,10 @@
 "question":"Will the Republican Party hold exactly 48 Senate seats after the 2026 midterm elections?",
 "link":"https://polymarket.com/event/republican-senate-seats-after-the-2026-midterm-elections-927",
 "end":1793725200,
-"won":null,
-"event":"republican-senate-seats-after-the-2026-midterm-elections-927"
+"won":false,
+"event":"republican-senate-seats-after-the-2026-midterm-elections-927",
+"void":false,
+"closed":1793794999
 },
 {
 "h":"H2",
@@ -6937,8 +6953,10 @@
 "question":"Will the Democrats win the Nevada governor race in 2026?",
 "link":"https://polymarket.com/event/nevada-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"nevada-governor-winner-2026"
+"won":false,
+"event":"nevada-governor-winner-2026",
+"void":false,
+"closed":1793799450
 },
 {
 "h":"H2",
@@ -8015,8 +8033,10 @@
 "question":"Will Democrats win all \"core four\" senate races?",
 "link":"https://polymarket.com/event/will-democrats-win-all-core-four-senate-races",
 "end":1793768340,
-"won":null,
-"event":"will-democrats-win-all-core-four-senate-races"
+"won":true,
+"event":"will-democrats-win-all-core-four-senate-races",
+"void":false,
+"closed":1793799499
 },
 {
 "h":"H3",
@@ -8317,8 +8337,10 @@
 "question":"2026 Balance of Power: D Senate, D House",
 "link":"https://polymarket.com/event/balance-of-power-2026-midterms",
 "end":1793768340,
-"won":null,
-"event":"balance-of-power-2026-midterms"
+"won":true,
+"event":"balance-of-power-2026-midterms",
+"void":false,
+"closed":1793814440
 },
 {
 "h":"H2",
@@ -8473,8 +8495,10 @@
 "question":"Will the Republican Party hold 47 or fewer Senate seats after the 2026 midterm elections?",
 "link":"https://polymarket.com/event/republican-senate-seats-after-the-2026-midterm-elections-927",
 "end":1793725200,
-"won":null,
-"event":"republican-senate-seats-after-the-2026-midterm-elections-927"
+"won":true,
+"event":"republican-senate-seats-after-the-2026-midterm-elections-927",
+"void":false,
+"closed":1793795049
 },
 {
 "h":"H2",
@@ -8515,8 +8539,10 @@
 "question":"2026 Balance of Power: D Senate, D House",
 "link":"https://polymarket.com/event/balance-of-power-2026-midterms",
 "end":1793768340,
-"won":null,
-"event":"balance-of-power-2026-midterms"
+"won":true,
+"event":"balance-of-power-2026-midterms",
+"void":false,
+"closed":1793814440
 },
 {
 "h":"H2",
@@ -8657,8 +8683,10 @@
 "question":"2026 Balance of Power: D Senate, D House",
 "link":"https://polymarket.com/event/balance-of-power-2026-midterms",
 "end":1793768340,
-"won":null,
-"event":"balance-of-power-2026-midterms"
+"won":false,
+"event":"balance-of-power-2026-midterms",
+"void":false,
+"closed":1793814440
 },
 {
 "h":"H2",
@@ -8743,8 +8771,10 @@
 "question":"Will the Republicans win the Nebraska Senate race in 2026?",
 "link":"https://polymarket.com/event/nebraska-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"nebraska-senate-election-winner"
+"won":true,
+"event":"nebraska-senate-election-winner",
+"void":false,
+"closed":1793792100
 },
 {
 "h":"H2",
@@ -9031,8 +9061,10 @@
 "question":"Will the Democratic Party control the House after the 2026 Midterm elections?",
 "link":"https://polymarket.com/event/which-party-will-win-the-house-in-2026",
 "end":1793768340,
-"won":null,
-"event":"which-party-will-win-the-house-in-2026"
+"won":false,
+"event":"which-party-will-win-the-house-in-2026",
+"void":false,
+"closed":1793797590
 },
 {
 "h":"H3",
@@ -9357,8 +9389,10 @@
 "question":"2026 Balance of Power: R Senate, D House",
 "link":"https://polymarket.com/event/balance-of-power-2026-midterms",
 "end":1793768340,
-"won":null,
-"event":"balance-of-power-2026-midterms"
+"won":true,
+"event":"balance-of-power-2026-midterms",
+"void":false,
+"closed":1793814410
 },
 {
 "h":"H4",
@@ -9371,8 +9405,10 @@
 "question":"Will the Democratic Party control the House after the 2026 Midterm elections?",
 "link":"https://polymarket.com/event/which-party-will-win-the-house-in-2026",
 "end":1793768340,
-"won":null,
-"event":"which-party-will-win-the-house-in-2026"
+"won":false,
+"event":"which-party-will-win-the-house-in-2026",
+"void":false,
+"closed":1793797590
 },
 {
 "h":"H3",
@@ -9619,8 +9655,10 @@
 "question":"2026 Balance of Power: D Senate, D House",
 "link":"https://polymarket.com/event/balance-of-power-2026-midterms",
 "end":1793768340,
-"won":null,
-"event":"balance-of-power-2026-midterms"
+"won":false,
+"event":"balance-of-power-2026-midterms",
+"void":false,
+"closed":1793814440
 },
 {
 "h":"H2",
@@ -9747,8 +9785,10 @@
 "question":"Will the Republican Party hold exactly 49 Senate seats after the 2026 midterm elections?",
 "link":"https://polymarket.com/event/republican-senate-seats-after-the-2026-midterm-elections-927",
 "end":1793725200,
-"won":null,
-"event":"republican-senate-seats-after-the-2026-midterm-elections-927"
+"won":false,
+"event":"republican-senate-seats-after-the-2026-midterm-elections-927",
+"void":false,
+"closed":1793793929
 },
 {
 "h":"H2",
@@ -9853,8 +9893,10 @@
 "question":"Will the Republicans win the Nevada governor race in 2026?",
 "link":"https://polymarket.com/event/nevada-governor-winner-2026",
 "end":1793768340,
-"won":null,
-"event":"nevada-governor-winner-2026"
+"won":false,
+"event":"nevada-governor-winner-2026",
+"void":false,
+"closed":1793799450
 },
 {
 "h":"H3",
@@ -9961,8 +10003,10 @@
 "question":"Will the Republicans win the Nebraska Senate race in 2026?",
 "link":"https://polymarket.com/event/nebraska-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"nebraska-senate-election-winner"
+"won":false,
+"event":"nebraska-senate-election-winner",
+"void":false,
+"closed":1793792100
 },
 {
 "h":"H1",
@@ -9989,8 +10033,10 @@
 "question":"Will an independent win the Nebraska Senate race in 2026?",
 "link":"https://polymarket.com/event/nebraska-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"nebraska-senate-election-winner"
+"won":false,
+"event":"nebraska-senate-election-winner",
+"void":false,
+"closed":1793792153
 },
 {
 "h":"H4",
@@ -10051,8 +10097,10 @@
 "question":"Will an independent win the Nebraska Senate race in 2026?",
 "link":"https://polymarket.com/event/nebraska-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"nebraska-senate-election-winner"
+"won":false,
+"event":"nebraska-senate-election-winner",
+"void":false,
+"closed":1793792153
 },
 {
 "h":"H2",
@@ -10155,8 +10203,10 @@
 "question":"Will the Republicans win the Nebraska Senate race in 2026?",
 "link":"https://polymarket.com/event/nebraska-senate-election-winner",
 "end":1793768340,
-"won":null,
-"event":"nebraska-senate-election-winner"
+"won":false,
+"event":"nebraska-senate-election-winner",
+"void":false,
+"closed":1793792100
 },
 {
 "h":"H2",
@@ -10297,6 +10347,160 @@
 "end":1794113940,
 "won":null,
 "event":"new-zealand-legislative-election-winner"
+},
+{
+"h":"H2",
+"cid":"0x56441522b6c3cd6bcb2447764933a9aa147a3bd94063fd67fd83e2cf14d4967d",
+"side":0,
+"side_name":"Yes",
+"entry":0.9465,
+"at":1793818186,
+"strength":0.5115,
+"question":"Will Eric Jones win the CA-04 House seat?",
+"link":"https://polymarket.com/event/ca-04-house-election-winner-by-individual-20260630172946503",
+"end":1793854740,
+"won":null,
+"event":"ca-04-house-election-winner-by-individual-20260630172946503"
+},
+{
+"h":"H2",
+"cid":"0x3a0c86d7d9d3e4e82d533d2b1351b5d3e63577f8e1495e2804b9ae540135a556",
+"side":0,
+"side_name":"Yes",
+"entry":0.525,
+"at":1793818186,
+"strength":0.12,
+"question":"Israel x Iran ceasefire continues through December 15?",
+"link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"end":1797397140,
+"won":null,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+},
+{
+"h":"H2",
+"cid":"0xeae757a623cf6a8e4d63ab5ebca6739519f87f3506accbfdd75ae514a72bf461",
+"side":0,
+"side_name":"Yes",
+"entry":0.43,
+"at":1793818186,
+"strength":0.085,
+"question":"Will Pete Hegseth leave the Trump administration before 2027?",
+"link":"https://polymarket.com/event/who-will-leave-trump-administration-before-2027",
+"end":1798779540,
+"won":null,
+"event":"who-will-leave-trump-administration-before-2027"
+},
+{
+"h":"H2",
+"cid":"0xa090ae1a88ca96bcae7523a65a96425ed53616709be75cb69a0df144f718931e",
+"side":0,
+"side_name":"Yes",
+"entry":0.9,
+"at":1793818186,
+"strength":0.085,
+"question":"Nothing Ever Happens: 2026",
+"link":"https://polymarket.com/event/nothing-ever-happens-2026",
+"end":1798736340,
+"won":null,
+"event":"nothing-ever-happens-2026"
+},
+{
+"h":"H2",
+"cid":"0x352b48203f4838cf28f6065ac9d55798c411664723749f3166f0abe3bf64efa4",
+"side":1,
+"side_name":"No",
+"entry":0.795,
+"at":1793818186,
+"strength":0.08,
+"question":"Will Crude Oil reach a new all-time high by March 31, 2027?",
+"link":"https://polymarket.com/event/crude-oil-all-time-high-by",
+"end":1806551940,
+"won":null,
+"event":"crude-oil-all-time-high-by"
+},
+{
+"h":"H2",
+"cid":"0x6636930a9cc342bb743ad025cb82e1a040be8f0c8fbe5d86d58ef603d8a2d754",
+"side":1,
+"side_name":"No",
+"entry":0.405,
+"at":1793818186,
+"strength":0.07,
+"question":"Will Trump be impeached by December 31, 2027?",
+"link":"https://polymarket.com/event/will-trump-be-impeached-by-december-31-2026",
+"end":1830315540,
+"won":null,
+"event":"will-trump-be-impeached-by-december-31-2026"
+},
+{
+"h":"H2",
+"cid":"0x5db999fad322cea2914535aae5517060c3f80ad6d8c0231cde2124a434d16846",
+"side":1,
+"side_name":"No",
+"entry":0.895,
+"at":1793818186,
+"strength":0.07,
+"question":"Will the U.S. invade Iran before 2027?",
+"link":"https://polymarket.com/event/will-the-us-invade-iran-before-2027",
+"end":1798779540,
+"won":null,
+"event":"will-the-us-invade-iran-before-2027"
+},
+{
+"h":"H2",
+"cid":"0xb4299322010815429e91d888b48410a093a51fdbeeea2c3c6f2c4a2ac8415d06",
+"side":1,
+"side_name":"No",
+"entry":0.555,
+"at":1793818186,
+"strength":0.065,
+"question":"Will Trump be impeached by June 30, 2027?",
+"link":"https://polymarket.com/event/will-trump-be-impeached-by-december-31-2026",
+"end":1814414340,
+"won":null,
+"event":"will-trump-be-impeached-by-december-31-2026"
+},
+{
+"h":"H2",
+"cid":"0x377e7fe65cf198a7fc4fdae3f2136b74729279267858daaf96718b23bc2a5607",
+"side":1,
+"side_name":"No",
+"entry":0.925,
+"at":1793818186,
+"strength":0.05,
+"question":"Iran leadership change by December 31?",
+"link":"https://polymarket.com/event/iran-leadership-change-by",
+"end":1798779540,
+"won":null,
+"event":"iran-leadership-change-by"
+},
+{
+"h":"H2",
+"cid":"0xbd395d67357a1862b014dfad77cb770824a64734949e789ea631509a4e1879d6",
+"side":1,
+"side_name":"No",
+"entry":0.835,
+"at":1793818186,
+"strength":0.05,
+"question":"Will Russia capture Rai-Oleksandrivka by December 31?",
+"link":"https://polymarket.com/event/will-russia-capture-rai-oleksandrivka-by-june-30",
+"end":1798779540,
+"won":null,
+"event":"will-russia-capture-rai-oleksandrivka-by-june-30"
+},
+{
+"h":"H3",
+"cid":"0x5c79dfde05559b79a9cb9f7c4187e4d49632dd042572ae676952f812732591cc",
+"side":0,
+"side_name":"Yes",
+"entry":0.13,
+"at":1793818186,
+"strength":5199.8804,
+"question":"Strait of Hormuz traffic returns to normal by December 31?",
+"link":"https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31",
+"end":1798779540,
+"won":null,
+"event":"strait-of-hormuz-traffic-returns-to-normal-by-december-31"
 }
 ]
 }

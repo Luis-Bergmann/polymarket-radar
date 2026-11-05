@@ -685,8 +685,10 @@
 "question":"Will the Democratic Party win the VA-01 House seat?",
 "link":"https://polymarket.com/event/va-01-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"va-01-house-election-winner"
+"won":true,
+"event":"va-01-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H2",
@@ -857,8 +859,10 @@
 "question":"Will the Republican Party win the VA-01 House seat?",
 "link":"https://polymarket.com/event/va-01-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"va-01-house-election-winner"
+"won":true,
+"event":"va-01-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H2",
@@ -2347,8 +2351,10 @@
 "question":"Will the Republican Party win the MT-01 House seat?",
 "link":"https://polymarket.com/event/mt-01-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"mt-01-house-election-winner"
+"won":false,
+"event":"mt-01-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H3",
@@ -2465,8 +2471,10 @@
 "question":"Will the Democratic Party win the MT-01 House seat?",
 "link":"https://polymarket.com/event/mt-01-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"mt-01-house-election-winner"
+"won":false,
+"event":"mt-01-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H2",
@@ -2479,8 +2487,10 @@
 "question":"Will the Democratic Party win the MT-01 House seat?",
 "link":"https://polymarket.com/event/mt-01-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"mt-01-house-election-winner"
+"won":true,
+"event":"mt-01-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H2",
@@ -2643,8 +2653,10 @@
 "question":"Will the Democratic Party win the NC-01 House seat?",
 "link":"https://polymarket.com/event/nc-01-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"nc-01-house-election-winner"
+"won":true,
+"event":"nc-01-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H2",
@@ -4671,8 +4683,10 @@
 "question":"Will the Republican Party win the AR-02 House seat?",
 "link":"https://polymarket.com/event/ar-02-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"ar-02-house-election-winner"
+"won":false,
+"event":"ar-02-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H2",
@@ -4685,8 +4699,10 @@
 "question":"Will the Democratic Party win the AR-02 House seat?",
 "link":"https://polymarket.com/event/ar-02-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"ar-02-house-election-winner"
+"won":false,
+"event":"ar-02-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H2",
@@ -4861,8 +4877,10 @@
 "question":"Will the Republican Party win the MT-01 House seat?",
 "link":"https://polymarket.com/event/mt-01-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"mt-01-house-election-winner"
+"won":true,
+"event":"mt-01-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H2",
@@ -5025,8 +5043,10 @@
 "question":"Will the Republican Party win the AR-02 House seat?",
 "link":"https://polymarket.com/event/ar-02-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"ar-02-house-election-winner"
+"won":true,
+"event":"ar-02-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H2",
@@ -5953,8 +5973,10 @@
 "question":"Will the Republican Party win the AZ-01 House seat?",
 "link":"https://polymarket.com/event/az-01-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"az-01-house-election-winner"
+"won":false,
+"event":"az-01-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H2",
@@ -8653,8 +8675,10 @@
 "question":"Will the Republican Party win the AZ-01 House seat?",
 "link":"https://polymarket.com/event/az-01-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"az-01-house-election-winner"
+"won":true,
+"event":"az-01-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H2",
@@ -8667,8 +8691,10 @@
 "question":"Will the Democratic Party win the AZ-01 House seat?",
 "link":"https://polymarket.com/event/az-01-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"az-01-house-election-winner"
+"won":true,
+"event":"az-01-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H2",
@@ -10035,8 +10061,10 @@
 "question":"Will the Democratic Party win the MT-01 House seat?",
 "link":"https://polymarket.com/event/mt-01-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"mt-01-house-election-winner"
+"won":true,
+"event":"mt-01-house-election-winner",
+"void":false,
+"closed":1793909084
 },
 {
 "h":"H2",
@@ -10755,6 +10783,104 @@
 "end":1806551940,
 "won":null,
 "event":"israel-withdraws-from-lebanon-by"
+},
+{
+"h":"H2",
+"cid":"0xc9c45970a2b948e7071f4e92791b76dd4e95b8bfc86f6805780f60cdcfcb7e22",
+"side":0,
+"side_name":"Yes",
+"entry":0.28,
+"at":1793914025,
+"strength":0.23,
+"question":"Will Yair Lapid be the next Israeli Minister of Foreign Affairs?",
+"link":"https://polymarket.com/event/next-israeli-minister-of-foreign-affairs",
+"end":1803877140,
+"won":null,
+"event":"next-israeli-minister-of-foreign-affairs"
+},
+{
+"h":"H2",
+"cid":"0xd89ba15a2be4604e2773baf481c49a917587afb4d85749edecb89a2306e5f08d",
+"side":1,
+"side_name":"No",
+"entry":0.46,
+"at":1793914025,
+"strength":0.115,
+"question":"Will Alexandria Ocasio-Cortez announce a Presidential run before 2028?",
+"link":"https://polymarket.com/event/who-will-announce-presidential-run-before-2028-20260803142755224",
+"end":1798675200,
+"won":null,
+"event":"who-will-announce-presidential-run-before-2028-20260803142755224"
+},
+{
+"h":"H2",
+"cid":"0x613235b9e2431915d33473fe60c078a333275c7b913fad569f4c14bd9bd62341",
+"side":1,
+"side_name":"No",
+"entry":0.57,
+"at":1793914025,
+"strength":0.1,
+"question":"Will Russia capture Orikhiv by June 30, 2027?",
+"link":"https://polymarket.com/event/will-russia-capture-orikhiv-by",
+"end":1814414340,
+"won":null,
+"event":"will-russia-capture-orikhiv-by"
+},
+{
+"h":"H2",
+"cid":"0x48a3e95c0bc1b9305e56445a7affcb857fd61e0ae0d78a4778310a1108ceb08a",
+"side":0,
+"side_name":"Yes",
+"entry":0.245,
+"at":1793914025,
+"strength":0.095,
+"question":"Will Marco Rubio leave the Trump administration before 2027?",
+"link":"https://polymarket.com/event/who-will-leave-trump-administration-before-2027",
+"end":1798779540,
+"won":null,
+"event":"who-will-leave-trump-administration-before-2027"
+},
+{
+"h":"H2",
+"cid":"0x18b1c135d0a40c5894da9412e77311827d9caf16cf4cd6591b247a34730af919",
+"side":0,
+"side_name":"Yes",
+"entry":0.388,
+"at":1793914025,
+"strength":0.0745,
+"question":"Will J.D. Vance win the 2028 Republican presidential nomination?",
+"link":"https://polymarket.com/event/republican-presidential-nominee-2028",
+"end":1857272340,
+"won":null,
+"event":"republican-presidential-nominee-2028"
+},
+{
+"h":"H2",
+"cid":"0xd27ee5c02549e03ad404a8a2373b3edea3dfc382920342934dedf3c3dce2bae7",
+"side":0,
+"side_name":"Yes",
+"entry":0.0665,
+"at":1793914025,
+"strength":0.0605,
+"question":"Will the next Russia x Ukraine peace talks take place in the United States by December 31, 2027?",
+"link":"https://polymarket.com/event/where-will-the-next-russia-x-ukraine-peace-talks-take-place",
+"end":1830315540,
+"won":null,
+"event":"where-will-the-next-russia-x-ukraine-peace-talks-take-place"
+},
+{
+"h":"H3",
+"cid":"0xca394e0db041f91ac2d69f3ea06efdfc8643acb0d2751283bd594e7b8bd581f9",
+"side":1,
+"side_name":"No",
+"entry":0.3021,
+"at":1793914025,
+"strength":1540.0,
+"question":"Israel x Iran ceasefire continues through November 15?",
+"link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"end":1794805140,
+"won":null,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
 }
 ]
 }

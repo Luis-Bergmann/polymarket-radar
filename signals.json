@@ -825,8 +825,10 @@
 "question":"Will the Republican Party win the NY-03 House seat?",
 "link":"https://polymarket.com/event/ny-03-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"ny-03-house-election-winner"
+"won":false,
+"event":"ny-03-house-election-winner",
+"void":false,
+"closed":1793830257
 },
 {
 "h":"H2",
@@ -1177,8 +1179,10 @@
 "question":"Will the Democratic Party win the NY-03 House seat?",
 "link":"https://polymarket.com/event/ny-03-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"ny-03-house-election-winner"
+"won":false,
+"event":"ny-03-house-election-winner",
+"void":false,
+"closed":1793830258
 },
 {
 "h":"H2",
@@ -5143,8 +5147,10 @@
 "question":"Will the Democratic Party win the MI-07 House seat?",
 "link":"https://polymarket.com/event/mi-07-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"mi-07-house-election-winner"
+"won":true,
+"event":"mi-07-house-election-winner",
+"void":false,
+"closed":1793830351
 },
 {
 "h":"H2",
@@ -5173,8 +5179,10 @@
 "question":"Will the Republican Party win the MI-07 House seat?",
 "link":"https://polymarket.com/event/mi-07-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"mi-07-house-election-winner"
+"won":true,
+"event":"mi-07-house-election-winner",
+"void":false,
+"closed":1793830126
 },
 {
 "h":"H2",
@@ -8151,8 +8159,10 @@
 "question":"Israel x Iran ceasefire continues through November 1?",
 "link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
 "end":1793595540,
-"won":null,
-"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+"won":true,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"void":false,
+"closed":1793831803
 },
 {
 "h":"H2",
@@ -8309,8 +8319,10 @@
 "question":"Will the Republican Party win the MI-04 House seat?",
 "link":"https://polymarket.com/event/mi-04-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"mi-04-house-election-winner"
+"won":true,
+"event":"mi-04-house-election-winner",
+"void":false,
+"closed":1793827034
 },
 {
 "h":"H2",
@@ -8381,8 +8393,10 @@
 "question":"Blue tsunami in 2026?",
 "link":"https://polymarket.com/event/blue-tsunami-in-2026",
 "end":1799125140,
-"won":null,
-"event":"blue-tsunami-in-2026"
+"won":true,
+"event":"blue-tsunami-in-2026",
+"void":false,
+"closed":1793834376
 },
 {
 "h":"H4",
@@ -9611,8 +9625,10 @@
 "question":"Will the Democratic Party win the TX-09 House seat?",
 "link":"https://polymarket.com/event/tx-09-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"tx-09-house-election-winner"
+"won":true,
+"event":"tx-09-house-election-winner",
+"void":false,
+"closed":1793826546
 },
 {
 "h":"H2",
@@ -10501,6 +10517,132 @@
 "end":1798779540,
 "won":null,
 "event":"strait-of-hormuz-traffic-returns-to-normal-by-december-31"
+},
+{
+"h":"H2",
+"cid":"0xb3262c65463482cf51b081fb909ccc1c7ebd158260825e6566b09a052c418156",
+"side":1,
+"side_name":"No",
+"entry":0.3,
+"at":1793836953,
+"strength":0.095,
+"question":"Will Radomir Sai\u010di\u0107 win the next Serbia presidential election?",
+"link":"https://polymarket.com/event/next-serbia-presidential-election-winner-20260629192336823",
+"end":1809230340,
+"won":null,
+"event":"next-serbia-presidential-election-winner-20260629192336823"
+},
+{
+"h":"H2",
+"cid":"0x4aa32bf54db5a3b4297e8c3ad46d9c56f14cd2efdf828812a69f5fb2e64fa396",
+"side":0,
+"side_name":"Yes",
+"entry":0.785,
+"at":1793836953,
+"strength":0.09,
+"question":"Pedro S\u00e1nchez out as PM of Spain by January 31, 2027?",
+"link":"https://polymarket.com/event/pedro-snchez-out-as-pm-of-spain-by",
+"end":1801457940,
+"won":null,
+"event":"pedro-snchez-out-as-pm-of-spain-by"
+},
+{
+"h":"H1",
+"cid":"0x506a2f7a1aae43e74f04d412afdc5982f669c7274c26463da72c23b28b2a6004",
+"side":1,
+"side_name":"No",
+"entry":0.715,
+"at":1793836953,
+"strength":3462,
+"question":"Iran full airspace closure by December 31?",
+"link":"https://polymarket.com/event/iran-full-airspace-closure-byptptpt-20260625195253028",
+"end":1798779540,
+"won":null,
+"event":"iran-full-airspace-closure-byptptpt-20260625195253028"
+},
+{
+"h":"H2",
+"cid":"0xecffb867dc6b5421ec726ff8a44de5a538ccbad7dc1ea5c8b175b00293227cb5",
+"side":1,
+"side_name":"No",
+"entry":0.575,
+"at":1793836953,
+"strength":0.085,
+"question":"Will Chris Hipkins be the next Prime Minister of New Zealand after the 2026 elections?",
+"link":"https://polymarket.com/event/next-prime-minister-of-new-zealand-174",
+"end":1794113940,
+"won":null,
+"event":"next-prime-minister-of-new-zealand-174"
+},
+{
+"h":"H2",
+"cid":"0x4f1fefaa7c8d7ecedab0fd6c9a2e5959f563146335cc1c4afa0a89a02b39dd8f",
+"side":0,
+"side_name":"Yes",
+"entry":0.92,
+"at":1793836953,
+"strength":0.08,
+"question":"Will Green Party win the third-most seats in the New Zealand House of Representatives in the 2026 New Zealand legislative election?",
+"link":"https://polymarket.com/event/new-zealand-election-3rd-place",
+"end":1794113940,
+"won":null,
+"event":"new-zealand-election-3rd-place"
+},
+{
+"h":"H2",
+"cid":"0xa745eff902c48aa61fd7478b3286623b38e979d0a5d89fef46964edf45e46219",
+"side":1,
+"side_name":"No",
+"entry":0.895,
+"at":1793836953,
+"strength":0.065,
+"question":"Will Trump and Putin not meet?",
+"link":"https://polymarket.com/event/where-will-trump-and-putin-meet-next-678",
+"end":1798779540,
+"won":null,
+"event":"where-will-trump-and-putin-meet-next-678"
+},
+{
+"h":"H2",
+"cid":"0x0d8c40da9a67ed1fa88f3bf213f3c9ac2c3d7534977bf89d157aeff2c58aa77d",
+"side":0,
+"side_name":"Yes",
+"entry":0.25,
+"at":1793836953,
+"strength":0.065,
+"question":"US reissues Iran oil sanction relief by November 30?",
+"link":"https://polymarket.com/event/us-reissues-iran-oil-sales-sanction-relief-byptptpt-20260708142359046",
+"end":1796101140,
+"won":null,
+"event":"us-reissues-iran-oil-sales-sanction-relief-byptptpt-20260708142359046"
+},
+{
+"h":"H3",
+"cid":"0x61600d487069f99e775307a0655c1a79f26e4fc6d8d1ba66790c64d78d0beba2",
+"side":0,
+"side_name":"Yes",
+"entry":0.179,
+"at":1793836953,
+"strength":1727.1567,
+"question":"Will Jon Ossoff win the 2028 US Presidential Election?",
+"link":"https://polymarket.com/event/presidential-election-winner-2028",
+"end":1857272340,
+"won":null,
+"event":"presidential-election-winner-2028"
+},
+{
+"h":"H4",
+"cid":"0x19d2ff72e389d190c183e6b114817301d29eba651d67d75a38ee201a05188fd9",
+"side":0,
+"side_name":"Yes",
+"entry":0.933,
+"at":1793836953,
+"strength":10364.7987,
+"question":"Will Mary Peltola win the Alaska Senate race in 2026?",
+"link":"https://polymarket.com/event/alaska-senate-election-winner",
+"end":1793768340,
+"won":null,
+"event":"alaska-senate-election-winner"
 }
 ]
 }

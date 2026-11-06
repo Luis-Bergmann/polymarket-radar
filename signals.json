@@ -875,8 +875,10 @@
 "question":"Will the Republican Party win the CO-03 House seat?",
 "link":"https://polymarket.com/event/co-03-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"co-03-house-election-winner"
+"won":true,
+"event":"co-03-house-election-winner",
+"void":false,
+"closed":1793993584
 },
 {
 "h":"H2",
@@ -9729,8 +9731,10 @@
 "question":"Will the Democratic Party win the CO-03 House seat?",
 "link":"https://polymarket.com/event/co-03-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"co-03-house-election-winner"
+"won":false,
+"event":"co-03-house-election-winner",
+"void":false,
+"closed":1793993584
 },
 {
 "h":"H2",
@@ -9743,8 +9747,10 @@
 "question":"Will the Republican Party win the CO-03 House seat?",
 "link":"https://polymarket.com/event/co-03-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"co-03-house-election-winner"
+"won":false,
+"event":"co-03-house-election-winner",
+"void":false,
+"closed":1793993584
 },
 {
 "h":"H2",
@@ -11179,6 +11185,20 @@
 "end":1796014740,
 "won":null,
 "event":"next-prime-minister-of-spain-20260625005215443"
+},
+{
+"h":"H2",
+"cid":"0x4f1fefaa7c8d7ecedab0fd6c9a2e5959f563146335cc1c4afa0a89a02b39dd8f",
+"side":1,
+"side_name":"No",
+"entry":0.0925,
+"at":1794001151,
+"strength":0.066,
+"question":"Will Green Party win the third-most seats in the New Zealand House of Representatives in the 2026 New Zealand legislative election?",
+"link":"https://polymarket.com/event/new-zealand-election-3rd-place",
+"end":1794113940,
+"won":null,
+"event":"new-zealand-election-3rd-place"
 }
 ]
 }

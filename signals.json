@@ -2639,8 +2639,10 @@
 "question":"Will the Democratic Party win the NY-17 House seat?",
 "link":"https://polymarket.com/event/ny-17-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"ny-17-house-election-winner"
+"won":false,
+"event":"ny-17-house-election-winner",
+"void":false,
+"closed":1793931554
 },
 {
 "h":"H2",
@@ -8287,8 +8289,10 @@
 "question":"Will the Republican Party hold below 190 House seats after the 2026 midterm elections?",
 "link":"https://polymarket.com/event/republican-house-seats-after-the-2026-midterm-elections",
 "end":1793768340,
-"won":null,
-"event":"republican-house-seats-after-the-2026-midterm-elections"
+"won":true,
+"event":"republican-house-seats-after-the-2026-midterm-elections",
+"void":false,
+"closed":1793935833
 },
 {
 "h":"H2",
@@ -9349,8 +9353,10 @@
 "question":"Will the Republican Party win the NY-17 House seat?",
 "link":"https://polymarket.com/event/ny-17-house-election-winner",
 "end":1793768340,
-"won":null,
-"event":"ny-17-house-election-winner"
+"won":false,
+"event":"ny-17-house-election-winner",
+"void":false,
+"closed":1793931554
 },
 {
 "h":"H2",
@@ -11005,6 +11011,90 @@
 "end":1830315540,
 "won":null,
 "event":"how-many-israeli-elections-before-government-formed-20260728195012183"
+},
+{
+"h":"H2",
+"cid":"0xeae757a623cf6a8e4d63ab5ebca6739519f87f3506accbfdd75ae514a72bf461",
+"side":1,
+"side_name":"No",
+"entry":0.58,
+"at":1793954132,
+"strength":0.125,
+"question":"Will Pete Hegseth leave the Trump administration before 2027?",
+"link":"https://polymarket.com/event/who-will-leave-trump-administration-before-2027",
+"end":1798779540,
+"won":null,
+"event":"who-will-leave-trump-administration-before-2027"
+},
+{
+"h":"H2",
+"cid":"0x466a62b2fae633e26f9b4c8426355f1b8b7acc01ff8b53b0858baa69c55b7ec9",
+"side":0,
+"side_name":"Yes",
+"entry":0.585,
+"at":1793954132,
+"strength":0.07,
+"question":"Will Jon Ossoff announce a Presidential run before 2028?",
+"link":"https://polymarket.com/event/who-will-announce-presidential-run-before-2028-20260803142755224",
+"end":1830315540,
+"won":null,
+"event":"who-will-announce-presidential-run-before-2028-20260803142755224"
+},
+{
+"h":"H2",
+"cid":"0xbb0d2443a9c76fce0910ca7a602f3a6d56bc676c9a1b078829fd20a782e2560f",
+"side":1,
+"side_name":"No",
+"entry":0.855,
+"at":1793954132,
+"strength":0.065,
+"question":"Will Robert F. Kennedy Jr. leave the Trump administration before 2027?",
+"link":"https://polymarket.com/event/who-will-leave-trump-administration-before-2027",
+"end":1798779540,
+"won":null,
+"event":"who-will-leave-trump-administration-before-2027"
+},
+{
+"h":"H2",
+"cid":"0x5fe6c169639d7a315e58c7aea2a1b7ba7720aaa86c07292090ce97b70c83bea7",
+"side":0,
+"side_name":"Yes",
+"entry":0.35,
+"at":1793954132,
+"strength":0.06,
+"question":"Will National Party win the second-most seats in the New Zealand House of Representatives in the 2026 New Zealand legislative election?",
+"link":"https://polymarket.com/event/new-zealand-election-2nd-place-393",
+"end":1794113940,
+"won":null,
+"event":"new-zealand-election-2nd-place-393"
+},
+{
+"h":"H2",
+"cid":"0xe9cb48f6706fdb574c943787f38d7ae2dd93a5eddea40e0a78036c624f2ce483",
+"side":1,
+"side_name":"No",
+"entry":0.375,
+"at":1793954132,
+"strength":0.06,
+"question":"Will Labour Party win the second-most seats in the New Zealand House of Representatives in the 2026 New Zealand legislative election?",
+"link":"https://polymarket.com/event/new-zealand-election-2nd-place-393",
+"end":1794113940,
+"won":null,
+"event":"new-zealand-election-2nd-place-393"
+},
+{
+"h":"H3",
+"cid":"0x8a42bb4cb9b9f157b539611f6a8c122388f652570cfc3c07d538e7df2bb78894",
+"side":0,
+"side_name":"Yes",
+"entry":0.2891,
+"at":1793954132,
+"strength":7190.35,
+"question":"Will Ulf Kristersson be the next Prime Minister of Sweden?",
+"link":"https://polymarket.com/event/next-prime-minister-of-sweden",
+"end":1789358340,
+"won":null,
+"event":"next-prime-minister-of-sweden"
 }
 ]
 }

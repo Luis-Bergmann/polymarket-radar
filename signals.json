@@ -8229,8 +8229,10 @@
 "question":"Israel x Iran ceasefire continues through November 5?",
 "link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
 "end":1793941140,
-"won":null,
-"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+"won":true,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"void":false,
+"closed":1794177164
 },
 {
 "h":"H2",
@@ -8509,8 +8511,10 @@
 "question":"Israel x Iran ceasefire continues through November 5?",
 "link":"https://polymarket.com/event/israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
 "end":1793941140,
-"won":null,
-"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963"
+"won":false,
+"event":"israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+"void":false,
+"closed":1794177164
 },
 {
 "h":"H2",

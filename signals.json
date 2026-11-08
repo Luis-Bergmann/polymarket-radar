@@ -6545,8 +6545,10 @@
 "question":"Will Benjamin Netanyahu receive the first mandate to form a government after the 2026 Israeli election?",
 "link":"https://polymarket.com/event/who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877",
 "end":1793159940,
-"won":null,
-"event":"who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877"
+"won":false,
+"event":"who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877",
+"void":false,
+"closed":1794159970
 },
 {
 "h":"H2",
@@ -6663,8 +6665,10 @@
 "question":"Will Benjamin Netanyahu receive the first mandate to form a government after the 2026 Israeli election?",
 "link":"https://polymarket.com/event/who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877",
 "end":1793159940,
-"won":null,
-"event":"who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877"
+"won":true,
+"event":"who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877",
+"void":false,
+"closed":1794159970
 },
 {
 "h":"H2",
@@ -6677,8 +6681,10 @@
 "question":"Will Gadi Eizenkot receive the first mandate to form a government after the 2026 Israeli election?",
 "link":"https://polymarket.com/event/who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877",
 "end":1793159940,
-"won":null,
-"event":"who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877"
+"won":true,
+"event":"who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877",
+"void":false,
+"closed":1794159970
 },
 {
 "h":"H2",
@@ -6933,8 +6939,10 @@
 "question":"Will Gadi Eizenkot receive the first mandate to form a government after the 2026 Israeli election?",
 "link":"https://polymarket.com/event/who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877",
 "end":1793159940,
-"won":null,
-"event":"who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877"
+"won":false,
+"event":"who-will-receive-the-first-mandate-to-form-israels-next-government-20261019144924877",
+"void":false,
+"closed":1794159970
 },
 {
 "h":"H2",
@@ -11457,6 +11465,34 @@
 "end":1798779540,
 "won":null,
 "event":"who-will-announce-presidential-run-before-2027"
+},
+{
+"h":"H2",
+"cid":"0x6d7bc67b86b33cccdc92923d821de82f2289cb704abc5d0f7b56b7d67f0e9cbc",
+"side":1,
+"side_name":"No",
+"entry":0.9135,
+"at":1794167892,
+"strength":0.0705,
+"question":"Will Andy Beshear announce a Presidential run before 2027?",
+"link":"https://polymarket.com/event/who-will-announce-presidential-run-before-2027",
+"end":1798779540,
+"won":null,
+"event":"who-will-announce-presidential-run-before-2027"
+},
+{
+"h":"H2",
+"cid":"0xde2be5c360bafeb33cc43bd0a49368ed89371daca90e1cc6da8bf7f93d5bbadf",
+"side":1,
+"side_name":"No",
+"entry":0.815,
+"at":1794167892,
+"strength":0.055,
+"question":"Will Kash Patel leave the Trump administration before 2027?",
+"link":"https://polymarket.com/event/who-will-leave-trump-administration-before-2027",
+"end":1798779540,
+"won":null,
+"event":"who-will-leave-trump-administration-before-2027"
 }
 ]
 }

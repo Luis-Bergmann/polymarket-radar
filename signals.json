@@ -11497,6 +11497,20 @@
 "end":1798779540,
 "won":null,
 "event":"who-will-leave-trump-administration-before-2027"
+},
+{
+"h":"H2",
+"cid":"0xd2e96e78b5a59e12b4d60d6b8426aa93dc6edf2ed7d711509481050c347856b3",
+"side":1,
+"side_name":"No",
+"entry":0.805,
+"at":1794193177,
+"strength":0.115,
+"question":"Will Trump's approval rating hit 35% in 2026?",
+"link":"https://polymarket.com/event/how-low-will-trumps-approval-rating-go-in-2026",
+"end":1799082000,
+"won":null,
+"event":"how-low-will-trumps-approval-rating-go-in-2026"
 }
 ]
 }

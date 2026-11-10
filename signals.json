@@ -1665,8 +1665,10 @@
 "question":"Russia-Ukraine peace talks by December 31, 2026?",
 "link":"https://polymarket.com/event/russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
 "end":1798779540,
-"won":null,
-"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716"
+"won":false,
+"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
+"void":false,
+"closed":1794308208
 },
 {
 "h":"H2",
@@ -2899,8 +2901,10 @@
 "question":"Billionaire one-time wealth tax passes in California election 2026?",
 "link":"https://polymarket.com/event/billionaire-one-time-wealth-tax-passes-in-california-election-2026",
 "end":1793768340,
-"won":null,
-"event":"billionaire-one-time-wealth-tax-passes-in-california-election-2026"
+"won":true,
+"event":"billionaire-one-time-wealth-tax-passes-in-california-election-2026",
+"void":false,
+"closed":1794298365
 },
 {
 "h":"H2",
@@ -2943,8 +2947,10 @@
 "question":"Russia-Ukraine peace talks by November 30, 2026?",
 "link":"https://polymarket.com/event/russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
 "end":1796083140,
-"won":null,
-"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716"
+"won":false,
+"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
+"void":false,
+"closed":1794308208
 },
 {
 "h":"H2",
@@ -3733,8 +3739,10 @@
 "question":"Russia-Ukraine peace talks by December 31, 2026?",
 "link":"https://polymarket.com/event/russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
 "end":1798779540,
-"won":null,
-"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716"
+"won":false,
+"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
+"void":false,
+"closed":1794308208
 },
 {
 "h":"H2",
@@ -4233,8 +4241,10 @@
 "question":"Russia-Ukraine peace talks by November 30, 2026?",
 "link":"https://polymarket.com/event/russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
 "end":1796083140,
-"won":null,
-"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716"
+"won":true,
+"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
+"void":false,
+"closed":1794308208
 },
 {
 "h":"H2",
@@ -4533,8 +4543,10 @@
 "question":"Russia-Ukraine peace talks by December 31, 2026?",
 "link":"https://polymarket.com/event/russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
 "end":1798779540,
-"won":null,
-"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716"
+"won":true,
+"event":"russia-x-ukraine-peace-talks-byptptpt-20260609012540716",
+"void":false,
+"closed":1794308208
 },
 {
 "h":"H2",
@@ -5967,8 +5979,10 @@
 "question":"Will the next Russia x Ukraine peace talks take place in the UAE by December 31, 2027?",
 "link":"https://polymarket.com/event/where-will-the-next-russia-x-ukraine-peace-talks-take-place",
 "end":1830315540,
-"won":null,
-"event":"where-will-the-next-russia-x-ukraine-peace-talks-take-place"
+"won":false,
+"event":"where-will-the-next-russia-x-ukraine-peace-talks-take-place",
+"void":false,
+"closed":1794308297
 },
 {
 "h":"H2",
@@ -7851,8 +7865,10 @@
 "question":"Billionaire one-time wealth tax passes in California election 2026?",
 "link":"https://polymarket.com/event/billionaire-one-time-wealth-tax-passes-in-california-election-2026",
 "end":1793768340,
-"won":null,
-"event":"billionaire-one-time-wealth-tax-passes-in-california-election-2026"
+"won":false,
+"event":"billionaire-one-time-wealth-tax-passes-in-california-election-2026",
+"void":false,
+"closed":1794298365
 },
 {
 "h":"H2",
@@ -8915,8 +8931,10 @@
 "question":"Billionaire one-time wealth tax passes in California election 2026?",
 "link":"https://polymarket.com/event/billionaire-one-time-wealth-tax-passes-in-california-election-2026",
 "end":1793768340,
-"won":null,
-"event":"billionaire-one-time-wealth-tax-passes-in-california-election-2026"
+"won":false,
+"event":"billionaire-one-time-wealth-tax-passes-in-california-election-2026",
+"void":false,
+"closed":1794298365
 },
 {
 "h":"H2",
@@ -9603,8 +9621,10 @@
 "question":"Will the next Russia x Ukraine peace talks take place in the UAE by December 31, 2027?",
 "link":"https://polymarket.com/event/where-will-the-next-russia-x-ukraine-peace-talks-take-place",
 "end":1830315540,
-"won":null,
-"event":"where-will-the-next-russia-x-ukraine-peace-talks-take-place"
+"won":true,
+"event":"where-will-the-next-russia-x-ukraine-peace-talks-take-place",
+"void":false,
+"closed":1794308297
 },
 {
 "h":"H2",
@@ -9855,8 +9875,10 @@
 "question":"Will no qualifying Russia x Ukraine peace talks take place by December 31, 2027?",
 "link":"https://polymarket.com/event/where-will-the-next-russia-x-ukraine-peace-talks-take-place",
 "end":1830315540,
-"won":null,
-"event":"where-will-the-next-russia-x-ukraine-peace-talks-take-place"
+"won":true,
+"event":"where-will-the-next-russia-x-ukraine-peace-talks-take-place",
+"void":false,
+"closed":1794308448
 },
 {
 "h":"H3",
@@ -10909,8 +10931,10 @@
 "question":"Will the next Russia x Ukraine peace talks take place in the United States by December 31, 2027?",
 "link":"https://polymarket.com/event/where-will-the-next-russia-x-ukraine-peace-talks-take-place",
 "end":1830315540,
-"won":null,
-"event":"where-will-the-next-russia-x-ukraine-peace-talks-take-place"
+"won":false,
+"event":"where-will-the-next-russia-x-ukraine-peace-talks-take-place",
+"void":false,
+"closed":1794308448
 },
 {
 "h":"H3",

@@ -11733,6 +11733,34 @@
 "end":1814414340,
 "won":null,
 "event":"iran-leadership-change-by"
+},
+{
+"h":"H2",
+"cid":"0xe1a717cca1d898e96a2216d4b3c4a4820779896928addfdab74dd861648a6382",
+"side":1,
+"side_name":"No",
+"entry":0.625,
+"at":1794433044,
+"strength":0.34,
+"question":"Will Helen Zille be the next mayor of Johannesburg?",
+"link":"https://polymarket.com/event/next-mayor-of-johannesburg-20260609220245506",
+"end":1794959940,
+"won":null,
+"event":"next-mayor-of-johannesburg-20260609220245506"
+},
+{
+"h":"H2",
+"cid":"0x3242b643a0452825cb80a26cf8b775a0fc4dc5b473a0923664f00fb88951ebc4",
+"side":0,
+"side_name":"Yes",
+"entry":0.265,
+"at":1794433044,
+"strength":0.06,
+"question":"Russia x Ukraine ceasefire by March 31, 2027?",
+"link":"https://polymarket.com/event/russia-x-ukraine-ceasefire-by",
+"end":1806551940,
+"won":null,
+"event":"russia-x-ukraine-ceasefire-by"
 }
 ]
 }
